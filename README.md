@@ -1,2 +1,2 @@
-# escape-game
-Test test
+# Escape Game
+Für mehr Informationen zu GitHub: https://learngitbranching.js.org/?locale=de_DE
