@@ -22,37 +22,43 @@ public class MainMenu : MonoBehaviour
     {
         errorNameTooLong.SetActive(false);
         errorNameNull.SetActive(false);
+        username = "";
     }
 
     // Update is called once per frame
     void Update()
     {
-        UserInput();       
+        username =UserInput();     
     }
 
-    void UserInput()
+    string UserInput()
     {
-        username = userField.text;
+        string _username = userField.text;
 
-        if (username.Length > 20)
+        if (userField.text != null)
         {
-            errorNameTooLong.SetActive(true);
-            isNameValid = false;
-        }    
-        else 
-        {
-            errorNameTooLong.SetActive(false);
-            isNameValid = true;
+            if (_username.Length > 20)
+            {
+                errorNameTooLong.SetActive(true);
+                isNameValid = false;
+            }
+            else
+            {
+                errorNameTooLong.SetActive(false);
+                isNameValid = true;
+            }
+            if (_username.Length != 0)
+            {
+                errorNameNull.SetActive(false);
+            }
         }
-        if(username.Length != 0)
-        {
-            errorNameNull.SetActive(false);
-        }
+
+        return _username;
     }    
 
     public void StartGame()
     {
-        if (username.Length == 0)
+        if (username.Length == 0 || username == null)
         {
             errorNameNull.SetActive(true);
         }
