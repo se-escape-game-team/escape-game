@@ -10,7 +10,8 @@ using UnityEngine.SceneManagement;
  *  
  * Items:
  *  3) "Selectable - Item" Tag dem GameObject hinzufügen
- *  4) ObjectImage.cs hinzufügen und Sprite für Inventar darin speichern
+ *  4) ObjectImage.cs hinzufügen 
+ *  5) Sprite für Inventar in ObjectImage.cs speichern
  * 
  * Tasks:
  *  3) "Selectable - Task" Tag dem GameObject hinzufügen

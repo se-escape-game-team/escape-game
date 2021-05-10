@@ -35,7 +35,7 @@ public class Inventory : MonoBehaviour
     public void AddItem(Sprite sprite)
     {
         itemList.Add(sprite);
-        Debug.Log(itemList.Count);
+        //Debug.Log(itemList.Count);
         RefreshInventory();
     }
 
