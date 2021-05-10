@@ -10,6 +10,7 @@ using UnityEngine.SceneManagement;
  *  
  * Items:
  *  3) "Selectable - Item" Tag dem GameObject hinzufügen
+ *  4) ObjectImage.cs hinzufügen und Sprite für Inventar darin speichern
  * 
  * Tasks:
  *  3) "Selectable - Task" Tag dem GameObject hinzufügen
@@ -23,6 +24,8 @@ public class SelectObjects : MonoBehaviour
     [SerializeField] private Color colorItems = new Color(250, 150, 0);
     [SerializeField] private Color colorTasks = new Color(0, 250, 255);
     [SerializeField] private int outlineWidth = 10;
+
+    [SerializeField] private Inventory inventory;
 
     private Outline recentOutline;
     private bool wasHit;
@@ -46,7 +49,8 @@ public class SelectObjects : MonoBehaviour
 
                 if (Input.GetMouseButtonDown(0))
                 {
-                    // Add item to inventory -> missing
+                    // Adds Item to inventory (with sprite saved in ObjectImage.cs)
+                    inventory.AddItem(hitObject.GetComponent<ObjectImage>().inventoryImage);
                     Destroy(hitObject);
                 }
             }
