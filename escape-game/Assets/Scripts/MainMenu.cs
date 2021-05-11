@@ -62,6 +62,7 @@ public class MainMenu : MonoBehaviour
 
     public void StartGame()
     {
+        Time.timeScale = 1f;
         if (username.Length == 0 || username == null)
         {
             errorNameNull.SetActive(true);
