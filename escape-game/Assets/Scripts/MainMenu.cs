@@ -14,7 +14,11 @@ public class MainMenu : MonoBehaviour
     
     public string Username
     {
-        get { return username; }
+        get
+        {
+            Debug.Log("Userneme was accessed");
+            return username;
+        }
     }
 
     // Start is called before the first frame update
@@ -28,29 +32,29 @@ public class MainMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        username =UserInput();     
+        if (userField.text != null)
+        {
+            username = UserInput();
+        } 
     }
 
     string UserInput()
     {
         string _username = userField.text;
 
-        if (userField.text != null)
+        if (_username.Length > 20)
         {
-            if (_username.Length > 20)
-            {
-                errorNameTooLong.SetActive(true);
-                isNameValid = false;
-            }
-            else
-            {
-                errorNameTooLong.SetActive(false);
-                isNameValid = true;
-            }
-            if (_username.Length != 0)
-            {
-                errorNameNull.SetActive(false);
-            }
+            errorNameTooLong.SetActive(true);
+            isNameValid = false;
+        }
+        else
+        {
+            errorNameTooLong.SetActive(false);
+            isNameValid = true;
+        }
+        if (_username.Length != 0)
+        {
+            errorNameNull.SetActive(false);
         }
 
         return _username;
