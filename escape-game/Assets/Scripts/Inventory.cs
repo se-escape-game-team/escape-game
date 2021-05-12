@@ -11,7 +11,9 @@ public class Inventory : MonoBehaviour
     // Saves the UI Slots for displaying the items
     public GameObject[] itemPanel;
     private Image[] itemImage;
-    
+
+    //bool test = true;
+
     // List that saves all the collected item Sprites
     ArrayList itemList = new ArrayList();
 
@@ -23,7 +25,7 @@ public class Inventory : MonoBehaviour
         itemImage = new Image[itemPanel.Length];
         for (int i = 0; i < itemPanel.Length; i++)
         {
-            itemImage[i] = itemPanel[i].transform.Find($"ItemImage{i}").GetComponent<Image>();
+            itemImage[i] = itemPanel[i].transform.Find($"ItemImage").GetComponent<Image>();
         }
 
         // Disables all the item-slots
@@ -54,6 +56,18 @@ public class Inventory : MonoBehaviour
                 RefreshInventory();
             }
         }
+
+        //zum Testen der DeleteIteme Methode mit der Leertaste
+        //if (Input.GetAxis("Jump")!=0&&test)
+        //{
+        //    DeleteItem((Sprite)itemList[0]);
+        //    test = false;
+        //}
+        //if (Input.GetAxis("Jump") == 0)
+        //{
+        //    test = true;
+        //}
+
     }
 
     /// <summary>
@@ -61,11 +75,9 @@ public class Inventory : MonoBehaviour
     /// </summary>
     void ScrollDown()
     {
-        if (currentItem0Position >= 3)
+        if (currentItem0Position >= itemImage.Length)
         {
-            Debug.Log("Scroll down");
             currentItem0Position--;
-            Debug.Log($"Current Position: {currentItem0Position}");
         }
     }
 
@@ -76,9 +88,7 @@ public class Inventory : MonoBehaviour
     {
         if (currentItem0Position < itemList.Count - 1)
         {
-            Debug.Log("Scroll up");
             currentItem0Position++;
-            Debug.Log($"Current Position: {currentItem0Position}");
         }
     }
 
@@ -108,17 +118,15 @@ public class Inventory : MonoBehaviour
     void RefreshInventory()
     {
         //Debug.Log($"ItemList: {itemList.Count}\nItemImage: {itemImage.Length}\nItemPanel: {itemPanel.Length}");
-        if (itemList.Count <= 3)
+        if (itemList.Count <= itemImage.Length)
         {
             foreach (GameObject g in itemPanel)
             {
-                //Debug.Log("Rücksetzen Panel");
                 g.SetActive(false);
             }
             int panel = 0;
             for (int i = currentItem0Position; i >= 0; i--, panel++)
             {
-                //Debug.Log($"i: {i}");
                 itemPanel[panel].SetActive(true);
                 itemImage[panel].sprite = (Sprite)itemList[i];
             }
@@ -126,7 +134,7 @@ public class Inventory : MonoBehaviour
         else
         {
             int panel = 0;
-            for (int i = currentItem0Position; i > currentItem0Position - 3; i--, panel++)
+            for (int i = currentItem0Position; i > currentItem0Position - itemImage.Length; i--, panel++)
             {
                 itemImage[panel].sprite = (Sprite)itemList[i];
             }
@@ -142,7 +150,7 @@ public class Inventory : MonoBehaviour
             }
 
             // Check to enable Arrow Down
-            if (currentItem0Position >= 3)
+            if (currentItem0Position >= itemImage.Length)
             {
                 arrowDown.enabled = true;
             }
