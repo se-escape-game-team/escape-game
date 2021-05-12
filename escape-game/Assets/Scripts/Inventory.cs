@@ -11,7 +11,7 @@ public class Inventory : MonoBehaviour
     // Saves the UI Slots for displaying the items
     public GameObject[] itemPanel;
     private Image[] itemImage;
-
+    
     // List that saves all the collected item Sprites
     ArrayList itemList = new ArrayList();
 
@@ -90,8 +90,18 @@ public class Inventory : MonoBehaviour
     {
         itemList.Add(sprite);
         currentItem0Position = itemList.Count - 1;
-        Debug.Log($"Current Position: {currentItem0Position}");
+        //Debug.Log($"Current Position: {currentItem0Position}");
         //Debug.Log(itemList.Count);
+        RefreshInventory();
+    }
+    /// <summary>
+    /// Delets Sprite out of ItemList of Inventory
+    /// </summary>
+    /// <param name="sprite">Sprite to delete</param>
+    public void DeleteItem(Sprite sprite)
+    {
+        itemList.Remove(sprite);
+        currentItem0Position = itemList.Count - 1;
         RefreshInventory();
     }
 
@@ -100,6 +110,11 @@ public class Inventory : MonoBehaviour
         //Debug.Log($"ItemList: {itemList.Count}\nItemImage: {itemImage.Length}\nItemPanel: {itemPanel.Length}");
         if (itemList.Count <= 3)
         {
+            foreach (GameObject g in itemPanel)
+            {
+                //Debug.Log("Rücksetzen Panel");
+                g.SetActive(false);
+            }
             int panel = 0;
             for (int i = currentItem0Position; i >= 0; i--, panel++)
             {
