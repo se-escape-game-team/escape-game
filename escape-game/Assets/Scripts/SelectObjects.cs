@@ -4,19 +4,19 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 /*
- * Für beides:
- *  1) Outline Script dem GameObject hinzufügen (QuickOutline)  !Wichtig: GameObject muss einen Collider haben!
+ * F?r beides:
+ *  1) Outline Script dem GameObject hinzuf?gen (QuickOutline)  !Wichtig: GameObject muss einen Collider haben!
  *  2) Outline Script deaktivieren
  *  
  * Items:
- *  3) "Selectable - Item" Tag dem GameObject hinzufügen
- *  4) ObjectImage.cs hinzufügen 
- *  5) Sprite für Inventar in ObjectImage.cs speichern
+ *  3) "Selectable - Item" Tag dem GameObject hinzuf?gen
+ *  4) ObjectImage.cs hinzuf?gen 
+ *  5) Sprite f?r Inventar in ObjectImage.cs speichern
  * 
  * Tasks:
- *  3) "Selectable - Task" Tag dem GameObject hinzufügen
- *  4) GameObject in zu öffnende Scene umbenennen
- *  5) Scene in Build Settings hinzufügen (File -> Build Settings)
+ *  3) "Selectable - Task" Tag dem GameObject hinzuf?gen
+ *  4) GameObject in zu ?ffnende Scene umbenennen
+ *  5) Scene in Build Settings hinzuf?gen (File -> Build Settings)
  */
 
 public class SelectObjects : MonoBehaviour
@@ -81,10 +81,8 @@ public class SelectObjects : MonoBehaviour
 
                 if (Input.GetMouseButtonDown(0))
                 {
-                    
-
                     Debug.Log("test");
-                    
+                    Camera.main.GetComponent<SnapshotMode>().enabled = false;
                 }
             }
         }
