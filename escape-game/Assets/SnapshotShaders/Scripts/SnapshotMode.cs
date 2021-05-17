@@ -21,7 +21,7 @@ public class SnapshotMode : MonoBehaviour
     List<SnapshotFilter> filters = new List<SnapshotFilter>();
 
     int filterIndex = 0;
-    bool isBlurred;
+    //bool isBlurred=true;
 
     private void Awake()
     {
@@ -36,22 +36,26 @@ public class SnapshotMode : MonoBehaviour
 
         // Create all filters.       
         filters.Add(new BlurFilter("Blur (Full)", Color.white, gaussianShader));
-        filters.Add(new BlurFilter("Blur (None)", Color.white, noneShader));
-    }
+       
 
-    private void Start()
-    {
         snapshotCanvas.SetFilterProperties(new BlurFilter("Blur (Full)", Color.white, gaussianShader));
-        isBlurred = true;
+        
     }
 
-    private void Update()
-    {
-        if(isBlurred)
-        {
-            snapshotCanvas.SetFilterProperties(new BlurFilter("Blur (None)", Color.white, noneShader));
-        }
-    }
+    //private void Start()
+    //{
+      
+    //}
+
+    //private void Update()
+    //{
+    //    if (!isBlurred)
+    //    {
+    //        snapshotCanvas.SetFilterProperties(new BlurFilter("Blur (None)", Color.white, noneShader));
+    //    }
+    //}
+
+    
 
     // Delegate OnRenderImage() to a SnapshotFilter object.
     private void OnRenderImage(RenderTexture src, RenderTexture dst)

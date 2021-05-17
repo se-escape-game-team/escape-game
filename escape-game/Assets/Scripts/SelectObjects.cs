@@ -70,6 +70,23 @@ public class SelectObjects : MonoBehaviour
                     SceneManager.LoadScene(hitObject.name);
                 }
             }
+            else if (hitObject.tag == "Selectable - VisionTask")
+            {
+                // Apply outline for task
+                recentOutline = hitObject.GetComponent<Outline>();
+                recentOutline.OutlineColor = colorTasks;
+                recentOutline.OutlineWidth = outlineWidth;
+                recentOutline.enabled = true;
+                wasHit = true;
+
+                if (Input.GetMouseButtonDown(0))
+                {
+                    
+
+                    Debug.Log("test");
+                    
+                }
+            }
         }
 
         // Reset outline
