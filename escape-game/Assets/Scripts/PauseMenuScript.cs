@@ -37,7 +37,6 @@ public class PauseMenuScript : MonoBehaviour
         Overlay.SetActive(true);
         GameIsPaused = false;
         pauseMenuUI.SetActive(false);
-        selectObjects.enabled = true;
         Time.timeScale = 1f;
 
         Cursor.lockState = CursorLockMode.Locked;
@@ -49,7 +48,6 @@ public class PauseMenuScript : MonoBehaviour
         GameIsPaused = true;
         Cursor.lockState = CursorLockMode.Confined;
         pauseMenuUI.SetActive(true);
-        selectObjects.enabled = false;
         Time.timeScale = 0f;
 
     }
