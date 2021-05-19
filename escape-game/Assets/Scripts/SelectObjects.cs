@@ -24,6 +24,7 @@ public class SelectObjects : MonoBehaviour
     [SerializeField] private float distance = 5f;
     [SerializeField] private Color colorItems = new Color(250, 150, 0);
     [SerializeField] private Color colorTasks = new Color(0, 250, 255);
+    
     [SerializeField] private int outlineWidth = 10;
 
     [SerializeField] private Inventory inventory;
