@@ -24,15 +24,13 @@ public class MainMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        errorNameTooLong.SetActive(false);
-        errorNameNull.SetActive(false);
         username = "";
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (userField.text != null)
+        if (userField != null && userField.text != null)
         {
             username = UserInput();
         } 

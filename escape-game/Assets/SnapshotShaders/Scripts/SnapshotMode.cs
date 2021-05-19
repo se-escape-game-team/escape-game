@@ -36,10 +36,11 @@ public class SnapshotMode : MonoBehaviour
 
         // Create all filters.       
         filters.Add(new BlurFilter("Blur (Full)", Color.white, gaussianShader));
-       
 
-        snapshotCanvas.SetFilterProperties(new BlurFilter("Blur (Full)", Color.white, gaussianShader));
-        
+        if (useCanvas)
+        {
+            snapshotCanvas.SetFilterProperties(new BlurFilter("Blur (Full)", Color.white, gaussianShader));
+        }
     }
 
     //private void Start()
