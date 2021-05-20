@@ -9,6 +9,9 @@ public class PauseMenuScript : MonoBehaviour
     public static bool GameIsPaused;
     public GameObject pauseMenuUI;
     public GameObject Overlay;
+    public GameObject startMessage;
+   
+
 
     private void Start()
     {
@@ -19,6 +22,7 @@ public class PauseMenuScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (GameIsPaused)
@@ -30,6 +34,7 @@ public class PauseMenuScript : MonoBehaviour
                 Pause();
             }
         }
+
     }
 
     public void Resume()
@@ -38,7 +43,6 @@ public class PauseMenuScript : MonoBehaviour
         GameIsPaused = false;
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
-
         Cursor.lockState = CursorLockMode.Locked;
     }
 
@@ -49,7 +53,7 @@ public class PauseMenuScript : MonoBehaviour
         Cursor.lockState = CursorLockMode.Confined;
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
-
+        startMessage.SetActive(false);
     }
 
     public void LoadMainMenu()
