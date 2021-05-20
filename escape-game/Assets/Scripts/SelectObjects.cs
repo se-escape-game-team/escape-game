@@ -29,8 +29,11 @@ public class SelectObjects : MonoBehaviour
 
     [SerializeField] private Inventory inventory;
 
+    private ChangeScene changeScene = new ChangeScene();
+
     private Outline recentOutline;
     private bool wasHit;
+
     void Update()
     {
         wasHit = false;
@@ -68,7 +71,8 @@ public class SelectObjects : MonoBehaviour
                 if (Input.GetMouseButtonDown(0))
                 {
                     // Loads new Scene
-                    SceneManager.LoadScene(hitObject.name);
+                    changeScene.ChangeToTaskScene(hitObject.name);
+                    //SceneManager.LoadScene(hitObject.name);
                 }
             }
             else if (hitObject.tag == "Selectable - VisionTask")

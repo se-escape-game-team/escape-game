@@ -8,6 +8,7 @@ TagManager:
   - Selectable - Item
   - Selectable - Task
   - Selectable - VisionTask
+  - Selectable
   layers:
   - Default
   - TransparentFX
