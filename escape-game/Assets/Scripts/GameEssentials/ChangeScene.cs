@@ -5,17 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
-    public void ChangeToTaskScene(string sceneName)
+    public static void ChangeToTaskScene(string sceneName)
     {
-        Debug.Log("0");
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
         SceneManager.LoadScene(sceneName);
-        
-        Debug.Log("1");
     }
 
-    public void ChangeSceneBackToLab()
+    public static void ChangeSceneBackToLab()
     {
         Cursor.lockState = CursorLockMode.Locked;
         SceneManager.LoadScene("Lab_Room");

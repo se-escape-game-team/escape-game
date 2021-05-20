@@ -9,8 +9,6 @@ public class Type : MonoBehaviour
     [SerializeField] private string password;
     [SerializeField] private MeshRenderer light;
 
-    private ChangeScene changeScene = new ChangeScene();
-
     private bool startTimer;
     private float time = 2;
 
@@ -21,7 +19,7 @@ public class Type : MonoBehaviour
             time -= Time.deltaTime;
             if(time <= 0)
             {
-                changeScene.ChangeSceneBackToLab();
+                ChangeScene.ChangeSceneBackToLab();
             }
         }
 
