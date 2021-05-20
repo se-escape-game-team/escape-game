@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DefeatMessageScript : MonoBehaviour
 {
@@ -43,7 +44,7 @@ public class DefeatMessageScript : MonoBehaviour
 
     public void Quit()
     {
-        // TODO: Auf Credit Szene verweisen
+        SceneManager.LoadScene("Credits");
     }
 
 

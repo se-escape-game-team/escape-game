@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TaskSafe.unity
     guid: 4b155cf7acd55694e8c81481b6e9ffc1
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: c3b7f5f7b6c286b4e9c8e950a86517fb
   - enabled: 0
     path: 
     guid: 485751387100d1346bf2dc9a5e7a3dc6

@@ -76,4 +76,9 @@ public class MainMenu : MonoBehaviour
         Debug.Log("Quitting...");
         Application.Quit();
     }
+
+    public void GoToCredits()
+    {
+        SceneManager.LoadScene("Credits");
+    }
 }

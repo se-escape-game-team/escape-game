@@ -9,6 +9,7 @@ public class Timer : MonoBehaviour
     public float minutes; // Input Unity
     public float seconds; // Input Unity
     public Text timerText;
+    public static string timeLeft;
     public DefeatMessageScript defeatMessage;
 
     private float ticks;
@@ -38,7 +39,7 @@ public class Timer : MonoBehaviour
             defeatMessage.ShowDefeatMessage();
         }
 
-        timerText.text = ($"{(int)ticks / 60:D2}:{(int)ticks % 60:D2}");
+        timeLeft = timerText.text = ($"{(int)ticks / 60:D2}:{(int)ticks % 60:D2}");
     }
 
     public void Pause()
