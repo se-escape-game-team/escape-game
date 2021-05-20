@@ -19,20 +19,16 @@ public class StartMessageScript : MonoBehaviour
         crosshair.SetActive(false);
         startMessageOverlay.SetActive(true);
         Time.timeScale = 0f;
-        
+        PauseMenuScript.PauseMenuAvailable = false;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            startMessageOverlay.SetActive(false);
-            crosshair.SetActive(true);           
-            Time.timeScale = 1f;
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
+            Resume();
         }
     }
 
@@ -43,6 +39,7 @@ public class StartMessageScript : MonoBehaviour
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        PauseMenuScript.PauseMenuAvailable = true;
     }
 
 

@@ -7,6 +7,7 @@ public class PauseMenuScript : MonoBehaviour
 {
     [SerializeField] private SelectObjects selectObjects;
     public static bool GameIsPaused;
+    public static bool PauseMenuAvailable;
     public GameObject pauseMenuUI;
     public GameObject Overlay;
     public GameObject startMessage;
@@ -17,13 +18,14 @@ public class PauseMenuScript : MonoBehaviour
     {
         pauseMenuUI.SetActive(false);
         GameIsPaused = false;
+        PauseMenuAvailable = true;
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && PauseMenuAvailable)
         {
             if (GameIsPaused)
             {

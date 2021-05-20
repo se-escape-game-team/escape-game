@@ -9,9 +9,12 @@ public class Timer : MonoBehaviour
     public float minutes; // Input Unity
     public float seconds; // Input Unity
     public Text timerText;
+    public DefeatMessageScript defeatMessage;
 
     private float ticks;
     private bool play;
+    private bool isTimeOver;
+
 
 
     // Start is called before the first frame update
@@ -19,6 +22,7 @@ public class Timer : MonoBehaviour
     {
         ticks = minutes * 60 + seconds;
         play = true; // yust for now
+        isTimeOver = false;
     }
 
     // Update is called once per frame
@@ -28,9 +32,10 @@ public class Timer : MonoBehaviour
         {
             ticks -= Time.deltaTime;
         }
-        else
+        else if(!isTimeOver)
         {
-            // TODO: GameOver implementieren
+            isTimeOver = true;
+            defeatMessage.ShowDefeatMessage();
         }
 
         timerText.text = ($"{(int)ticks / 60:D2}:{(int)ticks % 60:D2}");
