@@ -7,17 +7,19 @@ public class Type : MonoBehaviour
 {
     [SerializeField] private TextMeshPro text;
     [SerializeField] private string password;
-    [SerializeField] private MeshRenderer light;
+    [SerializeField] private MeshRenderer lightOk;
 
-    private bool startTimer;
     private float time = 2;
-
+    private bool finishScene = false;
     void Update()
     {
-        if (startTimer)
+        if (finishScene)
         {
-            time -= Time.deltaTime;
-            if(time <= 0)
+            if (time >= 0)
+            {
+                time -= Time.deltaTime;
+            }
+            else
             {
                 ChangeScene.ChangeSceneBackToLab();
             }
@@ -37,23 +39,19 @@ public class Type : MonoBehaviour
                     {
                         if (CheckPassword())
                         {
-                            light.material.color = Color.green;
-                            startTimer = true;
+                            lightOk.material.color = Color.green;
+                            finishScene = true;
                         }
                         else
                         {
+                            // Resets DisplayText
                             text.text = "";
                         }
-                        
+
                     }
                     else if (hitGameObject.transform.GetChild(0).name == "Delete")
                     {
-                        string temp = "";
-                        for(int i = 0; i < text.text.Length-1; i++)
-                        {
-                            temp += text.text[i];
-                        }
-                        text.text = temp;
+                        text.text = DeleteLastCharacter(text.text);
                     }
                     else
                     {
@@ -65,6 +63,16 @@ public class Type : MonoBehaviour
                 }
             }
         }
+    }
+
+    private string DeleteLastCharacter(string s)
+    {
+        string temp = "";
+        for (int i = 0; i < text.text.Length - 1; i++)
+        {
+            temp += text.text[i];
+        }
+        return temp;
     }
 
     private bool CheckPassword()

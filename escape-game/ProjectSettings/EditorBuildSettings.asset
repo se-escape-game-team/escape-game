@@ -6,21 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Lab_Room.unity
-    guid: b531e6482cb177d4caf5a31929c8e8e9
-  - enabled: 1
-    path: Assets/Scenes/Task1.unity
-    guid: 4bb6c729d9ab24c4ba1925f918027f49
-  - enabled: 1
     path: Assets/Scenes/MainMenue.unity
     guid: 2666a081b156b1e48b15b17ea1385665
+  - enabled: 1
+    path: Assets/Scenes/Lab_Room.unity
+    guid: b531e6482cb177d4caf5a31929c8e8e9
   - enabled: 1
     path: Assets/Scenes/TaskSafe.unity
     guid: 4b155cf7acd55694e8c81481b6e9ffc1
   - enabled: 1
+    path: Assets/Scenes/TaskPC.unity
+    guid: e4ad19158d31d354b968c8dad9737aa7
+  - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: c3b7f5f7b6c286b4e9c8e950a86517fb
-  - enabled: 0
-    path: 
-    guid: 485751387100d1346bf2dc9a5e7a3dc6
   m_configObjects: {}
