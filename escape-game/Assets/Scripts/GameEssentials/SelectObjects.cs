@@ -83,7 +83,7 @@ public class SelectObjects : MonoBehaviour
 
                 if (Input.GetMouseButtonDown(0))
                 {
-                    Debug.Log("test");
+                    //Debug.Log("test");
                     Camera.main.GetComponent<SnapshotMode>().enabled = false;
                 }
             }

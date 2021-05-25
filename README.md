@@ -6,4 +6,7 @@ Credits:
 
 ExitIcon: Pixel perfect
 PlayIcon: Freepik
-LaboratoryBackground: Pixaby​
+LaboratoryBackground: Pixaby
+
+
+KeyCard Icon: https://de.cleanpng.com/png-2pf4w6/download-png.html

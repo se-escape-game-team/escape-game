@@ -15,6 +15,11 @@ public class PlayHangman : MonoBehaviour
     [SerializeField] private Text roundText;
     [SerializeField] private int rounds;
 
+    /// <summary>
+    /// Öffentliche Variable für die Freigabe der Luftschleuse
+    /// </summary>
+    public static bool winning = false;
+
     // Array mit allen zur Auswahl stehenden Worten
     private string[] words = { "Atmosphaere", "Marsmission", "Ich bin dumm", "Solarzelle", "Roboter", "Quantencomputer", "Raumanzug", "Satellit", "NASA", "Raumschiff", "Landekapsel", "WLAN", "SpaceX", "Software Engineering", "Escape Game" };
 
@@ -110,6 +115,7 @@ public class PlayHangman : MonoBehaviour
         if (currentRound == rounds)
         {
             roundText.text = "Du hast gewonnen!";
+            winning = true;
         }
         else
         {
