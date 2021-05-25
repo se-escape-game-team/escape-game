@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: c3b7f5f7b6c286b4e9c8e950a86517fb
+  - enabled: 1
+    path: Assets/Scenes/DoorAccess.unity
+    guid: e3e2d90abd97a0646b3ba65d6520b7dd
   m_configObjects: {}
