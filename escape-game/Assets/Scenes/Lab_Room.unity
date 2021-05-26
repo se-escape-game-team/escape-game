@@ -1336,6 +1336,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfdc91a6a7dc9a74aa1f874c970d0d26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colorInventory: {r: 255, g: 255, b: 255, a: 1}
 --- !u!1 &255910396
 GameObject:
   m_ObjectHideFlags: 0
@@ -7998,6 +7999,7 @@ GameObject:
   - component: {fileID: 815632513}
   - component: {fileID: 815632512}
   - component: {fileID: 815632511}
+  - component: {fileID: 815632517}
   m_Layer: 0
   m_Name: Glasses
   m_TagString: Selectable - VisionTask
@@ -8032,7 +8034,7 @@ MeshCollider:
   m_GameObject: {fileID: 815632510}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -10244,6 +10246,19 @@ Transform:
   m_Father: {fileID: 1240023366}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 150, z: 0}
+--- !u!65 &815632517
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 815632510}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 12.460002, y: 3.03, z: 10.870003}
+  m_Center: {x: 6.1116633, y: 1.4556104, z: -4.564223}
 --- !u!1 &816086898
 GameObject:
   m_ObjectHideFlags: 0
@@ -10462,6 +10477,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfdc91a6a7dc9a74aa1f874c970d0d26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colorInventory: {r: 255, g: 255, b: 255, a: 1}
 --- !u!1 &866096263 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1822811081740728, guid: 9d79a38f83fd64d7890b96cd421bf2a8, type: 3}
@@ -11853,7 +11869,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2253787161437165400, guid: f9bc7dfb228da7349b3d9d1e944e605e, type: 3}
       propertyPath: speed
-      value: 5
+      value: 3.8
       objectReference: {fileID: 0}
     - target: {fileID: 2253787161437165403, guid: f9bc7dfb228da7349b3d9d1e944e605e, type: 3}
       propertyPath: m_RootOrder
@@ -17242,6 +17258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfdc91a6a7dc9a74aa1f874c970d0d26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colorInventory: {r: 255, g: 255, b: 255, a: 1}
 --- !u!1 &1258502508
 GameObject:
   m_ObjectHideFlags: 0
@@ -19760,6 +19777,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfdc91a6a7dc9a74aa1f874c970d0d26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colorInventory: {r: 255, g: 255, b: 255, a: 1}
 --- !u!1 &1485695811
 GameObject:
   m_ObjectHideFlags: 0
@@ -20732,6 +20750,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfdc91a6a7dc9a74aa1f874c970d0d26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colorInventory: {r: 255, g: 255, b: 255, a: 1}
 --- !u!43 &1600105698
 Mesh:
   m_ObjectHideFlags: 0
@@ -21586,7 +21605,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh31502
+  m_Name: pb_Mesh17514
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
