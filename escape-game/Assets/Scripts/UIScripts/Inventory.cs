@@ -55,6 +55,11 @@ public class Inventory : MonoBehaviour
                 ScrollDown();
                 RefreshInventory();
             }
+
+
+
+
+
         }
 
         //zum Testen der DeleteIteme Methode mit der Leertaste
@@ -160,4 +165,40 @@ public class Inventory : MonoBehaviour
             }
         }
     }
+
+    //public bool TakeItem()
+    //{
+    //    public static bool IsPointerOverUIObject()
+    //    {
+    //        PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
+    //        eventDataCurrentPosition.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+    //        List<RaycastResult> results = new List<RaycastResult>();
+    //        EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
+    //        return results.Count > 0;
+    //    }
+
+
+
+    //    wasHit = false;
+    //    if (Physics.Raycast(ray, out raycastHit, distance))
+    //    {
+    //        GameObject hitObject = raycastHit.collider.gameObject;
+    //        if (hitObject.tag == "Selectable - Item")
+    //        {
+    //            // Apply outline for item
+    //            recentOutline = hitObject.GetComponent<Outline>();
+    //            recentOutline.OutlineColor = colorItems;
+    //            recentOutline.OutlineWidth = outlineWidth;
+    //            recentOutline.enabled = true;
+    //            wasHit = true;
+
+    //            if (Input.GetMouseButtonDown(0))
+    //            {
+    //                // Adds Item to inventory (with sprite saved in ObjectImage.cs)
+    //                inventory.AddItem(hitObject.GetComponent<ObjectImage>().inventoryImage);
+    //                Destroy(hitObject);
+    //            }
+    //        }
+    //    }
+    //}
 }

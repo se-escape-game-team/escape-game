@@ -9,6 +9,7 @@ TagManager:
   - Selectable - Task
   - Selectable - VisionTask
   - Selectable
+  - Selectable - InventoryItem
   layers:
   - Default
   - TransparentFX
