@@ -32,6 +32,7 @@ public class SelectObjects : MonoBehaviour
     private Outline recentOutline;
     private bool wasHit;
 
+
     void Update()
     {
         wasHit = false;
