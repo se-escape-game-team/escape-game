@@ -25,7 +25,7 @@ public class Inventory : MonoBehaviour
         itemImage = new Image[itemPanel.Length];
         for (int i = 0; i < itemPanel.Length; i++)
         {
-            itemImage[i] = itemPanel[i].transform.Find($"ItemImage").GetComponent<Image>();
+            itemImage[i] = itemPanel[i].transform.Find($"ItemImage{i}").GetComponent<Image>();
         }
 
         // Disables all the item-slots

@@ -4,23 +4,28 @@ using UnityEngine;
 
 public class StartMessageScript : MonoBehaviour
 {
-
-    public GameObject startMessageOverlay;
     public GameObject crosshair;
     public GameObject pauseMenu;
-
-
 
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Confined;
-        Cursor.visible = true;
-        crosshair.SetActive(false);
-        startMessageOverlay.SetActive(true);
-        Time.timeScale = 0f;
-        PauseMenuScript.PauseMenuAvailable = false;
+        if (!SaveScript.StartMessageWasShown)
+        {
+            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = true;
+            crosshair.SetActive(false);
+            gameObject.SetActive(true);
+            Time.timeScale = 0f;
+            PauseMenuScript.PauseMenuAvailable = false;
 
+            SaveScript.StartMessageWasShown = true;
+        }
+        else
+        {
+            gameObject.SetActive(false);
+            Resume();
+        }
     }
 
     // Update is called once per frame
@@ -34,7 +39,7 @@ public class StartMessageScript : MonoBehaviour
 
     public void Resume()
     {
-        startMessageOverlay.SetActive(false);
+        gameObject.SetActive(false);
         crosshair.SetActive(true);
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;

@@ -11,6 +11,7 @@ public class Type : MonoBehaviour
 
     private float time = 2;
     private bool finishScene = false;
+
     void Update()
     {
         if (finishScene)

@@ -4,22 +4,17 @@ using UnityEngine;
 
 public class Crosshair : MonoBehaviour
 {
-    public GameObject crosshair;
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private GameObject crosshair;
+    public void CheckIfEnabled()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (PauseMenuScript.GameIsPaused)
+        if (!SaveScript.InLabScene)
         {
+            Debug.Log("Disable Crosshair");
             crosshair.SetActive(false);
         }
         else
         {
+            Debug.Log("Enable Crosshair");
             crosshair.SetActive(true);
         }
     }

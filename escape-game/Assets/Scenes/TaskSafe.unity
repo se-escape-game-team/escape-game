@@ -2647,7 +2647,7 @@ GameObject:
   - component: {fileID: 1022123640}
   - component: {fileID: 1022123639}
   m_Layer: 5
-  m_Name: StartMessage
+  m_Name: TaskMessage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2662,12 +2662,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1022123638}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0e20437820999347847e02ee3353d21, type: 3}
+  m_Script: {fileID: 11500000, guid: b91b7597ac118c04199c957eacfce8eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startMessageOverlay: {fileID: 1022123638}
-  crosshair: {fileID: 0}
-  pauseMenu: {fileID: 0}
 --- !u!114 &1022123640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2933,7 +2930,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1022123639}
-        m_TargetAssemblyTypeName: StartMessageScript, Assembly-CSharp
+        m_TargetAssemblyTypeName: TaskMessageScript, Assembly-CSharp
         m_MethodName: Resume
         m_Mode: 1
         m_Arguments:
