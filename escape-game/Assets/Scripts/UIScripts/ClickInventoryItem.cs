@@ -5,11 +5,16 @@ using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 
-public class ClickInventoryItem : MonoBehaviour//, IPointerEnterHandler, IPointerExitHandler
+public class ClickInventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    [SerializeField] private Color colorInventory = new Color(255, 255, 255);
+    [SerializeField] private Color colorInventory = new Color(255, 255, 0);
+    [SerializeField] private int outlineWidth = 10;
     private Outline recentOutline;
+    bool wasHit = false;
+
     GameObject currentHover;
+    string currentItem;
+    PointerEventData eventDat;
 
 
 
@@ -19,34 +24,60 @@ public class ClickInventoryItem : MonoBehaviour//, IPointerEnterHandler, IPointe
 
     //}
 
-    //// Update is called once per frame
-    //void Update()
-    //{
-    //    void OnPointerEnter(PointerEventData eventData)
-    //    {
-    //        if (eventData.pointerCurrentRaycast.gameObject != null)
-    //        {
-    //            Debug.Log("Mouse Over: " + eventData.pointerCurrentRaycast.gameObject.name);
-    //            currentHover = eventData.pointerCurrentRaycast.gameObject;
-    //        }
-    //    }
+    // Update is called once per frame
+    void Update()
+    {
+        if (currentHover)
+        {
+            GameObject hitObject = currentHover.gameObject;
 
-    //    void OnPointerExit(PointerEventData eventData)
-    //    {
-    //        currentHover = null;
-    //    }
+            //Debug.Log(currentHover.name + " @ " + Input.mousePosition);
+            currentItem = hitObject.name;
+
+            recentOutline = hitObject.GetComponent<Outline>();
+            recentOutline.OutlineColor = colorInventory;
+            recentOutline.OutlineWidth = outlineWidth;
+            recentOutline.enabled = true;
+            Debug.Log(currentItem);
+            wasHit = true;
+        }
+        else
+        {
+            currentHover = null;
+        }
+
+        //// Reset outline
+        //if (!wasHit && recentOutline != null)
+        //{
+        //    recentOutline.enabled = false;
+        //    recentOutline = null;
+        //    wasHit = false;
+        //}
+    }
 
 
-    //    if (currentHover)
-    //    {
-    //        Debug.Log(currentHover.name);
-    //    }
-    //    recentoutline = currentHover.getcomponent<outline>();
-    //    recentoutline.outlinecolor = colorInventory;
-    //    recentoutline.outlinewidth = outlinewidth;
-    //    recentoutline.enabled = true;
-    //    //washit = true;
-    //}
+    /// <summary>
+    /// Erkennt das aktuelle Objekt unter der Maus
+    /// </summary>
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (eventData.pointerCurrentRaycast.gameObject != null)
+        {
+            currentHover = eventData.pointerCurrentRaycast.gameObject;
+        }
+    }
+    /// <summary>
+    /// setzt currentHover zurück, wenn die Maus über keinem Objekt ist
+    /// </summary>
+    /// <param name="eventData"></param>
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        currentHover = null;
+    }
+
+
+
+
 
 
     //if (Input.GetMouseButtonDown(0) == true && EventSystem.current.IsPointerOverGameObject())
