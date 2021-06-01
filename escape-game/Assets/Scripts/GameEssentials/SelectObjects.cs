@@ -32,7 +32,6 @@ public class SelectObjects : MonoBehaviour
     private Outline recentOutline;
     private bool wasHit;
 
-
     void Update()
     {
         wasHit = false;
@@ -42,9 +41,9 @@ public class SelectObjects : MonoBehaviour
         if (Physics.Raycast(ray, out raycastHit, distance))
         {
             GameObject hitObject = raycastHit.collider.gameObject;
-            if (hitObject.tag == "Selectable - Item")
+            if (hitObject.tag == "Selectable - Item" && SaveScript.GlassesCollected)
             {
-                // Apply outline for item
+                // Umrandet das einsammelbare Item
                 recentOutline = hitObject.GetComponent<Outline>();
                 recentOutline.OutlineColor = colorItems;
                 recentOutline.OutlineWidth = outlineWidth;
@@ -53,14 +52,14 @@ public class SelectObjects : MonoBehaviour
 
                 if (Input.GetMouseButtonDown(0))
                 {
-                    // Adds Item to inventory (with sprite saved in ObjectImage.cs)
+                    // Fügt dem Inventar das eingesammelte Item hinzu (über das in ObjectImage.cs gespeicherte Sprite)
                     inventory.AddItem(hitObject.GetComponent<ObjectImage>().inventoryImage);
                     Destroy(hitObject);
                 }
             }
-            else if (hitObject.tag == "Selectable - Task")
+            else if (hitObject.tag == "Selectable - Task" && SaveScript.GlassesCollected)
             {
-                // Apply outline for task
+                // Umrandet das Objekt über das eine Aufgabe aufrufbar ist
                 recentOutline = hitObject.GetComponent<Outline>();
                 recentOutline.OutlineColor = colorTasks;
                 recentOutline.OutlineWidth = outlineWidth;
@@ -69,13 +68,13 @@ public class SelectObjects : MonoBehaviour
 
                 if (Input.GetMouseButtonDown(0))
                 {
-                    // Loads new Scene
+                    // Läd die Aufgabenszene
                     ChangeScene.ChangeToTaskScene(hitObject.name);
                 }
             }
             else if (hitObject.tag == "Selectable - VisionTask")
             {
-                // Apply outline for task
+                // Gibt der Brille eine Umrandung
                 recentOutline = hitObject.GetComponent<Outline>();
                 recentOutline.OutlineColor = colorTasks;
                 recentOutline.OutlineWidth = outlineWidth;
@@ -84,13 +83,15 @@ public class SelectObjects : MonoBehaviour
 
                 if (Input.GetMouseButtonDown(0))
                 {
-                    //Debug.Log("test");
                     Camera.main.GetComponent<SnapshotMode>().enabled = false;
+                    // Bool aktiviert, dass mit anderen selectable-Objekten (außer der Brille) interagiert werden kann
+                    SaveScript.GlassesCollected = true;
+                    Destroy(hitObject);
                 }
             }
         }
 
-        // Reset outline
+        // Setzt die Umrandung des zuvor anvisierten Objekts zurück
         if (!wasHit && recentOutline != null)
         {
             recentOutline.enabled = false;

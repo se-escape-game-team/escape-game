@@ -19,4 +19,15 @@ public class SaveScript : MonoBehaviour
         get => startMessageWasShown;
         set => startMessageWasShown = value;
     }
+
+    /// <summary>
+    /// Gibt an, ob die Brille schon eigesammelt wurde.
+    /// </summary>
+    private static bool glassesCollected = false;
+
+    public static bool GlassesCollected
+    {
+        get => glassesCollected;
+        set => glassesCollected = value;
+    }
 }
