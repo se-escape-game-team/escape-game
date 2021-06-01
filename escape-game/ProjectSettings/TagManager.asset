@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - Selectable - Item
+  - Selectable - Task
+  - Selectable - VisionTask
+  - Selectable
+  - Selectable - InventoryItem
   layers:
   - Default
   - TransparentFX
