@@ -6,13 +6,7 @@ using UnityEngine.UI;
 public class VictoryText : MonoBehaviour
 {
     public Text textArea;
-    private string output;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private string output;   
 
     // Update is called once per frame
     void Update()
