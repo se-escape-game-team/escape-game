@@ -55,11 +55,6 @@ public class Inventory : MonoBehaviour
                 ScrollDown();
                 RefreshInventory();
             }
-
-
-
-
-
         }
 
         //zum Testen der DeleteIteme Methode mit der Leertaste
