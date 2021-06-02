@@ -1,58 +1,71 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.UI;
 
 public class ClickInventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    [SerializeField] private Color colorInventory = new Color(255, 255, 0);
-    [SerializeField] private int outlineWidth = 10;
-    private Outline recentOutline;
-    bool wasHit = false;
 
     GameObject currentHover;
     string currentItem;
     PointerEventData eventDat;
+    bool moveItem = false;
+    Image itemImage;
+    Vector3 recentPosition;
 
-
-
-    //// Start is called before the first frame update
-    //void Start()
-    //{
-
-    //}
-
-    // Update is called once per frame
     void Update()
     {
-        if (currentHover)
+        if (itemImage)
         {
+            DragItem();
+        }
+
+        if (currentHover && currentHover.transform.tag == "Selectable - InventoryItem" && !moveItem)
+        {
+            
             GameObject hitObject = currentHover.gameObject;
+            
+            if (currentHover.name.Length == 5)
+            {
+                itemImage = transform.Find($"ItemImage{hitObject.name[4]}").GetComponent<Image>();
+                Debug.Log(itemImage.sprite.name + "hskjhdksjhd");
+            }
+            else if (currentHover.name.Length == 10)
+            {
+                itemImage = currentHover.GetComponent<Image>();
+                Debug.Log("ghjgjhg");
+            }
+            else
+            {
+                throw new Exception("Fehler weil Name von Inventory falsch.");
+            }
 
-            //Debug.Log(currentHover.name + " @ " + Input.mousePosition);
-            currentItem = hitObject.name;
-
-            recentOutline = hitObject.GetComponent<Outline>();
-            recentOutline.OutlineColor = colorInventory;
-            recentOutline.OutlineWidth = outlineWidth;
-            recentOutline.enabled = true;
-            Debug.Log(currentItem);
-            wasHit = true;
+            if(Input.GetMouseButton(0))
+            {
+                recentPosition = itemImage.transform.position;
+                moveItem = true;
+            }
         }
         else
         {
-            currentHover = null;
+            currentHover = null;    
         }
+    }
 
-        //// Reset outline
-        //if (!wasHit && recentOutline != null)
-        //{
-        //    recentOutline.enabled = false;
-        //    recentOutline = null;
-        //    wasHit = false;
-        //}
+    private void DragItem()
+    {
+        if (moveItem && Input.GetMouseButton(0))
+        {
+            itemImage.transform.position = Input.mousePosition;
+        }
+        else
+        {
+            itemImage.transform.position = recentPosition;
+            moveItem = false;
+        }
     }
 
 
@@ -67,7 +80,7 @@ public class ClickInventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerE
         }
     }
     /// <summary>
-    /// setzt currentHover zurück, wenn die Maus über keinem Objekt ist
+    /// setzt currentHover zur?ck, wenn die Maus ?ber keinem Objekt ist
     /// </summary>
     /// <param name="eventData"></param>
     public void OnPointerExit(PointerEventData eventData)
