@@ -8,13 +8,17 @@ using UnityEngine.UI;
 
 public class ClickInventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-
     GameObject currentHover;
-    string currentItem;
-    PointerEventData eventDat;
-    bool moveItem = false;
+    bool dragItem = false;
     Image itemImage;
     Vector3 recentPosition;
+
+    private static string selectedItem = "";
+
+    /// <summary>
+    /// Gibt den Namen des aktuell ausgewaehlten Item-Sprites zurueck.
+    /// </summary>
+    public static string SelctedItem => selectedItem;
 
     void Update()
     {
@@ -23,48 +27,52 @@ public class ClickInventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerE
             DragItem();
         }
 
-        if (currentHover && currentHover.transform.tag == "Selectable - InventoryItem" && !moveItem)
+        if (Input.GetMouseButtonDown(0))
         {
-            
-            GameObject hitObject = currentHover.gameObject;
-            
-            if (currentHover.name.Length == 5)
+            if (currentHover && currentHover.transform.tag == "Selectable - InventoryItem")
             {
-                itemImage = transform.Find($"ItemImage{hitObject.name[4]}").GetComponent<Image>();
-                Debug.Log(itemImage.sprite.name + "hskjhdksjhd");
-            }
-            else if (currentHover.name.Length == 10)
-            {
-                itemImage = currentHover.GetComponent<Image>();
-                Debug.Log("ghjgjhg");
-            }
-            else
-            {
-                throw new Exception("Fehler weil Name von Inventory falsch.");
-            }
-
-            if(Input.GetMouseButton(0))
-            {
+                // Zeiger ueber Item-Panel
+                if (currentHover.name.Length == 5)
+                {
+                    itemImage = currentHover.transform.Find($"ItemImage{currentHover.name[4]}").GetComponent<Image>();
+                    // Debug.Log("Image über ItemPanel: " + itemImage.sprite.name);
+                }
+                // Zeiger ueber Item-Image
+                else if (currentHover.name.Length == 10)
+                {
+                    itemImage = currentHover.GetComponent<Image>();
+                    // Debug.Log("Image direkt über Image " + itemImage.sprite.name);
+                }
+                else
+                {
+                    throw new Exception("Fehler weil Name von Inventory falsch.");
+                }
+                // Speichern der ursprueglichen Position des Items im Inventar
                 recentPosition = itemImage.transform.position;
-                moveItem = true;
+                // Vergroeßern des Items ums dreifache
+                itemImage.transform.localScale = new Vector3(3, 3);
+                // Freischalten der DragItem-Methode
+                dragItem = true;
             }
-        }
-        else
-        {
-            currentHover = null;    
         }
     }
 
     private void DragItem()
     {
-        if (moveItem && Input.GetMouseButton(0))
+        if (dragItem && Input.GetMouseButton(0))
         {
+            // Item folgt der Maus
             itemImage.transform.position = Input.mousePosition;
+            selectedItem = itemImage.sprite.name;
         }
         else
         {
+            // Falls die Maustaste losgelassen wird, wird das Item wieder zurueck ins Inventar an seine uerspruengliche Stelle gelegt
             itemImage.transform.position = recentPosition;
-            moveItem = false;
+            // Groeße auf Standart zuruecksetzen
+            itemImage.transform.localScale = new Vector3(1, 1);
+            selectedItem = "";
+            dragItem = false;
         }
     }
 

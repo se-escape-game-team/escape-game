@@ -6880,6 +6880,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ItemImage4
       objectReference: {fileID: 0}
+    - target: {fileID: 7457364437631306919, guid: 2f1e4d46d7ca5bf49844b14b1c3e54d8, type: 3}
+      propertyPath: m_TagString
+      value: Selectable - InventoryItem
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f1e4d46d7ca5bf49844b14b1c3e54d8, type: 3}
 --- !u!1001 &508369242
@@ -9436,6 +9440,10 @@ PrefabInstance:
     - target: {fileID: 7457364437631306919, guid: 2f1e4d46d7ca5bf49844b14b1c3e54d8, type: 3}
       propertyPath: m_Name
       value: ItemImage2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7457364437631306919, guid: 2f1e4d46d7ca5bf49844b14b1c3e54d8, type: 3}
+      propertyPath: m_TagString
+      value: Selectable - InventoryItem
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f1e4d46d7ca5bf49844b14b1c3e54d8, type: 3}
@@ -18134,6 +18142,10 @@ PrefabInstance:
     - target: {fileID: 7457364437631306919, guid: 2f1e4d46d7ca5bf49844b14b1c3e54d8, type: 3}
       propertyPath: m_Name
       value: ItemImage1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7457364437631306919, guid: 2f1e4d46d7ca5bf49844b14b1c3e54d8, type: 3}
+      propertyPath: m_TagString
+      value: Selectable - InventoryItem
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f1e4d46d7ca5bf49844b14b1c3e54d8, type: 3}
@@ -28678,6 +28690,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ItemImage3
       objectReference: {fileID: 0}
+    - target: {fileID: 7457364437631306919, guid: 2f1e4d46d7ca5bf49844b14b1c3e54d8, type: 3}
+      propertyPath: m_TagString
+      value: Selectable - InventoryItem
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f1e4d46d7ca5bf49844b14b1c3e54d8, type: 3}
 --- !u!1 &2023245790
@@ -31975,6 +31991,7 @@ GameObject:
   - component: {fileID: 3368377344032676900}
   - component: {fileID: 3338277993133388042}
   - component: {fileID: 3338277993133388041}
+  - component: {fileID: 3338277993133388043}
   m_Layer: 0
   m_Name: KeyCard
   m_TagString: Selectable - Item
@@ -32013,6 +32030,20 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!64 &3338277993133388043
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3338277993133388040}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: ab9e24e14f0b1400aa074527c8c3b4ee, type: 3}
 --- !u!4 &3339945615146874082
 Transform:
   m_ObjectHideFlags: 0
@@ -32191,6 +32222,10 @@ PrefabInstance:
     - target: {fileID: 7457364437631306919, guid: 2f1e4d46d7ca5bf49844b14b1c3e54d8, type: 3}
       propertyPath: m_Name
       value: ItemImage0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7457364437631306919, guid: 2f1e4d46d7ca5bf49844b14b1c3e54d8, type: 3}
+      propertyPath: m_TagString
+      value: Selectable - InventoryItem
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f1e4d46d7ca5bf49844b14b1c3e54d8, type: 3}
