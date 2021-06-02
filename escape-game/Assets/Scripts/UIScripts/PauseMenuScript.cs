@@ -10,20 +10,18 @@ public class PauseMenuScript : MonoBehaviour
     public static bool PauseMenuAvailable;
     public GameObject pauseMenuUI;
     public GameObject Overlay;
-    public GameObject startMessage;   
+    public GameObject startMessage;
+   
 
-    /// <summary>
-    /// The game is not  paused and the PauseMenu can be shown.
-    /// </summary>
+
     private void Start()
-    {       
+    {
+        pauseMenuUI.SetActive(false);
         GameIsPaused = false;
         PauseMenuAvailable = true;
     }
 
-    /// <summary>
-    /// Show and Quit PauseMenu by clicking Esc.
-    /// </summary>
+    // Update is called once per frame
     void Update()
     {
 
@@ -41,9 +39,15 @@ public class PauseMenuScript : MonoBehaviour
 
     }
 
-    /// <summary>
-    /// The PauseMenu gets activated, the game pauses and the Cursor changes its state.
-    /// </summary>
+    public void Resume()
+    {
+        Overlay.SetActive(true);
+        GameIsPaused = false;
+        pauseMenuUI.SetActive(false);
+        Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
     void Pause()
     {
         Overlay.SetActive(false);
@@ -54,29 +58,11 @@ public class PauseMenuScript : MonoBehaviour
         startMessage.SetActive(false);
     }
 
-    /// <summary>
-    /// Undos all the changes of the Pause() method.
-    /// </summary>
-    public void Resume()
-    {
-        Overlay.SetActive(true);
-        GameIsPaused = false;
-        pauseMenuUI.SetActive(false);
-        Time.timeScale = 1f;
-        Cursor.lockState = CursorLockMode.Locked;
-    }    
-
-    /// <summary>
-    /// Loads MainMenu-scene.
-    /// </summary>
     public void LoadMainMenu()
     {
         SceneManager.LoadScene("MainMenue");
     }
 
-    /// <summary>
-    /// Quits the application.
-    /// </summary>
     public void QuitGame()
     {
         Debug.Log("Quitting Game...");
