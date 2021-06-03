@@ -4,7 +4,30 @@ using UnityEngine;
 
 public class SaveScript : MonoBehaviour
 {
+    // Speicher fuer Lockscreen
+    private static string username = "user";
+    public static string Username
+    {
+        get => username;
+        set => username = value;
+    }
 
+    private static int tries = 0;
+    public static int Tries
+    {
+        get => tries;
+        set => tries = value;
+    }
+
+    private static bool hintShown = false;
+    public static bool HintShown
+    {
+        get => hintShown;
+        set => hintShown = value;
+    }
+
+
+    // Weiteres Zeug
     private static bool inLabScene = true;
     public static bool InLabScene
     {

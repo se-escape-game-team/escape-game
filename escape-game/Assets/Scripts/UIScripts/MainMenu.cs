@@ -67,6 +67,7 @@ public class MainMenu : MonoBehaviour
         }
         else if(isNameValid)
         {
+            SaveScript.Username = username;
             SceneManager.LoadScene("Lab_Room");
         }
     }
