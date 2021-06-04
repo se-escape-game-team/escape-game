@@ -16,6 +16,12 @@ public class DoorAccess : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+       
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
         Material acessMaterial = doorAccess.GetComponent<MeshRenderer>().material;
         if (SaveScript.doorIsOpen == false && SaveScript.HangmanWon == false)
         {
@@ -32,11 +38,5 @@ public class DoorAccess : MonoBehaviour
             // Farbe gruen einstellen
             acessMaterial.SetColor("_EmissionColor", green);
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }
