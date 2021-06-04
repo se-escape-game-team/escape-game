@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class AutomaticDoor : MonoBehaviour
 {
-
     public GameObject movingDoor;
-
-    public float maximumOpening = 1.2f;
-    public float maximumClosing = 0f;
+    private float originX;
+    public float maximumOpening = 1.5f;
 
     public float movementSpeed = 1f;
 
@@ -17,38 +15,39 @@ public class AutomaticDoor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        originX = movingDoor.transform.position.x;
         playerOnTrigger = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(SaveScript.DoorIsOpen)
+        //Debug.Log(movingDoor.transform.position);
+        if (SaveScript.DoorIsOpen)
         {
             if (playerOnTrigger)
             {
                 //Debug.Log("blala");
-                Debug.Log(movingDoor.transform.position.z);
-                if (movingDoor.transform.position.z < maximumOpening)
+                if (movingDoor.transform.position.x < maximumOpening + originX)
                 {
+                    //Debug.Log("Tür öffnen");
                     movingDoor.transform.Translate(0f, 0f, movementSpeed * Time.deltaTime);
                 }
             }
             else
             {
-                //Debug.Log("blub");
-                if (movingDoor.transform.position.z > maximumClosing)
+                if (movingDoor.transform.position.x > originX)
                 {
-                    Debug.Log("Tür schließen");
+                    //Debug.Log("Tür schließen");
                     movingDoor.transform.Translate(0f, 0f, -movementSpeed * Time.deltaTime);
                 }
             }
         }
     }
-    
+
     private void OnTriggerEnter(Collider col)
     {
-        if(col.gameObject.tag == "Player")
+        if (col.gameObject.tag == "Player")
         {
             playerOnTrigger = true;
         }
