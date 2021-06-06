@@ -4,6 +4,28 @@ using UnityEngine;
 
 public class SaveScript : MonoBehaviour
 {
+    //Player Position and Rotation
+    private static Vector3 playerPosition = new Vector3(2, 2, -11);
+    public static Vector3 PlayerPosition
+    {
+        get => playerPosition;
+        set => playerPosition = value;
+    }
+
+    private static Quaternion playerRotation = new Quaternion();
+    public static Quaternion PlayerRotation
+    {
+        get => playerRotation;
+        set => playerRotation = value;
+    }
+
+    private static Quaternion cameraRotation = new Quaternion();
+    public static Quaternion CameraRotation
+    {
+        get => cameraRotation;
+        set => cameraRotation = value;
+    }
+
     // Speicher fuer Lockscreen
     private static string username = "user";
     public static string Username

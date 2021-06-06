@@ -15,6 +15,15 @@ public class MovementPlayer : MonoBehaviour
     Vector3 velocity;
     bool isGrounded;
 
+
+    private void Start()
+    {
+        //transform.position = SaveScript.PlayerPosition;
+        transform.SetPositionAndRotation(SaveScript.PlayerPosition, SaveScript.PlayerRotation);
+
+        Debug.Log(SaveScript.PlayerPosition);
+    }
+
     void Update()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
