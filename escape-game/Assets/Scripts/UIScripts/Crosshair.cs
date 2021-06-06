@@ -9,12 +9,10 @@ public class Crosshair : MonoBehaviour
     {
         if (!SaveScript.InLabScene)
         {
-            Debug.Log("Disable Crosshair");
             crosshair.SetActive(false);
         }
         else
         {
-            Debug.Log("Enable Crosshair");
             crosshair.SetActive(true);
         }
     }

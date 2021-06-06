@@ -19,8 +19,8 @@ public class MovementPlayer : MonoBehaviour
         // Setzen der gespeicherten Spieler-Position
         controller.enabled = false;
         transform.position = SaveScript.PlayerPosition;
+        transform.rotation = Quaternion.Euler(0f, SaveScript.PlayerRotationY, 0f);
         controller.enabled = true;
-        Debug.LogWarning($"Setze Spieler auf Position {SaveScript.PlayerPosition} - Spielerposition: {transform.position}");
     }
 
     void Update()

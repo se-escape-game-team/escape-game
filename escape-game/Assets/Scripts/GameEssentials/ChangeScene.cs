@@ -13,6 +13,15 @@ public class ChangeScene : MonoBehaviour
 
         // Speichern der Spielerposition
         SaveScript.PlayerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
+
+        // Speichern der Rotation des Spielers
+        SaveScript.PlayerRotationY = GameObject.FindGameObjectWithTag("Player").transform.rotation.eulerAngles.y;
+        Debug.Log(SaveScript.PlayerRotationY);
+
+        // Speichern der Rotation der Kamera
+        SaveScript.CamerRotationX = GameObject.FindGameObjectWithTag("MainCamera").transform.rotation.eulerAngles.x;
+        Debug.Log(SaveScript.CamerRotationX);
+
         SceneManager.LoadScene(sceneName);
 
         GameObject.Find("Overlay").GetComponent<Crosshair>().CheckIfEnabled();

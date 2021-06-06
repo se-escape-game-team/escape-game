@@ -12,6 +12,22 @@ public static class SaveScript
         set => playerPosition = value;
     }
 
+    // Speicher fuer Rotation der Kamera
+    private static float camerRotationX = 0f;
+    public static float CamerRotationX
+    {
+        get => camerRotationX;
+        set => camerRotationX = value;
+    }
+
+    // Speichert fuer Rotation des Spielers
+    private static float playerRotationY = 3f;
+    public static float PlayerRotationY
+    {
+        get => playerRotationY;
+        set => playerRotationY = value;
+    }
+
     // Speicher fuer Lockscreen
     private static string username = "user";
     public static string Username
