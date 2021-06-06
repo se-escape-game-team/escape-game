@@ -12,7 +12,6 @@ public class MovementCamera : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Confined;
-        transform.localRotation = SaveScript.CameraRotation;
     }
 
     void Update()
