@@ -10,15 +10,11 @@ public class ClickInventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerE
 {
     GameObject currentHover;
     bool dragItem = false;
-    Image itemImage;
+    Image itemImage = null;
     Vector3 recentPosition;
 
-    private static string selectedItem = "";
-
-    /// <summary>
-    /// Gibt den Namen des aktuell ausgewaehlten Item-Sprites zurueck.
-    /// </summary>
-    public static string SelctedItem => selectedItem;
+    private static string selectedItemSprite = "";
+    public static string SelectedItemSprite => selectedItemSprite;
 
     void Update()
     {
@@ -62,7 +58,7 @@ public class ClickInventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerE
         {
             // Item folgt der Maus
             itemImage.transform.position = Input.mousePosition;
-            selectedItem = itemImage.sprite.name;
+            selectedItemSprite = itemImage.sprite.name;
         }
         else
         {
@@ -70,7 +66,8 @@ public class ClickInventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerE
             itemImage.transform.position = recentPosition;
             // Groeﬂe auf Standart zuruecksetzen
             itemImage.transform.localScale = new Vector3(1, 1);
-            selectedItem = "";
+            selectedItemSprite = "";
+            itemImage = null;
             dragItem = false;
         }
     }
@@ -83,7 +80,6 @@ public class ClickInventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerE
     {
         if (eventData.pointerCurrentRaycast.gameObject != null)
         {
-            Debug.Log("HOVER");
             currentHover = eventData.pointerCurrentRaycast.gameObject;
         }
     }

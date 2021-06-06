@@ -12,7 +12,7 @@ public class DoorUnlock : MonoBehaviour
         if (Physics.Raycast(ray, out hitObject))
         {
             GameObject hitGameObject = hitObject.transform.gameObject;
-            if (hitGameObject.name == "DoorAccess" && ClickInventoryItem.SelctedItem == "KeyCard")
+            if (hitGameObject.name == "DoorAccess" && ClickInventoryItem.SelectedItemSprite== "KeyCard")
             {
                 // Tuer oeffnen
                 Debug.Log("Open Door");
