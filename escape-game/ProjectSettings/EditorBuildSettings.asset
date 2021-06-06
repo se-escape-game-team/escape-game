@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Lab_Room.unity
     guid: b531e6482cb177d4caf5a31929c8e8e9
   - enabled: 1
+    path: Assets/Scenes/TaskSecretWriting.unity
+    guid: 8e3d6f9271e18cc4db80df201b09db39
+  - enabled: 1
     path: Assets/Scenes/TaskSafe.unity
     guid: 4b155cf7acd55694e8c81481b6e9ffc1
   - enabled: 1
