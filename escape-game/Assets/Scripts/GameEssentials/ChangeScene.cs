@@ -10,8 +10,11 @@ public class ChangeScene : MonoBehaviour
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
         SaveScript.InLabScene = false;
+
+        // Speichern der Spielerposition
+        SaveScript.PlayerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
         SceneManager.LoadScene(sceneName);
-        
+
         GameObject.Find("Overlay").GetComponent<Crosshair>().CheckIfEnabled();
     }
 

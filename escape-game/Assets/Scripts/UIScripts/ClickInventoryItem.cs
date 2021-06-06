@@ -26,7 +26,6 @@ public class ClickInventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerE
         {
             DragItem();
         }
-
         if (Input.GetMouseButtonDown(0))
         {
             if (currentHover && currentHover.transform.tag == "Selectable - InventoryItem")
@@ -84,6 +83,7 @@ public class ClickInventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerE
     {
         if (eventData.pointerCurrentRaycast.gameObject != null)
         {
+            Debug.Log("HOVER");
             currentHover = eventData.pointerCurrentRaycast.gameObject;
         }
     }
@@ -95,54 +95,5 @@ public class ClickInventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerE
     {
         currentHover = null;
     }
-
-
-
-
-
-
-    //if (Input.GetMouseButtonDown(0) == true && EventSystem.current.IsPointerOverGameObject())
-    //{
-    //    Debug.Log(EventSystem.current.currentSelectedGameObject.gameObject.name);
-    //}
-
-    //if (EventSystem.current.IsPointerOverGameObject())
-    //{
-    //    Debug.Log(GameObjectUnderPointer());
-
-    //    //recentOutline = hitObject.GetComponent<Outline>();
-    //    //recentOutline.OutlineColor = colorTasks;
-    //    //recentOutline.OutlineWidth = outlineWidth;
-    //    //recentOutline.enabled = true;
-    //    //wasHit = true;
-    //}
-
-    //if (EventSystem.current.IsPointerOverGameObject())
-    //{
-    //    //Debug.Log("Its over UI elements");
-    //    if (EventSystem.current != null)
-    //    {
-    //        //Debug.Log("Current Objekt != null");
-
-
-    //    }
-    //    if (EventSystem.current.CompareTag("Selectable - InventoryItem"))
-    //    {
-    //        Debug.Log("Tagged Selectable");
-    //    }
-
-    //}
-
-
-
-    //if (EventSystem.current.IsPointerOverGameObject())
-    //{
-    //    Debug.Log("Its over UI elements");
-
-    //}
-    //else
-    //{
-    //    Debug.Log("Its NOT over UI elements");
-    //}
 }
 

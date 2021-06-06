@@ -2,8 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SaveScript : MonoBehaviour
+public static class SaveScript
 {
+    // Speicher fuer Spielerposition
+    private static Vector3 playerPosition = new Vector3(2,2,-11);
+    public static Vector3 PlayerPosition
+    {
+        get => playerPosition;
+        set => playerPosition = value;
+    }
+
     // Speicher fuer Lockscreen
     private static string username = "user";
     public static string Username

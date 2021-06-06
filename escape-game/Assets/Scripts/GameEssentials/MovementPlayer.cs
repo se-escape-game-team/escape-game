@@ -14,6 +14,14 @@ public class MovementPlayer : MonoBehaviour
 
     Vector3 velocity;
     bool isGrounded;
+    void Start()
+    {
+        // Setzen der gespeicherten Spieler-Position
+        controller.enabled = false;
+        transform.position = SaveScript.PlayerPosition;
+        controller.enabled = true;
+        Debug.LogWarning($"Setze Spieler auf Position {SaveScript.PlayerPosition} - Spielerposition: {transform.position}");
+    }
 
     void Update()
     {
