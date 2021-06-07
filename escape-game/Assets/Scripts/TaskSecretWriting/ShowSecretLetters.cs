@@ -11,7 +11,6 @@ public class ShowSecretLetters : MonoBehaviour
     bool triggerActive = true;
     void Update()
     {
-        Debug.Log(ClickInventoryItem.SelectedItemSprite);
         if (ClickInventoryItem.SelectedItemSprite == "Erlenmeyer")
         {
             // Deaktivieren des Triggers, damit die Objekte darunter getrackt werden
@@ -30,7 +29,6 @@ public class ShowSecretLetters : MonoBehaviour
                     hitGameObject.GetComponent<TextMeshPro>().enabled = true;
                 }
             }
-            
         }
         // Wieder Aktivieren des Triggers falls die Tinte nicht ausgerüstet ist
         else if(!triggerActive)

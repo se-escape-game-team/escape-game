@@ -99,7 +99,7 @@ public class Inventory : MonoBehaviour
         {
             foreach (GameObject g in SaveScript.itemPanel)
             {
-                Debug.LogWarning(g);
+                g.SetActive(false);
             }
             int panel = 0;
             for (int i = SaveScript.currentItem0Position; i >= 0; i--, panel++)
