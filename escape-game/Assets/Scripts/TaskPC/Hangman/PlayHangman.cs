@@ -45,6 +45,8 @@ public class PlayHangman : MonoBehaviour
         if (newRound)
         {
             // Setzt alle für die naechste Runde benoetigten Komponenten zurueck
+            mistakes = 0;
+            hangmanImage.sprite = hangmanStates[0];
             roundText.text = $"Round {currentRound + 1}/{rounds}";
             currentWord = ChoseWord();
             Debug.Log(currentWord);
