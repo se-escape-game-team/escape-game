@@ -8,71 +8,45 @@ public class Inventory : MonoBehaviour
     [SerializeField] private Image arrowUp;
     [SerializeField] private Image arrowDown;
 
-    // Saves the UI Slots for displaying the items
+    // UI Elemente fuer Inventaranzeige
     public GameObject[] itemPanel;
-    private Image[] itemImage;
-
-    //bool test = true;
-
-    // List that saves all the collected item Sprites
-    ArrayList itemList = new ArrayList();
-
-    int currentItem0Position = 0;
+    public Image[] itemImage;
 
     void Start()
     {
-        // Getting the Image-Object childs of the panels
-        itemImage = new Image[itemPanel.Length];
-        for (int i = 0; i < itemPanel.Length; i++)
-        {
-            itemImage[i] = itemPanel[i].transform.Find($"ItemImage{i}").GetComponent<Image>();
-        }
-
-        // Disables all the item-slots
-        foreach (GameObject gameObject in itemPanel)
+        // Speichern der UI Elemente
+        SaveScript.itemPanel = itemPanel;
+        SaveScript.itemImage = itemImage;
+        SaveScript.inventoryArrows = new Image[]{arrowUp, arrowDown};
+        
+        // Deaktivieren der Item-Slots
+        foreach (GameObject gameObject in SaveScript.itemPanel)
         {
             gameObject.SetActive(false);
         }
 
-        //Disable arrows
-        arrowDown.enabled = false;
-        arrowUp.enabled = false;
+        // Deaktivieren der Pfeile
+        SaveScript.inventoryArrows[0].enabled = false;
+        SaveScript.inventoryArrows[1].enabled = false;
     }
 
     private void Update()
     {
-        if (itemList.Count > itemPanel.Length)
+        // Checken ob Scrollen moeglich ist
+        if (SaveScript.itemList.Count > SaveScript.itemPanel.Length)
         {
-            // Scroll up
+            // Scrollen registrieren
             if (Input.GetAxis("MouseScrollWheel") > 0)
             {
                 ScrollUp();
                 RefreshInventory();
             }
-            // Scroll down
             else if (Input.GetAxis("MouseScrollWheel") < 0)
             {
                 ScrollDown();
                 RefreshInventory();
             }
-
-
-
-
-
         }
-
-        //zum Testen der DeleteIteme Methode mit der Leertaste
-        //if (Input.GetAxis("Jump")!=0&&test)
-        //{
-        //    DeleteItem((Sprite)itemList[0]);
-        //    test = false;
-        //}
-        //if (Input.GetAxis("Jump") == 0)
-        //{
-        //    test = true;
-        //}
-
     }
 
     /// <summary>
@@ -80,9 +54,9 @@ public class Inventory : MonoBehaviour
     /// </summary>
     void ScrollDown()
     {
-        if (currentItem0Position >= itemImage.Length)
+        if (SaveScript.currentItem0Position >= SaveScript.itemImage.Length)
         {
-            currentItem0Position--;
+            SaveScript.currentItem0Position--;
         }
     }
 
@@ -91,9 +65,9 @@ public class Inventory : MonoBehaviour
     /// </summary>
     void ScrollUp()
     {
-        if (currentItem0Position < itemList.Count - 1)
+        if (SaveScript.currentItem0Position < SaveScript.itemList.Count - 1)
         {
-            currentItem0Position++;
+            SaveScript.currentItem0Position++;
         }
     }
 
@@ -103,102 +77,64 @@ public class Inventory : MonoBehaviour
     /// <param name="sprite"></param>
     public void AddItem(Sprite sprite)
     {
-        itemList.Add(sprite);
-        currentItem0Position = itemList.Count - 1;
-        //Debug.Log($"Current Position: {currentItem0Position}");
-        //Debug.Log(itemList.Count);
+        SaveScript.itemList.Add(sprite);
+        SaveScript.currentItem0Position = SaveScript.itemList.Count - 1;
         RefreshInventory();
     }
+
     /// <summary>
     /// Delets Sprite out of ItemList of Inventory
     /// </summary>
     /// <param name="sprite">Sprite to delete</param>
     public void DeleteItem(Sprite sprite)
     {
-        itemList.Remove(sprite);
-        currentItem0Position = itemList.Count - 1;
+        SaveScript.itemList.Remove(sprite);
+        SaveScript.currentItem0Position = SaveScript.itemList.Count - 1;
         RefreshInventory();
     }
 
     void RefreshInventory()
     {
-        //Debug.Log($"ItemList: {itemList.Count}\nItemImage: {itemImage.Length}\nItemPanel: {itemPanel.Length}");
-        if (itemList.Count <= itemImage.Length)
+        if (SaveScript.itemList.Count <= SaveScript.itemImage.Length)
         {
-            foreach (GameObject g in itemPanel)
+            foreach (GameObject g in SaveScript.itemPanel)
             {
-                g.SetActive(false);
+                Debug.LogWarning(g);
             }
             int panel = 0;
-            for (int i = currentItem0Position; i >= 0; i--, panel++)
+            for (int i = SaveScript.currentItem0Position; i >= 0; i--, panel++)
             {
-                itemPanel[panel].SetActive(true);
-                itemImage[panel].sprite = (Sprite)itemList[i];
+                SaveScript.itemPanel[panel].SetActive(true);
+                SaveScript.itemImage[panel].sprite = (Sprite)SaveScript.itemList[i];
             }
         }
         else
         {
             int panel = 0;
-            for (int i = currentItem0Position; i > currentItem0Position - itemImage.Length; i--, panel++)
+            for (int i = SaveScript.currentItem0Position; i > SaveScript.currentItem0Position - SaveScript.itemImage.Length; i--, panel++)
             {
-                itemImage[panel].sprite = (Sprite)itemList[i];
+                SaveScript.itemImage[panel].sprite = (Sprite)SaveScript.itemList[i];
             }
 
-            // Check to enable Arrow Up
-            if (currentItem0Position < itemList.Count - 1)
+            // Checken ob der Pfeil nach oben aktiviert werden soll
+            if (SaveScript.currentItem0Position < SaveScript.itemList.Count - 1)
             {
-                arrowUp.enabled = true;
+                SaveScript.inventoryArrows[0].enabled = true;
             }
             else
             {
-                arrowUp.enabled = false;
+                SaveScript.inventoryArrows[0].enabled = false;
             }
 
-            // Check to enable Arrow Down
-            if (currentItem0Position >= itemImage.Length)
+            // Checken ob der Pfeil nach unten aktiviert werden soll
+            if (SaveScript.currentItem0Position >= SaveScript.itemImage.Length)
             {
-                arrowDown.enabled = true;
+                SaveScript.inventoryArrows[1].enabled = true;
             }
             else
             {
-                arrowDown.enabled = false;
+                SaveScript.inventoryArrows[1].enabled = false;
             }
         }
     }
-
-    //public bool TakeItem()
-    //{
-    //    public static bool IsPointerOverUIObject()
-    //    {
-    //        PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
-    //        eventDataCurrentPosition.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-    //        List<RaycastResult> results = new List<RaycastResult>();
-    //        EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
-    //        return results.Count > 0;
-    //    }
-
-
-
-    //    wasHit = false;
-    //    if (Physics.Raycast(ray, out raycastHit, distance))
-    //    {
-    //        GameObject hitObject = raycastHit.collider.gameObject;
-    //        if (hitObject.tag == "Selectable - Item")
-    //        {
-    //            // Apply outline for item
-    //            recentOutline = hitObject.GetComponent<Outline>();
-    //            recentOutline.OutlineColor = colorItems;
-    //            recentOutline.OutlineWidth = outlineWidth;
-    //            recentOutline.enabled = true;
-    //            wasHit = true;
-
-    //            if (Input.GetMouseButtonDown(0))
-    //            {
-    //                // Adds Item to inventory (with sprite saved in ObjectImage.cs)
-    //                inventory.AddItem(hitObject.GetComponent<ObjectImage>().inventoryImage);
-    //                Destroy(hitObject);
-    //            }
-    //        }
-    //    }
-    //}
 }

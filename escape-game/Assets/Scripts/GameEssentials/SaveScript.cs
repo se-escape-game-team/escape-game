@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public static class SaveScript
 {
@@ -94,4 +95,29 @@ public static class SaveScript
         get => doorIsOpen;
         set => doorIsOpen = value;
     }
+
+    /// <summary>
+    /// Speicher fuer die Panel-Objekte im Inventar UI
+    /// </summary>
+    public static GameObject[] itemPanel;
+
+    /// <summary>
+    /// Speicher fuer die Image-Objekte im Inventar UI
+    /// </summary>
+    public static Image[] itemImage;
+
+    /// <summary>
+    /// Speicher fuer die Arrows des Inventars. 0 ist up, 1 ist down.
+    /// </summary>
+    public static Image[] inventoryArrows;
+
+    /// <summary>
+    /// Speicher fuer die Sprites im Inventar
+    /// </summary>
+    public static ArrayList itemList = new ArrayList();
+
+    /// <summary>
+    /// Speicher fuer das aktuelle Sprite in itemList, das im Inventar ganz oben angezeigt wird
+    /// </summary>
+    public static int currentItem0Position = 0;
 }
