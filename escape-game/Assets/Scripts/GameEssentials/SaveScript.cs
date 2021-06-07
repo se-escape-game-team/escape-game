@@ -60,6 +60,11 @@ public static class SaveScript
         set => inLabScene = value;
     }
 
+    /// <summary>
+    /// Gibt an, ob das Pause Menue an ist
+    /// </summary>
+    public static bool pause = false;
+
 
     private static bool startMessageWasShown = false;
     public static bool StartMessageWasShown

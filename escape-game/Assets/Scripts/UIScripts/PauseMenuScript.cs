@@ -11,8 +11,6 @@ public class PauseMenuScript : MonoBehaviour
     public GameObject pauseMenuUI;
     public GameObject Overlay;
     public GameObject startMessage;
-   
-
 
     private void Start()
     {
@@ -24,7 +22,6 @@ public class PauseMenuScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if (Input.GetKeyDown(KeyCode.Escape) && PauseMenuAvailable)
         {
             if (GameIsPaused)
@@ -36,7 +33,6 @@ public class PauseMenuScript : MonoBehaviour
                 Pause();
             }
         }
-
     }
 
     public void Resume()
@@ -68,7 +64,4 @@ public class PauseMenuScript : MonoBehaviour
         Debug.Log("Quitting Game...");
         Application.Quit();
     }
-
-
-
 }
