@@ -2,71 +2,67 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class RedBlinkingLightScript //: MonoBehaviour
+public class RedBlinkingLightScript : MonoBehaviour
 {
-    private static readonly System.Diagnostics.Stopwatch stopwatchLighting;
-    private static readonly System.Diagnostics.Stopwatch redLightStopwatch;
-    private static bool lightIsRed;
-    private static Color lightColor;
+    private bool lightIsRed;
+    private Color lightColor;
 
-    static ArrayList lightsWithTag = new ArrayList();
+    List<Light> lights = new List<Light>();
+    List<Material> lamps = new List<Material>();
 
-    //[SerializeField] Light[] lights;
-
-    //private Light[] lights;
-
-    // Start is called before the first frame update
-    static void Start()
+    void Start()
     {
-        Light[] allLights = GameObject.FindObjectsOfType<Light>();
-
-        foreach (Light light in allLights)
+        GameObject[] blinkingLights = GameObject.FindGameObjectsWithTag("BlinkingLight");
+        foreach(GameObject g in blinkingLights)
         {
-            if (light.tag == "BlinkingLight")
+            MeshRenderer mr;
+            if(g.TryGetComponent<MeshRenderer>(out mr))
             {
-                lightsWithTag.Add(light);
+                lamps.Add(mr.material);
+            }
+            else
+            {
+                lights.Add(g.GetComponent<Light>());
             }
         }
 
-
-
-
-        stopwatchLighting.Start();
         lightIsRed = false;
         lightColor = Color.white;
     }
 
-    // Update is called once per frame
-    static void Update()
+    float timer = -1;
+    void Update()
     {
-        if (stopwatchLighting.Elapsed.Seconds >= 5)
+        if ((SaveScript.secondsLeft % 4) <= 0.1 && timer < 0)
         {
             lightIsRed = true;
-            redLightStopwatch.Start();
-            stopwatchLighting.Restart();
+            timer = 1;
         }
         else if (lightIsRed)
         {
-            if (redLightStopwatch.ElapsedMilliseconds < 1000)
+            timer -= Time.deltaTime;
+            if (timer > 0)
             {
                 lightColor = Color.red;
             }
             else
             {
                 lightIsRed = false;
-                redLightStopwatch.Reset();
                 lightColor = Color.white;
             }
-
             SetLightColour();
         }
     }
 
-    private static void SetLightColour()
+    private void SetLightColour()
     {
-        foreach (Light light in lightsWithTag)
+        foreach (Light light in lights)
         {
             light.color = lightColor;
+        }
+        foreach(Material material in lamps)
+        {
+            material.SetColor("_EmissionColor", lightColor);
         }
     }
 }

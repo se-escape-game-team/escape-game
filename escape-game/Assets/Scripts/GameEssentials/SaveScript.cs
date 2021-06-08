@@ -126,6 +126,11 @@ public static class SaveScript
     /// </summary>
     public static int currentItem0Position = 0;
 
+    /// <summary>
+    /// Speichert die noch übrige Zeit in Sekunden
+    /// </summary>
+    public static float secondsLeft;
+
     private static string name = Username;
     public static string Name
     {

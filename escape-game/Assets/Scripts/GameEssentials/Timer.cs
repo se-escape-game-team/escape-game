@@ -21,7 +21,7 @@ public class Timer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ticks = minutes * 60 + seconds;
+        SaveScript.secondsLeft = minutes * 60 + seconds;
         play = true; // yust for now
         isTimeOver = false;
     }
@@ -29,9 +29,9 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (ticks > 0 && play)
+        if (SaveScript.secondsLeft > 0 && play)
         {
-            ticks -= Time.deltaTime;
+            SaveScript.secondsLeft -= Time.deltaTime;
         }
         else if(!isTimeOver)
         {
@@ -39,7 +39,7 @@ public class Timer : MonoBehaviour
             defeatMessage.ShowDefeatMessage();
         }
 
-        timeLeft = timerText.text = ($"{(int)ticks / 60:D2}:{(int)ticks % 60:D2}");
+        timeLeft = timerText.text = ($"{(int)SaveScript.secondsLeft / 60:D2}:{(int)SaveScript.secondsLeft % 60:D2}");
     }
 
     public void Pause()
