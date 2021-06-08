@@ -2127,8 +2127,8 @@ GameObject:
   - component: {fileID: 159172333}
   - component: {fileID: 159172334}
   m_Layer: 8
-  m_Name: Light
-  m_TagString: Untagged
+  m_Name: Light2
+  m_TagString: BlinkingLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -10376,8 +10376,8 @@ GameObject:
   - component: {fileID: 487015368}
   - component: {fileID: 487015369}
   m_Layer: 8
-  m_Name: Light
-  m_TagString: Untagged
+  m_Name: Light8
+  m_TagString: BlinkingLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -12407,8 +12407,8 @@ GameObject:
   - component: {fileID: 585616154}
   - component: {fileID: 585616155}
   m_Layer: 8
-  m_Name: Light
-  m_TagString: Untagged
+  m_Name: Light4
+  m_TagString: BlinkingLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -17794,8 +17794,8 @@ GameObject:
   - component: {fileID: 905414756}
   - component: {fileID: 905414757}
   m_Layer: 8
-  m_Name: Light
-  m_TagString: Untagged
+  m_Name: Light1
+  m_TagString: BlinkingLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -29037,8 +29037,8 @@ GameObject:
   - component: {fileID: 1246044163}
   - component: {fileID: 1246044164}
   m_Layer: 8
-  m_Name: Light
-  m_TagString: Untagged
+  m_Name: Light5
+  m_TagString: BlinkingLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -29766,7 +29766,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   crosshair: {fileID: 255910396}
   pauseMenu: {fileID: 1149522964}
-  t: {fileID: 1278255875}
 --- !u!1001 &1278905218
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39644,8 +39643,8 @@ GameObject:
   - component: {fileID: 1662485767}
   - component: {fileID: 1662485768}
   m_Layer: 8
-  m_Name: Light
-  m_TagString: Untagged
+  m_Name: Light3
+  m_TagString: BlinkingLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -44140,7 +44139,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   crosshair: {fileID: 2091134772}
   pauseMenu: {fileID: 1149522964}
-  t: {fileID: 1278255875}
 --- !u!1 &1793344298
 GameObject:
   m_ObjectHideFlags: 0
@@ -54316,8 +54314,8 @@ GameObject:
   - component: {fileID: 2136313271}
   - component: {fileID: 2136313272}
   m_Layer: 8
-  m_Name: Light
-  m_TagString: Untagged
+  m_Name: Light7
+  m_TagString: BlinkingLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -54559,8 +54557,8 @@ GameObject:
   - component: {fileID: 4864596173423132}
   - component: {fileID: 108337232788150762}
   m_Layer: 8
-  m_Name: Light
-  m_TagString: Untagged
+  m_Name: Light6
+  m_TagString: BlinkingLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -54702,8 +54700,8 @@ GameObject:
   - component: {fileID: 4354824812826702}
   - component: {fileID: 108231258955250564}
   m_Layer: 8
-  m_Name: Light
-  m_TagString: Untagged
+  m_Name: Light0
+  m_TagString: BlinkingLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295

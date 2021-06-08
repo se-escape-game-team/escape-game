@@ -2,31 +2,48 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RedBlinkingLightScript : MonoBehaviour
+public static class RedBlinkingLightScript //: MonoBehaviour
 {
-    private System.Diagnostics.Stopwatch stopwatch;
-    private System.Diagnostics.Stopwatch redLightStopwatch;
-    private bool lightIsRed;
-    private Color lightColor;
+    private static readonly System.Diagnostics.Stopwatch stopwatchLighting;
+    private static readonly System.Diagnostics.Stopwatch redLightStopwatch;
+    private static bool lightIsRed;
+    private static Color lightColor;
 
-    [SerializeField] Light[] lights;
+    static ArrayList lightsWithTag = new ArrayList();
+
+    //[SerializeField] Light[] lights;
+
+    //private Light[] lights;
 
     // Start is called before the first frame update
-    void Start()
+    static void Start()
     {
-        stopwatch.Start();
+        Light[] allLights = GameObject.FindObjectsOfType<Light>();
+
+        foreach (Light light in allLights)
+        {
+            if (light.tag == "BlinkingLight")
+            {
+                lightsWithTag.Add(light);
+            }
+        }
+
+
+
+
+        stopwatchLighting.Start();
         lightIsRed = false;
         lightColor = Color.white;
     }
 
     // Update is called once per frame
-    void Update()
+    static void Update()
     {
-        if (stopwatch.Elapsed.Seconds >= 60)
+        if (stopwatchLighting.Elapsed.Seconds >= 5)
         {
             lightIsRed = true;
             redLightStopwatch.Start();
-            stopwatch.Restart();
+            stopwatchLighting.Restart();
         }
         else if (lightIsRed)
         {
@@ -45,9 +62,9 @@ public class RedBlinkingLightScript : MonoBehaviour
         }
     }
 
-    private void SetLightColour()
+    private static void SetLightColour()
     {
-        foreach (Light light in lights)
+        foreach (Light light in lightsWithTag)
         {
             light.color = lightColor;
         }

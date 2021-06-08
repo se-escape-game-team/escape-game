@@ -11,6 +11,7 @@ TagManager:
   - Selectable
   - Selectable - InventoryItem
   - HiddenLetter
+  - BlinkingLight
   layers:
   - Default
   - TransparentFX
