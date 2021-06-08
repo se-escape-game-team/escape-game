@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MovementCamera : MonoBehaviour
 {
-    public float sensitivity = 1500;
+    public Slider slider;
+    float sensitivity;
     public Transform playerBody;
+    
 
     float xRotation = 0;
 
@@ -24,5 +27,9 @@ public class MovementCamera : MonoBehaviour
 
         transform.localRotation = Quaternion.Euler(xRotation + SaveScript.CamerRotationX, 0f, 0);
         playerBody.Rotate(0, mouseX, 0);
+
+        sensitivity = slider.value;
     }
+
+    
 }

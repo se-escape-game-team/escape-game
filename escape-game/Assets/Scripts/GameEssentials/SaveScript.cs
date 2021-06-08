@@ -125,4 +125,11 @@ public static class SaveScript
     /// Speicher fuer das aktuelle Sprite in itemList, das im Inventar ganz oben angezeigt wird
     /// </summary>
     public static int currentItem0Position = 0;
+
+    private static string name = Username;
+    public static string Name
+    {
+        get => name;
+        set => name = value;
+    }
 }

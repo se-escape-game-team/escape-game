@@ -3296,7 +3296,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "R\xE4tsel l\xF6sen \n\n(Mit Leertaste beenden)"
+  m_Text: "Die KI hat den Safe verschlossen! Du ben\xF6tigst ein <Stellen>-stelliges
+    Passwort, um ihn zu \xF6ffnen!\n\n\n\n\n(Mit Leertaste beenden)"
 --- !u!222 &1435068345
 CanvasRenderer:
   m_ObjectHideFlags: 0
