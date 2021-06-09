@@ -17,8 +17,7 @@ public class DefeatMessageScript : MonoBehaviour
 
     public void Resume()
     {
-        Debug.Log("Spiel weiterspielen");
-        SaveScript.defeatMessageWasShown = true;
+        SaveScript.continueAfterDefeat = true;
         gameObject.SetActive(false);
         crosshair.CrosshairEnabled = true;
         Time.timeScale = 1f;
@@ -29,7 +28,4 @@ public class DefeatMessageScript : MonoBehaviour
     { 
         SceneManager.LoadScene("Credits");
     }
-
-
-
 }

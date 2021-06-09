@@ -32076,8 +32076,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 840df51653d7d04449c9d46fd208db88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minutes: 1
-  seconds: 5
+  minutes: 2
+  seconds: 0
   timerText: {fileID: 1222605448}
   defeatMessage: {fileID: 1793344299}
 --- !u!4 &1360079262
@@ -43947,7 +43947,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f011995159f53da4ab57b6bf2b6d2874, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crosshair: {fileID: 0}
+  crosshair: {fileID: 255910403}
 --- !u!114 &1793344300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52744,7 +52744,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2091134774
 MonoBehaviour:

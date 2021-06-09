@@ -46,11 +46,6 @@ public static class SaveScript
     public static bool startMessageWasShown = false;
 
     /// <summary>
-    /// Gibt an ob die Defeatnachricht angezeigt wurde
-    /// </summary>
-    public static bool defeatMessageWasShown = false;
-
-    /// <summary>
     /// Gibt an ob die Brille schon eigesammelt wurde.
     /// </summary>
     public static bool glassesCollected = false;
@@ -94,4 +89,14 @@ public static class SaveScript
     /// Speichert die noch übrige Zeit in Sekunden
     /// </summary>
     public static float secondsLeft;
+
+    /// <summary>
+    /// Gibt an ob die Zeit des Timers schon gesetzt wurde
+    /// </summary>
+    public static bool timeSet = false;
+
+    /// <summary>
+    /// Speichert ob der Spieler nach verlieren des Spiels weiterspielen will
+    /// </summary>
+    public static bool continueAfterDefeat = false;
 }

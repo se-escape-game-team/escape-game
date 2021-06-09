@@ -33,7 +33,7 @@ public class RedBlinkingLightScript : MonoBehaviour
     float timer = -1;
     void Update()
     {
-        if ((SaveScript.secondsLeft % 4) <= 0.1 && timer < 0)
+        if ((SaveScript.secondsLeft % 5) <= 0.1 && timer < 0)
         {
             lightIsRed = true;
             timer = 1;
