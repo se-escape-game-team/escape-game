@@ -29,7 +29,7 @@ public class Type : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hitObject;
 
-        if (Physics.Raycast(ray, out hitObject))
+        if (Physics.Raycast(ray, out hitObject) && !SaveScript.pause)
         {
             GameObject hitGameObject = hitObject.transform.gameObject;
             if (hitGameObject.tag == "Selectable")

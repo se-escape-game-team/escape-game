@@ -25,6 +25,7 @@ public class MovementPlayer : MonoBehaviour
 
     void Update()
     {
+
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         if (isGrounded && velocity.y < 0)
         {
@@ -38,7 +39,15 @@ public class MovementPlayer : MonoBehaviour
         float moveY = Input.GetAxis("Vertical");
 
         Vector3 movement = transform.right * moveX + transform.forward * moveY;
-        movement *= Time.deltaTime * speed;
+
+        if (!SaveScript.glassesCollected)
+        {
+            movement *= Time.deltaTime * (speed / 2);
+        }
+        else
+        {
+            movement *= Time.deltaTime * speed;
+        }
 
         controller.Move(movement);
     }

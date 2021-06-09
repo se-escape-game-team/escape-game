@@ -34,7 +34,15 @@ public class Timer : MonoBehaviour
         {
             defeatMessage.ShowDefeatMessage();
         }
-        timeLeft = timerText.text = ($"{(int)SaveScript.secondsLeft / 60:D2}:{(int)SaveScript.secondsLeft % 60:D2}");
+        if (!SaveScript.continueAfterDefeat)
+        {
+            timeLeft = timerText.text = ($"{(int)SaveScript.secondsLeft / 60:D2}:{(int)SaveScript.secondsLeft % 60:D2}");
+        }
+        else
+        {
+            timeLeft = timerText.text = ($"-{(int)SaveScript.secondsLeft / 60:D2}:{(int)SaveScript.secondsLeft % 60:D2}");
+        }
+        
     }
 }
 

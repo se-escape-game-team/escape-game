@@ -9,13 +9,12 @@ public class DoorUnlock : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hitObject;
 
-        if (Physics.Raycast(ray, out hitObject))
+        if (Physics.Raycast(ray, out hitObject) && !SaveScript.pause)
         {
             GameObject hitGameObject = hitObject.transform.gameObject;
             if (hitGameObject.name == "DoorAccess" && ClickInventoryItem.SelectedItemSprite== "KeyCard")
             {
                 // Tuer oeffnen
-                Debug.Log("Open Door");
                 SaveScript.doorIsOpen = true;
             }
         }

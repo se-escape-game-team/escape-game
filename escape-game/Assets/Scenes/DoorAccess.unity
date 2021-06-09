@@ -437,8 +437,8 @@ GameObject:
   - component: {fileID: 1033790606}
   - component: {fileID: 1033790605}
   m_Layer: 5
-  m_Name: Canvas
-  m_TagString: Untagged
+  m_Name: BackToLabCanvas
+  m_TagString: BackToLabButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1323,7 +1323,7 @@ GameObject:
   - component: {fileID: 1391271040}
   - component: {fileID: 1391271039}
   m_Layer: 5
-  m_Name: BacktoLab
+  m_Name: BacktoLabButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

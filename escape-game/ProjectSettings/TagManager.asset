@@ -12,6 +12,7 @@ TagManager:
   - Selectable - InventoryItem
   - HiddenLetter
   - BlinkingLight
+  - BackToLabButton
   layers:
   - Default
   - TransparentFX

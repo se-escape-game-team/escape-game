@@ -5,13 +5,25 @@ using UnityEngine;
 
 public class ShowSecretLetters : MonoBehaviour
 {
-    [SerializeField] TextMeshPro letter;
     [SerializeField] GameObject spotPapersTrigger;
+    [SerializeField] TextMeshPro[] letters;
 
     bool triggerActive = true;
+
+    private void Start()
+    {
+        for(int i = 0; i < SaveScript.letterVisible.Length; i++)
+        {
+            if (SaveScript.letterVisible[i])
+            {
+                letters[i].enabled = true;
+            }
+        }
+    }
+
     void Update()
     {
-        if (ClickInventoryItem.SelectedItemSprite == "Erlenmeyer")
+        if (ClickInventoryItem.SelectedItemSprite == "Erlenmeyer" && !SaveScript.pause)
         {
             // Deaktivieren des Triggers, damit die Objekte darunter getrackt werden
             spotPapersTrigger.SetActive(false);
@@ -23,10 +35,18 @@ public class ShowSecretLetters : MonoBehaviour
             if (Physics.Raycast(ray, out hitObject))
             {
                 GameObject hitGameObject = hitObject.transform.gameObject;
-                Debug.Log(hitGameObject);
                 if (hitGameObject.tag == "HiddenLetter")
                 {
                     hitGameObject.GetComponent<TextMeshPro>().enabled = true;
+
+                    // Speichern des sichbar gemachten Buchstaben
+                    for(int i = 0; i < letters.Length; i++)
+                    {
+                        if(hitGameObject.GetComponent<TextMeshPro>() == letters[i])
+                        {
+                            SaveScript.letterVisible[i] = true;
+                        }
+                    }
                 }
             }
         }

@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public static class SaveScript
 {
     /// <summary>
     /// Speichert die Position des Spielers (wird immer beim verlassen der Lab-Scene aktualisiert)
     /// </summary>
-    public static Vector3 playerPosition = new Vector3(2,2,-11);
+    public static Vector3 playerPosition = new Vector3(-1.2f, 2.6f , -1.9f);
 
     /// <summary>
     /// Speichert die Rotation des Spielers (wird immer beim verlassen der Lab-Scene aktualisiert)
@@ -99,4 +100,9 @@ public static class SaveScript
     /// Speichert ob der Spieler nach verlieren des Spiels weiterspielen will
     /// </summary>
     public static bool continueAfterDefeat = false;
+
+    /// <summary>
+    /// Speichert an welche Buchstaben sichtbar sind
+    /// </summary>
+    public static bool[] letterVisible = new bool[17];
 }

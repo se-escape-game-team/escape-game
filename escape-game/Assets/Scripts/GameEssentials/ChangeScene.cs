@@ -12,11 +12,9 @@ public class ChangeScene : MonoBehaviour
 
         // Speichern der Rotation des Spielers
         SaveScript.playerRotationY = GameObject.FindGameObjectWithTag("Player").transform.rotation.eulerAngles.y;
-        Debug.Log(SaveScript.playerRotationY);
 
         // Speichern der Rotation der Kamera
         SaveScript.camerRotationX = GameObject.FindGameObjectWithTag("MainCamera").transform.rotation.eulerAngles.x;
-        Debug.Log(SaveScript.camerRotationX);
 
         SceneManager.LoadScene(sceneName);
 

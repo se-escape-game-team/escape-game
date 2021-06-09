@@ -38,7 +38,7 @@ public class SelectObjects : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit raycastHit;
 
-        if (Physics.Raycast(ray, out raycastHit, distance))
+        if (Physics.Raycast(ray, out raycastHit, distance) && !SaveScript.pause)
         {
             GameObject hitObject = raycastHit.collider.gameObject;
             if (hitObject.tag == "Selectable - Item" && SaveScript.glassesCollected)

@@ -1,34 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class PauseMenuScript : MonoBehaviour
 {
-    public static bool pauseMenuAvailable = true;
-    public GameObject pauseMenuUI;
-    public GameObject overlay;
+    [SerializeField] private GameObject backgroundPanel;
+    [SerializeField] private GameObject pauseMenuUI;
+    [SerializeField] private GameObject overlay;
+    [SerializeField] private Text timeLeft;
 
-    private bool gameIsPaused = false;
+    public static bool pauseMenuAvailable = true;
+
+    private GameObject backToLabButton;
 
     private void Start()
     {
         // Deaktiviert das Pause-Menue beim Starten der Szene
         pauseMenuUI.SetActive(false);
+        backgroundPanel.SetActive(false);
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) && pauseMenuAvailable)
         {
-            if (gameIsPaused)
-            {
-                Resume();
-            }
-            else
+            if (!SaveScript.pause)
             {
                 Pause();
+                
             }
+            //else  // Gibt Fehler mit Cursor
+            //{
+            //    Resume();
+            //}
         }
     }
 
@@ -39,27 +45,57 @@ public class PauseMenuScript : MonoBehaviour
 
         // Deaktiviert das Pause-Menue
         pauseMenuUI.SetActive(false);
+        backgroundPanel.SetActive(false);
 
-        // Lockt den Cursor in der Mitte vom Bild
-        Cursor.lockState = CursorLockMode.Locked;
+        if(SceneManager.GetActiveScene().name == "Lab_Room")
+        {
+            // Lockt den Cursor in der Mitte vom Bild
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+
+        // Aktiviert den BackToLab-Button
+        
+        if (backToLabButton != null)
+        {
+            backToLabButton.SetActive(true);
+            backToLabButton = null;
+        }
 
         Time.timeScale = 1f;
-        gameIsPaused = false;
+        SaveScript.pause = false;
     }
 
     void Pause()
     {
+        // Aktualisieren der angezeigten uebrigen Zeit
+        if (!SaveScript.continueAfterDefeat)
+        {
+            timeLeft.text = $"Du hast noch {(int)SaveScript.secondsLeft / 60:D2}:{(int)SaveScript.secondsLeft % 60:D2} Minuten Zeit...";
+        }
+        else
+        {
+            timeLeft.text = $"Du bist {(int)SaveScript.secondsLeft / 60:D2}:{(int)SaveScript.secondsLeft % 60:D2} Minuten über der Zeit...";
+        }
+
+        // Deaktiviert den BackToLab-Button
+        backToLabButton = GameObject.FindGameObjectWithTag("BackToLabButton");
+        if(backToLabButton != null)
+        {
+            backToLabButton.SetActive(false);
+        }
+
         // Deaktiviert das Overlay
         overlay.SetActive(false);
         
         // Aktiviert das Pause-Menue
         pauseMenuUI.SetActive(true);
+        backgroundPanel.SetActive(true);
 
         // Schaltet den Cursor frei
         Cursor.lockState = CursorLockMode.Confined;
 
         Time.timeScale = 0f;
-        gameIsPaused = true;
+        SaveScript.pause = true;
     }
 
     public void QuitGame()
