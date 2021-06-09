@@ -8,13 +8,6 @@ public class VictoryText : MonoBehaviour
     public Text textArea;
     private string output;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         output = "";

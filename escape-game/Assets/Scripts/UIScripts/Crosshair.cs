@@ -5,15 +5,29 @@ using UnityEngine;
 public class Crosshair : MonoBehaviour
 {
     [SerializeField] private GameObject crosshair;
-    public void CheckIfEnabled()
+
+    private bool crosshairEnabled = false;
+    public bool CrosshairEnabled
     {
-        if (!SaveScript.inLabScene)
+        get
         {
-            crosshair.SetActive(false);
+            return crosshairEnabled;
         }
-        else
+        set
         {
-            crosshair.SetActive(true);
+            if(value == false)
+            {
+                Cursor.lockState = CursorLockMode.Confined;
+                Cursor.visible = true;
+                crosshair.SetActive(false);
+            }
+            else
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+                crosshair.SetActive(true);
+            }
+            crosshairEnabled = value;
         }
     }
 }

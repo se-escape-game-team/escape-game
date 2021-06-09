@@ -5,26 +5,23 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenuScript : MonoBehaviour
 {
-    [SerializeField] private SelectObjects selectObjects;
-    public static bool GameIsPaused;
-    public static bool PauseMenuAvailable;
+    public static bool pauseMenuAvailable = true;
     public GameObject pauseMenuUI;
-    public GameObject Overlay;
-    public GameObject startMessage;
+    public GameObject overlay;
+
+    private bool gameIsPaused = false;
 
     private void Start()
     {
+        // Deaktiviert das Pause-Menue beim Starten der Szene
         pauseMenuUI.SetActive(false);
-        GameIsPaused = false;
-        PauseMenuAvailable = true;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && PauseMenuAvailable)
+        if (Input.GetKeyDown(KeyCode.Escape) && pauseMenuAvailable)
         {
-            if (GameIsPaused)
+            if (gameIsPaused)
             {
                 Resume();
             }
@@ -37,31 +34,37 @@ public class PauseMenuScript : MonoBehaviour
 
     public void Resume()
     {
-        Overlay.SetActive(true);
-        GameIsPaused = false;
+        // Aktiviert das Overlay
+        overlay.SetActive(true);
+
+        // Deaktiviert das Pause-Menue
         pauseMenuUI.SetActive(false);
-        Time.timeScale = 1f;
+
+        // Lockt den Cursor in der Mitte vom Bild
         Cursor.lockState = CursorLockMode.Locked;
+
+        Time.timeScale = 1f;
+        gameIsPaused = false;
     }
 
     void Pause()
     {
-        Overlay.SetActive(false);
-        GameIsPaused = true;
-        Cursor.lockState = CursorLockMode.Confined;
+        // Deaktiviert das Overlay
+        overlay.SetActive(false);
+        
+        // Aktiviert das Pause-Menue
         pauseMenuUI.SetActive(true);
-        Time.timeScale = 0f;
-        startMessage.SetActive(false);
-    }
 
-    public void LoadMainMenu()
-    {
-        SceneManager.LoadScene("MainMenue");
+        // Schaltet den Cursor frei
+        Cursor.lockState = CursorLockMode.Confined;
+
+        Time.timeScale = 0f;
+        gameIsPaused = true;
     }
 
     public void QuitGame()
     {
-        Debug.Log("Quitting Game...");
+        Debug.Log("Spiel beenden.");
         Application.Quit();
     }
 }

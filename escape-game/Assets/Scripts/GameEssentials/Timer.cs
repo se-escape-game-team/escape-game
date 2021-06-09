@@ -5,18 +5,14 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    //Variables
-    public float minutes; // Input Unity
-    public float seconds; // Input Unity
+    public float minutes;
+    public float seconds;
     public Text timerText;
     public static string timeLeft;
     public DefeatMessageScript defeatMessage;
 
-    private float ticks;
     private bool play;
     private bool isTimeOver;
-
-
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +25,7 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (SaveScript.secondsLeft > 0 && play)
+        if (SaveScript.secondsLeft > 0 && play && !SaveScript.defeatMessageWasShown)
         {
             SaveScript.secondsLeft -= Time.deltaTime;
         }
@@ -40,15 +36,6 @@ public class Timer : MonoBehaviour
         }
 
         timeLeft = timerText.text = ($"{(int)SaveScript.secondsLeft / 60:D2}:{(int)SaveScript.secondsLeft % 60:D2}");
-    }
-
-    public void Pause()
-    {
-        play = false;
-    }
-    public void Play()
-    {
-        play = true;
     }
 }
 

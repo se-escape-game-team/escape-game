@@ -5,45 +5,28 @@ using UnityEngine.SceneManagement;
 
 public class DefeatMessageScript : MonoBehaviour
 {
-    public GameObject defeatMessage;
-    public GameObject crosshair;
-
-    void Start()
-    {
-        defeatMessage.SetActive(false);
-    }
-
-
-    // Update is called once per frame
-    void Update()
-    {
-
-        
-    }
+    [SerializeField] private Crosshair crosshair;
 
     public void ShowDefeatMessage()
     {
-        defeatMessage.SetActive(true);
-        crosshair.SetActive(false);
+        crosshair.CrosshairEnabled = false;
+        gameObject.SetActive(true);
         Time.timeScale = 0f;
-        Cursor.lockState = CursorLockMode.Confined;
-        Cursor.visible = true;
-        PauseMenuScript.PauseMenuAvailable = false;
+        PauseMenuScript.pauseMenuAvailable = false;
     }
 
     public void Resume()
     {
-        Debug.Log("test");
-        defeatMessage.SetActive(false);
-        crosshair.SetActive(true);
+        Debug.Log("Spiel weiterspielen");
+        SaveScript.defeatMessageWasShown = true;
+        gameObject.SetActive(false);
+        crosshair.CrosshairEnabled = true;
         Time.timeScale = 1f;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-        PauseMenuScript.PauseMenuAvailable = true;
+        PauseMenuScript.pauseMenuAvailable = true;
     }
 
     public void Quit()
-    {
+    { 
         SceneManager.LoadScene("Credits");
     }
 

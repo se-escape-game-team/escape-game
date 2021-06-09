@@ -7,10 +7,6 @@ public class ChangeScene : MonoBehaviour
 {
     public static void ChangeToTaskScene(string sceneName)
     {
-        Cursor.lockState = CursorLockMode.Confined;
-        Cursor.visible = true;
-        SaveScript.inLabScene = false;
-
         // Speichern der Spielerposition
         SaveScript.playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
 
@@ -24,15 +20,12 @@ public class ChangeScene : MonoBehaviour
 
         SceneManager.LoadScene(sceneName);
 
-        GameObject.Find("Overlay").GetComponent<Crosshair>().CheckIfEnabled();
+        GameObject.Find("Overlay").GetComponent<Crosshair>().CrosshairEnabled = false;
     }
 
     public static void ChangeSceneBackToLab()
-    {
-        Cursor.lockState = CursorLockMode.Locked;
-        SaveScript.inLabScene = true;
+    { 
         SceneManager.LoadScene("Lab_Room");
-
-        GameObject.Find("Overlay").GetComponent<Crosshair>().CheckIfEnabled();
+        GameObject.Find("Overlay").GetComponent<Crosshair>().CrosshairEnabled = true;
     }
 }

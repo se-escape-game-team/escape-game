@@ -4,31 +4,34 @@ using UnityEngine;
 
 public class StartMessageScript : MonoBehaviour
 {
-    public GameObject crosshair;
-    public GameObject pauseMenu;
+    public Crosshair crosshair;
 
     // Start is called before the first frame update
     void Start()
     {
+        // Ueberpruefen ob die Nachricht bereits angezeigt wurde
         if (!SaveScript.startMessageWasShown)
         {
-            Cursor.lockState = CursorLockMode.Confined;
-            Cursor.visible = true;
-            crosshair.SetActive(false);
-            gameObject.SetActive(true);
-            Time.timeScale = 0f;
-            PauseMenuScript.PauseMenuAvailable = false;
+            // Schalte Crosshair aus
+            crosshair.CrosshairEnabled = false;
 
+            // Halte Zeit an
+            Time.timeScale = 0f;
+
+            // Verweigere Zugriff auf Pause-Menue
+            PauseMenuScript.pauseMenuAvailable = false;
+
+            // Speichert, dass die Startnachricht angezeigt wurde
             SaveScript.startMessageWasShown = true;
         }
         else
         {
+            // Zeigt Nachricht nicht an und startet direkt die Szene
             gameObject.SetActive(false);
             Resume();
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -39,15 +42,16 @@ public class StartMessageScript : MonoBehaviour
 
     public void Resume()
     {
+        // Deaktiviert die Nachricht
         gameObject.SetActive(false);
-        crosshair.SetActive(true);
+
+        // Zeigt das Crosshair an
+        crosshair.CrosshairEnabled = true;
+
+        // Laestt die Zeit weiterlaufen
         Time.timeScale = 1f;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-        PauseMenuScript.PauseMenuAvailable = true;
+
+        // Schaltet das Pause-Menue frei
+        PauseMenuScript.pauseMenuAvailable = true;
     }
-
-
-
-
 }

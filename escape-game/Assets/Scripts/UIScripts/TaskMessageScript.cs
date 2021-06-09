@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class TaskMessageScript : MonoBehaviour
 {
-    // Start is called before the first frame update
     void Start()
     {
         gameObject.SetActive(true);
-        PauseMenuScript.PauseMenuAvailable = false;
+        PauseMenuScript.pauseMenuAvailable = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -23,10 +21,6 @@ public class TaskMessageScript : MonoBehaviour
     public void Resume()
     {
         gameObject.SetActive(false);
-        PauseMenuScript.PauseMenuAvailable = true;
+        PauseMenuScript.pauseMenuAvailable = true;
     }
-
-
-
-
 }

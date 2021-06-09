@@ -36,11 +36,6 @@ public static class SaveScript
     public static bool hintShown = false;
 
     /// <summary>
-    /// Gibt an ob die aktuelle Szene die Lab-Scene ist
-    /// </summary>
-    public static bool inLabScene = true;
-
-    /// <summary>
     /// Gibt an ob das Pause Menue an ist
     /// </summary>
     public static bool pause = false;
@@ -49,6 +44,11 @@ public static class SaveScript
     /// Gibt an ob die Startnachricht angezeigt wurde 
     /// </summary>
     public static bool startMessageWasShown = false;
+
+    /// <summary>
+    /// Gibt an ob die Defeatnachricht angezeigt wurde
+    /// </summary>
+    public static bool defeatMessageWasShown = false;
 
     /// <summary>
     /// Gibt an ob die Brille schon eigesammelt wurde.
