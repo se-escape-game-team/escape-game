@@ -15,12 +15,12 @@ public class Lockscreen : MonoBehaviour
 
     public void Start()
     {
-        username.text = SaveScript.Username;
-        if(SaveScript.Tries >= 3)
+        username.text = SaveScript.username;
+        if(SaveScript.tries >= 3)
         {
             hintButton.SetActive(true);
         }
-        if (SaveScript.HintShown)
+        if (SaveScript.hintShown)
         {
             hintText.SetActive(true);
         }
@@ -28,7 +28,7 @@ public class Lockscreen : MonoBehaviour
 
     public void Access()
     {
-        if(password.text == passwordString && username.text == SaveScript.Username)
+        if(password.text == passwordString && username.text == SaveScript.username)
         {
             Debug.Log("Anmeldung erfolgreich!");
             desktop.SetActive(true);
@@ -44,7 +44,7 @@ public class Lockscreen : MonoBehaviour
             {
                 password.textComponent.color = Color.black;
             }
-            if(username.text != SaveScript.Username)
+            if(username.text != SaveScript.username)
             {
                 username.textComponent.color = Color.red;
             }
@@ -53,14 +53,14 @@ public class Lockscreen : MonoBehaviour
                 username.textComponent.color = Color.black;
             }
 
-            SaveScript.Tries++;
+            SaveScript.tries++;
 
-            if (SaveScript.Tries >= 3)
+            if (SaveScript.tries >= 3)
             {
                 Debug.Log("Enable hint");
                 hintButton.SetActive(true);
             }
-            Debug.Log("Anmeldung fehlgeschlagen!" + SaveScript.Tries);
+            Debug.Log("Anmeldung fehlgeschlagen!" + SaveScript.tries);
         }
     }
 
@@ -68,6 +68,6 @@ public class Lockscreen : MonoBehaviour
     {
         Debug.Log("Show hint");
         hintText.SetActive(true);
-        SaveScript.HintShown = true;
+        SaveScript.hintShown = true;
     }
 }

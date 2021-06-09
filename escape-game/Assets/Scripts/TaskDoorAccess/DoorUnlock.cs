@@ -16,7 +16,7 @@ public class DoorUnlock : MonoBehaviour
             {
                 // Tuer oeffnen
                 Debug.Log("Open Door");
-                SaveScript.DoorIsOpen = true;
+                SaveScript.doorIsOpen = true;
             }
         }
     }

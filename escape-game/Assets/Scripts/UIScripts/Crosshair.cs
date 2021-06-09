@@ -7,7 +7,7 @@ public class Crosshair : MonoBehaviour
     [SerializeField] private GameObject crosshair;
     public void CheckIfEnabled()
     {
-        if (!SaveScript.InLabScene)
+        if (!SaveScript.inLabScene)
         {
             crosshair.SetActive(false);
         }

@@ -18,8 +18,8 @@ public class MovementPlayer : MonoBehaviour
     {
         // Setzen der gespeicherten Spieler-Position
         controller.enabled = false;
-        transform.position = SaveScript.PlayerPosition;
-        transform.rotation = Quaternion.Euler(0f, SaveScript.PlayerRotationY, 0f);
+        transform.position = SaveScript.playerPosition;
+        transform.rotation = Quaternion.Euler(0f, SaveScript.playerRotationY, 0f);
         controller.enabled = true;
     }
 

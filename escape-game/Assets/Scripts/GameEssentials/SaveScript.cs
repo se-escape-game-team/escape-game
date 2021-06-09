@@ -5,101 +5,65 @@ using UnityEngine.UI;
 
 public static class SaveScript
 {
-    // Speicher fuer Spielerposition
-    private static Vector3 playerPosition = new Vector3(2,2,-11);
-    public static Vector3 PlayerPosition
-    {
-        get => playerPosition;
-        set => playerPosition = value;
-    }
-
-    // Speicher fuer Rotation der Kamera
-    private static float camerRotationX = 0f;
-    public static float CamerRotationX
-    {
-        get => camerRotationX;
-        set => camerRotationX = value;
-    }
-
-    // Speichert fuer Rotation des Spielers
-    private static float playerRotationY = 3f;
-    public static float PlayerRotationY
-    {
-        get => playerRotationY;
-        set => playerRotationY = value;
-    }
-
-    // Speicher fuer Lockscreen
-    private static string username = "user";
-    public static string Username
-    {
-        get => username;
-        set => username = value;
-    }
-
-    private static int tries = 0;
-    public static int Tries
-    {
-        get => tries;
-        set => tries = value;
-    }
-
-    private static bool hintShown = false;
-    public static bool HintShown
-    {
-        get => hintShown;
-        set => hintShown = value;
-    }
-
-
-    // Weiteres Zeug
-    private static bool inLabScene = true;
-    public static bool InLabScene
-    {
-        get => inLabScene;
-        set => inLabScene = value;
-    }
+    /// <summary>
+    /// Speichert die Position des Spielers (wird immer beim verlassen der Lab-Scene aktualisiert)
+    /// </summary>
+    public static Vector3 playerPosition = new Vector3(2,2,-11);
 
     /// <summary>
-    /// Gibt an, ob das Pause Menue an ist
+    /// Speichert die Rotation des Spielers (wird immer beim verlassen der Lab-Scene aktualisiert)
+    /// </summary>
+    public static float playerRotationY = 3f;
+
+    /// <summary>
+    /// Speichert die Rotation der Spieler-Kamera (wird immer beim verlassen der Lab-Scene aktualisiert)
+    /// </summary>
+    public static float camerRotationX = 0f;
+
+    /// <summary>
+    /// Speicher fuer im Startmenue festgelegten Namen
+    /// </summary>
+    public static string username = "user";
+
+    /// <summary>
+    /// Speicher fuer die benoetigten Versuche zum Entsperren des Computers
+    /// </summary>
+    public static int tries = 0;
+
+    /// <summary>
+    /// Speichert ob der Tipp zum Herausfinden des Passworts fuer den PC angezeigt wurde
+    /// </summary>
+    public static bool hintShown = false;
+
+    /// <summary>
+    /// Gibt an ob die aktuelle Szene die Lab-Scene ist
+    /// </summary>
+    public static bool inLabScene = true;
+
+    /// <summary>
+    /// Gibt an ob das Pause Menue an ist
     /// </summary>
     public static bool pause = false;
 
-
-    private static bool startMessageWasShown = false;
-    public static bool StartMessageWasShown
-    {
-        get => startMessageWasShown;
-        set => startMessageWasShown = value;
-    }
-
+    /// <summary>
+    /// Gibt an ob die Startnachricht angezeigt wurde 
+    /// </summary>
+    public static bool startMessageWasShown = false;
 
     /// <summary>
-    /// Gibt an, ob die Brille schon eigesammelt wurde.
+    /// Gibt an ob die Brille schon eigesammelt wurde.
     /// </summary>
-    private static bool glassesCollected = false;
+    public static bool glassesCollected = false;
 
-    public static bool GlassesCollected
-    {
-        get => glassesCollected;
-        set => glassesCollected = value;
-    }
+    /// <summary>
+    /// Gibt an ob das Hangman-Minispiel gewonnen wurde
+    /// </summary>
+    public static bool hangmanWon = false;
 
-
-    private static bool hangmanWon = false;
-    public static bool HangmanWon
-    {
-        get => hangmanWon;
-        set => hangmanWon = value;
-    }
-
-
+    /// <summary>
+    /// Gibt an ob die Tuer geoeffnet wurde (also mit Karte entriegelt)
+    /// </summary>
     public static bool doorIsOpen = false;
-    public static bool DoorIsOpen
-    {
-        get => doorIsOpen;
-        set => doorIsOpen = value;
-    }
 
     /// <summary>
     /// Speicher fuer die Panel-Objekte im Inventar UI
@@ -130,11 +94,4 @@ public static class SaveScript
     /// Speichert die noch übrige Zeit in Sekunden
     /// </summary>
     public static float secondsLeft;
-
-    private static string name = Username;
-    public static string Name
-    {
-        get => name;
-        set => name = value;
-    }
 }

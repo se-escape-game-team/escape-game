@@ -112,7 +112,7 @@ public class PlayHangman : MonoBehaviour
         if (currentRound == rounds)
         {
             roundText.text = "Du hast gewonnen!";
-            SaveScript.HangmanWon = true;
+            SaveScript.hangmanWon = true;
         }
         else
         {

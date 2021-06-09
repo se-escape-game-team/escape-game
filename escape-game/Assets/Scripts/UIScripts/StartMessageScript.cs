@@ -10,7 +10,7 @@ public class StartMessageScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (!SaveScript.StartMessageWasShown)
+        if (!SaveScript.startMessageWasShown)
         {
             Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = true;
@@ -19,7 +19,7 @@ public class StartMessageScript : MonoBehaviour
             Time.timeScale = 0f;
             PauseMenuScript.PauseMenuAvailable = false;
 
-            SaveScript.StartMessageWasShown = true;
+            SaveScript.startMessageWasShown = true;
         }
         else
         {

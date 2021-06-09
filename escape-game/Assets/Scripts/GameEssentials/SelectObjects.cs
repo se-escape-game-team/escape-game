@@ -41,7 +41,7 @@ public class SelectObjects : MonoBehaviour
         if (Physics.Raycast(ray, out raycastHit, distance))
         {
             GameObject hitObject = raycastHit.collider.gameObject;
-            if (hitObject.tag == "Selectable - Item" && SaveScript.GlassesCollected)
+            if (hitObject.tag == "Selectable - Item" && SaveScript.glassesCollected)
             {
                 // Umrandet das einsammelbare Item
                 recentOutline = hitObject.GetComponent<Outline>();
@@ -57,7 +57,7 @@ public class SelectObjects : MonoBehaviour
                     Destroy(hitObject);
                 }
             }
-            else if (hitObject.tag == "Selectable - Task" && SaveScript.GlassesCollected)
+            else if (hitObject.tag == "Selectable - Task" && SaveScript.glassesCollected)
             {
                 // Umrandet das Objekt über das eine Aufgabe aufrufbar ist
                 recentOutline = hitObject.GetComponent<Outline>();
@@ -85,7 +85,7 @@ public class SelectObjects : MonoBehaviour
                 {
                     Camera.main.GetComponent<SnapshotMode>().enabled = false;
                     // Bool aktiviert, dass mit anderen selectable-Objekten (außer der Brille) interagiert werden kann
-                    SaveScript.GlassesCollected = true;
+                    SaveScript.glassesCollected = true;
                     Destroy(hitObject);
                 }
             }

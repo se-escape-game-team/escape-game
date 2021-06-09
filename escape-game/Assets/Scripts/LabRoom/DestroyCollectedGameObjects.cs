@@ -21,7 +21,7 @@ public class DestroyCollectedGameObjects : MonoBehaviour
         }
 
         // Zerstoeren der Brille, falls sie schon eigesammelt wurde
-        if (SaveScript.GlassesCollected)
+        if (SaveScript.glassesCollected)
         {
             Destroy(glasses);
         }

@@ -9,18 +9,18 @@ public class ChangeScene : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
-        SaveScript.InLabScene = false;
+        SaveScript.inLabScene = false;
 
         // Speichern der Spielerposition
-        SaveScript.PlayerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
+        SaveScript.playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
 
         // Speichern der Rotation des Spielers
-        SaveScript.PlayerRotationY = GameObject.FindGameObjectWithTag("Player").transform.rotation.eulerAngles.y;
-        Debug.Log(SaveScript.PlayerRotationY);
+        SaveScript.playerRotationY = GameObject.FindGameObjectWithTag("Player").transform.rotation.eulerAngles.y;
+        Debug.Log(SaveScript.playerRotationY);
 
         // Speichern der Rotation der Kamera
-        SaveScript.CamerRotationX = GameObject.FindGameObjectWithTag("MainCamera").transform.rotation.eulerAngles.x;
-        Debug.Log(SaveScript.CamerRotationX);
+        SaveScript.camerRotationX = GameObject.FindGameObjectWithTag("MainCamera").transform.rotation.eulerAngles.x;
+        Debug.Log(SaveScript.camerRotationX);
 
         SceneManager.LoadScene(sceneName);
 
@@ -30,7 +30,7 @@ public class ChangeScene : MonoBehaviour
     public static void ChangeSceneBackToLab()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        SaveScript.InLabScene = true;
+        SaveScript.inLabScene = true;
         SceneManager.LoadScene("Lab_Room");
 
         GameObject.Find("Overlay").GetComponent<Crosshair>().CheckIfEnabled();

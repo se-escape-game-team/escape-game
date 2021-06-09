@@ -23,7 +23,7 @@ public class AutomaticDoor : MonoBehaviour
     void Update()
     {
         //Debug.Log(movingDoor.transform.position);
-        if (SaveScript.DoorIsOpen)
+        if (SaveScript.doorIsOpen)
         {
             if (playerOnTrigger)
             {

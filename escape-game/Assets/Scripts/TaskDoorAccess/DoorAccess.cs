@@ -23,17 +23,17 @@ public class DoorAccess : MonoBehaviour
     void Update()
     {
         Material acessMaterial = doorAccess.GetComponent<MeshRenderer>().material;
-        if (SaveScript.doorIsOpen == false && SaveScript.HangmanWon == false)
+        if (SaveScript.doorIsOpen == false && SaveScript.hangmanWon == false)
         {
             // Farbe rot einstellen
             acessMaterial.SetColor("_EmissionColor", red);
         }
-        else if (SaveScript.doorIsOpen == false && SaveScript.HangmanWon == true)
+        else if (SaveScript.doorIsOpen == false && SaveScript.hangmanWon == true)
         {
             // Farbe orange einstellen
             acessMaterial.SetColor("_EmissionColor", orange);
         }
-        else if (SaveScript.doorIsOpen == true && SaveScript.HangmanWon == true)
+        else if (SaveScript.doorIsOpen == true && SaveScript.hangmanWon == true)
         {
             // Farbe gruen einstellen
             acessMaterial.SetColor("_EmissionColor", green);
