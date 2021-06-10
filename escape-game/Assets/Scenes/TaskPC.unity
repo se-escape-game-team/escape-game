@@ -292,7 +292,7 @@ GameObject:
   - component: {fileID: 170141701}
   - component: {fileID: 170141703}
   - component: {fileID: 170141702}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -367,7 +367,7 @@ GameObject:
   - component: {fileID: 175972731}
   - component: {fileID: 175972733}
   - component: {fileID: 175972732}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -590,7 +590,7 @@ GameObject:
   - component: {fileID: 261901383}
   - component: {fileID: 261901385}
   - component: {fileID: 261901384}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -672,7 +672,7 @@ GameObject:
   - component: {fileID: 377564657}
   - component: {fileID: 377564660}
   - component: {fileID: 377564661}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: HangmanApplication
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -838,7 +838,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 0
 --- !u!114 &394603447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1007,7 +1007,7 @@ GameObject:
   - component: {fileID: 434501072}
   - component: {fileID: 434501074}
   - component: {fileID: 434501073}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: HeadBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1167,7 +1167,7 @@ GameObject:
   - component: {fileID: 488813586}
   - component: {fileID: 488813585}
   - component: {fileID: 488813584}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: BrowserApplication
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1413,7 +1413,7 @@ GameObject:
   - component: {fileID: 589080107}
   - component: {fileID: 589080109}
   - component: {fileID: 589080108}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Placeholder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1575,7 +1575,7 @@ GameObject:
   - component: {fileID: 671260820}
   - component: {fileID: 671260822}
   - component: {fileID: 671260821}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1726,7 +1726,7 @@ GameObject:
   - component: {fileID: 768649850}
   - component: {fileID: 768649849}
   - component: {fileID: 768649848}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Desktop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1749,7 +1749,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 0
 --- !u!114 &768649849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1833,7 +1833,7 @@ GameObject:
   - component: {fileID: 806713847}
   - component: {fileID: 806713846}
   - component: {fileID: 806713849}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: SwitchOff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2588,7 +2588,7 @@ GameObject:
   - component: {fileID: 1132303023}
   - component: {fileID: 1132303025}
   - component: {fileID: 1132303024}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2663,7 +2663,7 @@ GameObject:
   - component: {fileID: 1178844296}
   - component: {fileID: 1178844298}
   - component: {fileID: 1178844297}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: NextWordText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2742,7 +2742,7 @@ GameObject:
   - component: {fileID: 1194338653}
   - component: {fileID: 1194338655}
   - component: {fileID: 1194338654}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2822,7 +2822,7 @@ GameObject:
   - component: {fileID: 1195387326}
   - component: {fileID: 1195387325}
   - component: {fileID: 1195387324}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: NextWord
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2955,7 +2955,7 @@ GameObject:
   - component: {fileID: 1207870615}
   - component: {fileID: 1207870614}
   - component: {fileID: 1207870613}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: InputField
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3097,7 +3097,7 @@ GameObject:
   - component: {fileID: 1225941945}
   - component: {fileID: 1225941947}
   - component: {fileID: 1225941946}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: BackgroundImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3160,7 +3160,7 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1225941944}
-  m_CullTransparentMesh: 1
+  m_CullTransparentMesh: 0
 --- !u!1 &1249531096
 GameObject:
   m_ObjectHideFlags: 0
@@ -3315,7 +3315,7 @@ GameObject:
   - component: {fileID: 1270503207}
   - component: {fileID: 1270503209}
   - component: {fileID: 1270503208}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: HangmanWord
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3396,7 +3396,7 @@ GameObject:
   - component: {fileID: 1303143442}
   - component: {fileID: 1303143441}
   - component: {fileID: 1303143440}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: BrowserButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3510,7 +3510,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 89dc803fe11d8324c84349aa9797193f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a6ae051b75456a6429a21269fa9ea762, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -3737,7 +3737,7 @@ GameObject:
   - component: {fileID: 1515057319}
   - component: {fileID: 1515057321}
   - component: {fileID: 1515057320}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3926,7 +3926,7 @@ GameObject:
   - component: {fileID: 1547635545}
   - component: {fileID: 1547635544}
   - component: {fileID: 1547635543}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: QuitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4058,7 +4058,7 @@ GameObject:
   - component: {fileID: 1562125068}
   - component: {fileID: 1562125070}
   - component: {fileID: 1562125069}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4133,7 +4133,7 @@ GameObject:
   - component: {fileID: 1626198269}
   - component: {fileID: 1626198271}
   - component: {fileID: 1626198270}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4292,7 +4292,7 @@ GameObject:
   - component: {fileID: 1730563631}
   - component: {fileID: 1730563630}
   - component: {fileID: 1730563629}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: QuitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4425,7 +4425,7 @@ GameObject:
   - component: {fileID: 1758233108}
   - component: {fileID: 1758233107}
   - component: {fileID: 1758233106}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Hangman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4689,7 +4689,7 @@ GameObject:
   - component: {fileID: 1967206798}
   - component: {fileID: 1967206800}
   - component: {fileID: 1967206799}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4769,7 +4769,7 @@ GameObject:
   - component: {fileID: 1993817318}
   - component: {fileID: 1993817317}
   - component: {fileID: 1993817316}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: BrowserTab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4870,7 +4870,7 @@ GameObject:
   - component: {fileID: 1997015885}
   - component: {fileID: 1997015884}
   - component: {fileID: 1997015883}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: TaskMessage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4981,7 +4981,7 @@ GameObject:
   - component: {fileID: 2036076327}
   - component: {fileID: 2036076329}
   - component: {fileID: 2036076328}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5063,7 +5063,7 @@ GameObject:
   - component: {fileID: 2085663949}
   - component: {fileID: 2085663951}
   - component: {fileID: 2085663950}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5142,7 +5142,7 @@ GameObject:
   - component: {fileID: 2142846944}
   - component: {fileID: 2142846946}
   - component: {fileID: 2142846945}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5337,7 +5337,7 @@ GameObject:
   - component: {fileID: 1248499325514445139}
   - component: {fileID: 1248499325514445148}
   - component: {fileID: 1248499325514445149}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: QuitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5416,7 +5416,7 @@ GameObject:
   - component: {fileID: 1248499326480034118}
   - component: {fileID: 1248499326480034116}
   - component: {fileID: 1248499326480034117}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}

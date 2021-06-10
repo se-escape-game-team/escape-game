@@ -29,7 +29,7 @@ public class PauseMenuScript : MonoBehaviour
             if (!SaveScript.pause)
             {
                 Pause();
-                
+
             }
             //else  // Gibt Fehler mit Cursor
             //{
