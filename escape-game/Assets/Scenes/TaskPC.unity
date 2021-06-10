@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1164,8 +1164,6 @@ GameObject:
   - component: {fileID: 488813589}
   - component: {fileID: 488813588}
   - component: {fileID: 488813587}
-  - component: {fileID: 488813586}
-  - component: {fileID: 488813585}
   - component: {fileID: 488813584}
   m_Layer: 6
   m_Name: BrowserApplication
@@ -1206,46 +1204,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13cf2536e762faf43b34c685bcac2ee5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &488813585
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 488813582}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53fd4451f7e13844ba479ea0253d07ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hangmanStates:
-  - {fileID: 21300000, guid: 0c249b8539f4d534186ef98a7791e377, type: 3}
-  - {fileID: 21300000, guid: 50229bd140ca21740bd0bc22cd31c975, type: 3}
-  - {fileID: 21300000, guid: b6d081a8187a04a46a400d455b33a0bf, type: 3}
-  - {fileID: 21300000, guid: e64a6cc6b3dae254b9dd41f03cbceca3, type: 3}
-  - {fileID: 21300000, guid: 5540f44d2b65a1e4ea7d47bafd2a68da, type: 3}
-  - {fileID: 21300000, guid: e58bef9dc9d85fd418c6c4e2226f89b6, type: 3}
-  - {fileID: 21300000, guid: 01970d03e5c20e14b8c67548b3ea6ed9, type: 3}
-  - {fileID: 21300000, guid: 04685d3e20575584a85a0863c6816c01, type: 3}
-  hangmanImage: {fileID: 0}
-  hangmanWord: {fileID: 0}
-  inputField: {fileID: 0}
-  nextWordButton: {fileID: 0}
-  nextWordButtonText: {fileID: 0}
-  roundText: {fileID: 0}
-  rounds: 5
---- !u!114 &488813586
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 488813582}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15a7b08dc3e013e48939b9146b072e79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &488813587
