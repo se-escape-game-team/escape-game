@@ -57,6 +57,11 @@ public static class SaveScript
     public static bool hangmanWon = false;
 
     /// <summary>
+    /// Gibt an ob der Safe entsperrt wurde
+    /// </summary>
+    public static bool safeOpen = false;
+
+    /// <summary>
     /// Gibt an ob die Tuer geoeffnet wurde (also mit Karte entriegelt)
     /// </summary>
     public static bool doorIsOpen = false;

@@ -9,7 +9,7 @@ public class Type : MonoBehaviour
     [SerializeField] private string password;
     [SerializeField] private MeshRenderer lightOk;
 
-    private float time = 2;
+    private float time = 0.5f;
     private bool finishScene = false;
 
     void Update()
@@ -41,6 +41,7 @@ public class Type : MonoBehaviour
                         if (CheckPassword())
                         {
                             lightOk.material.color = Color.green;
+                            SaveScript.safeOpen = true;
                             finishScene = true;
                         }
                         else
