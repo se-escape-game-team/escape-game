@@ -24,6 +24,5 @@ public class ChangeScene : MonoBehaviour
     public static void ChangeSceneBackToLab()
     { 
         SceneManager.LoadScene("Lab_Room");
-        GameObject.Find("Overlay").GetComponent<Crosshair>().CrosshairEnabled = true;
     }
 }

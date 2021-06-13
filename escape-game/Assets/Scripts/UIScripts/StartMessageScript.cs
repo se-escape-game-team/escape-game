@@ -20,9 +20,6 @@ public class StartMessageScript : MonoBehaviour
 
             // Verweigere Zugriff auf Pause-Menue
             PauseMenuScript.pauseMenuAvailable = false;
-
-            // Speichert, dass die Startnachricht angezeigt wurde
-            SaveScript.startMessageWasShown = true;
         }
         else
         {
@@ -36,6 +33,8 @@ public class StartMessageScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            // Speichert, dass die Startnachricht angezeigt wurde
+            SaveScript.startMessageWasShown = true;
             Resume();
         }
     }
