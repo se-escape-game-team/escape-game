@@ -10,6 +10,14 @@ public class LabRoomLoader : MonoBehaviour
     {
         // Ueberprueft ob die Items in der Szene schon eignesammelt wurden
         GameObject[] itemsInScene = GameObject.FindGameObjectsWithTag("Selectable - Item");
+
+
+        //foreach (GameObject item in itemsInScene)
+        //{
+        //    Debug.Log(item.name);
+        //}
+
+
         foreach (Sprite s in SaveScript.itemList)
         {
             foreach (GameObject item in itemsInScene)

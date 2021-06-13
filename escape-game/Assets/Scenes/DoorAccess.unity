@@ -246,9 +246,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorAccess: {fileID: 36382936}
-  red: {r: 255, g: 0, b: 0, a: 1}
-  orange: {r: 191, g: 146, b: 0, a: 1}
-  green: {r: 0.059707217, g: 0.7490196, b: 0, a: 1}
+  red: {r: 0.7490196, g: 0, b: 0, a: 0}
+  orange: {r: 0.7490196, g: 0.57254905, b: 0, a: 0}
+  green: {r: 0.059707217, g: 0.7490196, b: 0, a: 0}
 --- !u!1 &504115988
 GameObject:
   m_ObjectHideFlags: 0
