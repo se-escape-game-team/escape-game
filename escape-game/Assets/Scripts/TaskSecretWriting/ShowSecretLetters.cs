@@ -38,8 +38,6 @@ public class ShowSecretLetters : MonoBehaviour
                 if (hitGameObject.tag == "HiddenLetter")
                 {
                     hitGameObject.GetComponent<TextMeshPro>().enabled = true;
-                    Debug.Log(SaveScript.letterVisible.Length);
-                    Debug.Log(letters.Length);
                     // Speichern des sichbar gemachten Buchstaben
                     for(int i = 0; i < letters.Length; i++)
                     {

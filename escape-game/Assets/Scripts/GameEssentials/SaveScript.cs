@@ -57,6 +57,11 @@ public static class SaveScript
     public static bool hangmanWon = false;
 
     /// <summary>
+    /// Gibt an ob der Browser geoeffnet wurde
+    /// </summary>
+    public static bool browserOpen = false;
+
+    /// <summary>
     /// Gibt an ob der Safe entsperrt wurde
     /// </summary>
     public static bool safeOpen = false;
@@ -109,5 +114,5 @@ public static class SaveScript
     /// <summary>
     /// Speichert an welche Buchstaben sichtbar sind
     /// </summary>
-    public static bool[] letterVisible = new bool[17];
+    public static bool[] letterVisible = new bool[18];
 }

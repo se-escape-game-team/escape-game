@@ -25,7 +25,13 @@ public class DefeatMessageScript : MonoBehaviour
     }
 
     public void Quit()
-    { 
+    {
+        // Loesche alle Objekte die ueber Szenenwechsel hinweg leben
+        DontDestroyOnLoad[] dontDestroyObjects = GameObject.FindObjectsOfType<DontDestroyOnLoad>();
+        foreach(DontDestroyOnLoad d in dontDestroyObjects)
+        {
+            Destroy(d.gameObject);
+        }
         SceneManager.LoadScene("Credits");
     }
 }

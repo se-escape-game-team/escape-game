@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class StartMessageScript : MonoBehaviour
 {
-    public Crosshair crosshair;
+    private Crosshair crosshair;
 
     // Start is called before the first frame update
     void Start()
     {
+        crosshair = GameObject.Find("Overlay").GetComponent<Crosshair>();
         // Ueberpruefen ob die Nachricht bereits angezeigt wurde
         if (!SaveScript.startMessageWasShown)
         {
@@ -32,15 +33,16 @@ public class StartMessageScript : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
-        {
-            // Speichert, dass die Startnachricht angezeigt wurde
-            SaveScript.startMessageWasShown = true;
+        { 
             Resume();
         }
     }
 
     public void Resume()
     {
+        // Speichert, dass die Startnachricht angezeigt wurde
+        SaveScript.startMessageWasShown = true;
+
         // Deaktiviert die Nachricht
         gameObject.SetActive(false);
 

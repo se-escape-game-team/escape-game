@@ -6,6 +6,7 @@ public class LabRoomLoader : MonoBehaviour
 {
     [SerializeField] private GameObject glasses;
     [SerializeField] private GameObject safeDoor;
+    [SerializeField] private GameObject formelAmoniakwasser;
 
     void Start()
     {
@@ -36,6 +37,7 @@ public class LabRoomLoader : MonoBehaviour
             Destroy(glasses);
         }
 
+        // Oeffnen des Safes, falls er entsperrt wurde
         if (SaveScript.safeOpen)
         {
             // Oeffnen der Tuer
@@ -46,9 +48,16 @@ public class LabRoomLoader : MonoBehaviour
             safeDoor.transform.parent.GetComponent<BoxCollider>().enabled = false;
         }
 
+        // Einschalten des Crosshairs, falls die Startmessage schon eingeblendet wurde
         if (SaveScript.startMessageWasShown)
         {
             GameObject.Find("Overlay").GetComponent<Crosshair>().CrosshairEnabled = true;
+        }
+
+        // Falls der Browser bereits geoeffnet wurde wird die Formel fuer die Geheimtinte angezeigt
+        if (SaveScript.browserOpen)
+        {
+            formelAmoniakwasser.SetActive(true);
         }
     }
 }
