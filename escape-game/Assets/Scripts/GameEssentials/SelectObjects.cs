@@ -83,7 +83,6 @@ public class SelectObjects : MonoBehaviour
 
                 if (Input.GetMouseButtonDown(0))
                 {
-                    Camera.main.GetComponent<SnapshotMode>().enabled = false;
                     // Bool aktiviert, dass mit anderen selectable-Objekten (auﬂer der Brille) interagiert werden kann
                     SaveScript.glassesCollected = true;
                     Destroy(hitObject);
