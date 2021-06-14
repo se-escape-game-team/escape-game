@@ -13,7 +13,6 @@ TagManager:
   - HiddenLetter
   - BlinkingLight
   - BackToLabButton
-  - Selectable - LSD
   layers:
   - Default
   - TransparentFX

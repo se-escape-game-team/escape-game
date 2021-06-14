@@ -52,11 +52,6 @@ public static class SaveScript
     public static bool glassesCollected = false;
 
     /// <summary>
-    /// Gibt an ob man seine Drogen eingenommen hat
-    /// </summary>
-    public static bool lsdActivated = false;
-
-    /// <summary>
     /// Gibt an ob das Hangman-Minispiel gewonnen wurde
     /// </summary>
     public static bool hangmanWon = false;
