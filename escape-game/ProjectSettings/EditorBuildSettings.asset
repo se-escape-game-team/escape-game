@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DoorAccess.unity
     guid: e3e2d90abd97a0646b3ba65d6520b7dd
+  - enabled: 1
+    path: Assets/Scenes/TaskSecretInk.unity
+    guid: e396766bf275dda4a8e19e4a6619f75c
   m_configObjects: {}
