@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StartMessageScript : MonoBehaviour
 {
     private Crosshair crosshair;
+    [SerializeField] private Text usernameText;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +23,12 @@ public class StartMessageScript : MonoBehaviour
 
             // Verweigere Zugriff auf Pause-Menue
             PauseMenuScript.pauseMenuAvailable = false;
+
+            // Text für StartMessage mit Username und Timer-Zeit
+            usernameText.text = $@"Anscheinend ist etwas schiefgelaufen!Es gab eine Explosion!
+                                   Du befindest dich in einem hermetisch abgeriegelten Labor. Normalerweise beschäftigst Du, Professor Doktor {SaveScript.username}, Dich hier mit der Erforschung fremder Galaxien.
+                                   Bei der Untersuchung von Marsgestein ist Dir ein verheerender Fehler unterlaufen, das Labor wird Dir nur für {(int)SaveScript.secondsLeft/60} Minuten ausreichend Sauerstoff bieten. Löse alle Rätsel, um dich zu befreien!
+            Und dann ist da auch noch die KI …";                                
         }
         else
         {
