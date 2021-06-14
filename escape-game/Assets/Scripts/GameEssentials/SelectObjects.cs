@@ -52,14 +52,14 @@ public class SelectObjects : MonoBehaviour
 
                 if (Input.GetMouseButtonDown(0))
                 {
-                    // Fügt dem Inventar das eingesammelte Item hinzu (über das in ObjectImage.cs gespeicherte Sprite)
+                    // F?gt dem Inventar das eingesammelte Item hinzu (?ber das in ObjectImage.cs gespeicherte Sprite)
                     inventory.AddItem(hitObject.GetComponent<ObjectImage>().inventoryImage);
                     Destroy(hitObject);
                 }
             }
             else if (hitObject.tag == "Selectable - Task" && SaveScript.glassesCollected)
             {
-                // Umrandet das Objekt über das eine Aufgabe aufrufbar ist
+                // Umrandet das Objekt ?ber das eine Aufgabe aufrufbar ist
                 recentOutline = hitObject.GetComponent<Outline>();
                 recentOutline.OutlineColor = colorTasks;
                 recentOutline.OutlineWidth = outlineWidth;
@@ -68,7 +68,7 @@ public class SelectObjects : MonoBehaviour
 
                 if (Input.GetMouseButtonDown(0))
                 {
-                    // Läd die Aufgabenszene
+                    // L?d die Aufgabenszene
                     ChangeScene.ChangeToTaskScene(hitObject.name);
                 }
             }
@@ -83,14 +83,28 @@ public class SelectObjects : MonoBehaviour
 
                 if (Input.GetMouseButtonDown(0))
                 {
-                    // Bool aktiviert, dass mit anderen selectable-Objekten (außer der Brille) interagiert werden kann
+                    // Bool aktiviert, dass mit anderen selectable-Objekten (au?er der Brille) interagiert werden kann
                     SaveScript.glassesCollected = true;
                     Destroy(hitObject);
                 }
             }
+            else if (hitObject.tag == "Selectable - LightShift")
+            {
+                // Gibt der Brille eine Umrandung
+                recentOutline = hitObject.GetComponent<Outline>();
+                recentOutline.OutlineColor = colorTasks;
+                recentOutline.OutlineWidth = outlineWidth;
+                recentOutline.enabled = true;
+                wasHit = true;
+
+                if (Input.GetMouseButtonDown(0))
+                {
+                    
+                }
+            }
         }
 
-        // Setzt die Umrandung des zuvor anvisierten Objekts zurück
+        // Setzt die Umrandung des zuvor anvisierten Objekts zur?ck
         if (!wasHit && recentOutline != null)
         {
             recentOutline.enabled = false;
