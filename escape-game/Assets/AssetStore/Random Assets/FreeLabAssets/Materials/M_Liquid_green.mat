@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Liquid
+  m_Name: M_Liquid_green
   m_Shader: {fileID: 4800000, guid: d6fdb76b4397c4f3b8da322fc1a2716e, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -98,8 +98,8 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Color1: {r: 0.14901961, g: 0, b: 0.017290708, a: 0.5882353}
-    - _Color2: {r: 1, g: 0, b: 0.7569413, a: 0.5882353}
-    - _Color3: {r: 1, g: 1, b: 1, a: 0.5882353}
+    - _Color1: {r: 0, g: 0.14901961, b: 0.07536176, a: 0.5882353}
+    - _Color2: {r: 0.39695132, g: 1, b: 0, a: 0.5882353}
+    - _Color3: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
