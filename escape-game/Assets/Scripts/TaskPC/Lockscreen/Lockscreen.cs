@@ -26,6 +26,14 @@ public class Lockscreen : MonoBehaviour
         }
     }
 
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            Access();
+        }
+    }
+
     public void Access()
     {
         if(password.text == passwordString && username.text == SaveScript.username)
