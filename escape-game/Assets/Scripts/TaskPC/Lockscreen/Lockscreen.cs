@@ -14,7 +14,7 @@ public class Lockscreen : MonoBehaviour
     private string passwordString = "GeNiUS";
 
     public void Start()
-    {
+    {       
         username.text = SaveScript.username;
         if(SaveScript.tries >= 3)
         {
