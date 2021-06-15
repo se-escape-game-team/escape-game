@@ -23,7 +23,7 @@ public class ShowSecretLetters : MonoBehaviour
 
     void Update()
     {
-        if (ClickInventoryItem.SelectedItemSprite == "Erlenmeyer" && !SaveScript.pause)
+        if (ClickInventoryItem.SelectedItemSprite == "SecretLetterLiquid" && !SaveScript.pause)
         {
             // Deaktivieren des Triggers, damit die Objekte darunter getrackt werden
             spotPapersTrigger.SetActive(false);

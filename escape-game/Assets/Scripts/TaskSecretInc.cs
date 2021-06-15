@@ -13,7 +13,6 @@ public class TaskSecretInc : MonoBehaviour
 
     [SerializeField] Sprite ItemCup;
     [SerializeField] GameObject Cup;
-    [SerializeField] private Inventory inventory;
 
     //Verschiedene Flüssigkeiten im Glas
     [SerializeField] GameObject liquidHalf;
@@ -48,15 +47,17 @@ public class TaskSecretInc : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hitObject;
         Material liquidHalfMaterial = liquidHalf.GetComponent<MeshRenderer>().material;
-        if (!solved)
+        if (!solved && !SaveScript.pause)
         {
             if (Physics.Raycast(ray, out hitObject))
             {
                 GameObject hitGameObject = hitObject.transform.gameObject;
-                if (hitGameObject.name == "SpotCupTrigger" && ClickInventoryItem.SelectedItemSprite.Contains("Inc"))
+                if (hitGameObject.name == "Cup" && ClickInventoryItem.SelectedItemSprite.Contains("Inc"))
                 {
                     // Elementbezeichnung aus Sprite extrahieren
                     string[] spriteName = ClickInventoryItem.SelectedItemSprite.Split('_');
+                    Debug.Log(hitGameObject.name);
+
                     if (firstElement == null)
                     {
                         firstElement = spriteName[0];
@@ -100,22 +101,25 @@ public class TaskSecretInc : MonoBehaviour
 
                         }
                     }
-                    else if (firstElement != secondElement)
+                    else
                     {
                         secondElement = spriteName[0];
-                        //Richtige zusammensetzung: Erst NH3, dann H2O oder umgekehrt
-                        if ((firstElement == "NH3" && secondElement == "H2O") || (secondElement == "NH3" && firstElement == "H2O"))
+                        if (firstElement != secondElement)
                         {
-                            liquidHalf.SetActive(false);
-                            liquidRight.SetActive(true);
-                            addToInventorry.SetActive(true);
-                            solved = true;
-                        }
-                        else
-                        {
-                            liquidHalf.SetActive(false);
-                            liquidWrong.SetActive(true);
-                            retry.SetActive(true);
+                            //Richtige zusammensetzung: Erst NH3, dann H2O oder umgekehrt
+                            if ((firstElement == "NH3" && secondElement == "H2O") || (secondElement == "NH3" && firstElement == "H2O"))
+                            {
+                                liquidHalf.SetActive(false);
+                                liquidRight.SetActive(true);
+                                addToInventorry.SetActive(true);
+                                solved = true;
+                            }
+                            else
+                            {
+                                liquidHalf.SetActive(false);
+                                liquidWrong.SetActive(true);
+                                retry.SetActive(true);
+                            }
                         }
                     }
                 }
@@ -141,6 +145,7 @@ public class TaskSecretInc : MonoBehaviour
 
     public void AddToInventory()
     {
+        Inventory inventory = GameObject.FindObjectOfType<Inventory>();
         inventory.AddItem(ItemCup);
         Cup.SetActive(false);
         addToInventorry.SetActive(false);
