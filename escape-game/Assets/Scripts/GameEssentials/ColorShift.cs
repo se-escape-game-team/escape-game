@@ -7,6 +7,7 @@ public class ColorShift : MonoBehaviour
 {
     private ColorGrading colorGrading;
     bool up = true;
+    private float duration = 15;
 
     public void Start()
     {
@@ -16,22 +17,33 @@ public class ColorShift : MonoBehaviour
 
     void Update()
     {
-        if (colorGrading.hueShift.value >= 180)
+        if (SaveScript.lsdMode)
         {
-            up = false;
-        }
-        else if (colorGrading.hueShift.value <= 180)
-        {
-            up = true;
-        }
+            duration -= Time.deltaTime;
+            if (colorGrading.hueShift.value >= 180)
+            {
+                up = false;
+            }
+            else if (colorGrading.hueShift.value <= -180)
+            {
+                up = true;
+            }
 
-        if (up)
-        {
-            colorGrading.hueShift.value++;
-        }
-        else
-        {
-            colorGrading.hueShift.value--;
+            if (up)
+            {
+                colorGrading.hueShift.value = colorGrading.hueShift.value + (75 * Time.deltaTime);
+            }
+            else
+            {
+                colorGrading.hueShift.value = colorGrading.hueShift.value - (75 * Time.deltaTime);
+            }
+
+            if (duration <= 0)
+            {
+                duration = 15;
+                colorGrading.hueShift.value = 0;
+                SaveScript.lsdMode = false;
+            }
         }
     }
 }

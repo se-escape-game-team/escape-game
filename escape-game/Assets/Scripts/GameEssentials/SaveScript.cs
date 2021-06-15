@@ -52,6 +52,11 @@ public static class SaveScript
     public static bool glassesCollected = false;
 
     /// <summary>
+    /// Gibt an ob die Medizin genommen wurde
+    /// </summary>
+    public static bool lsdMode = false;
+
+    /// <summary>
     /// Gibt an ob das Hangman-Minispiel gewonnen wurde
     /// </summary>
     public static bool hangmanWon = false;
@@ -97,7 +102,7 @@ public static class SaveScript
     public static int currentItem0Position = 0;
 
     /// <summary>
-    /// Speichert die noch übrige Zeit in Sekunden
+    /// Speichert die noch ?brige Zeit in Sekunden
     /// </summary>
     public static float secondsLeft;
 

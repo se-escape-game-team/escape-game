@@ -99,7 +99,7 @@ public class SelectObjects : MonoBehaviour
 
                 if (Input.GetMouseButtonDown(0))
                 {
-                    
+                    SaveScript.lsdMode = true;
                 }
             }
         }
