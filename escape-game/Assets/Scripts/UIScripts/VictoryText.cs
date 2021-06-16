@@ -5,15 +5,28 @@ using UnityEngine.UI;
 
 public class VictoryText : MonoBehaviour
 {
-    public Text textArea;
-    private string output;
+    [SerializeField] Text textArea;
+    public GameObject message;
+    
+
+    void Start()
+    {
+        textArea.text = $"Herzlichen Glückwunsch {SaveScript.username}! Du hast es geschafft, aus dem Labor zu fliehen und die KI zu besiegen." +
+            $"Gut gemacht!" +
+            $"Übrige Zeit: {SaveScript.secondsLeft / 50}:{SaveScript.secondsLeft % 60}";
+    }
 
     void Update()
     {
-        output = "";
-        output += "Hallo xy, Deine verbleibende Zeit: \n";
-        output += Timer.timeLeft;
-        textArea.text = output;
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            gameObject.SetActive(false);
+        }
+    }
+
+    public void Resume()
+    {
+        gameObject.SetActive(false);
     }
 }
 
