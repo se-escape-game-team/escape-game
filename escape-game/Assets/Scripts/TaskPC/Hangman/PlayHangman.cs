@@ -16,11 +16,56 @@ public class PlayHangman : MonoBehaviour
     [SerializeField] private int rounds;
 
     // Array mit allen zur Auswahl stehenden Worten
-    private string[] words = { "Atmosphaere", "Marsmission", "Ich bin dumm", "Solarzelle", "Roboter", "Quantencomputer", "Raumanzug", "Satellit", "NASA", "Raumschiff", "Landekapsel", "WLAN", "SpaceX", "Software Engineering", "Escape Game", "Sauerstoff", "Tresor", "Erlenmeyerkolben" };
+    private string[] words =
+        {
+        "Atmosphaere",
+        "Marsmission",
+        "Ich bin dumm",
+        "Solarzelle",
+        "Raumanzug",
+        "Roboter",
+        "Quantencomputer",
+        "Satellit",
+        "NASA",
+        "Roskosmos",
+        "Raumschiff",
+        "Landekapsel",
+        "AntiFü",
+        "WLAN",
+        "SpaceX",
+        "Escape Game",
+        "Sauerstoff",
+        "Tresor",
+        "Erlenmeyerkolben",
+        "Computer",
+        "Code",
+        "Bug",
+        "Mond",
+        "Pluto",
+        "Saturn",
+        "Venus",
+        "Mars",
+        "Sonne",
+        "Erde",
+        "Sonnensystem",
+        "Milchstrasse",
+        "Merkur",
+        "Uranus",
+        "Aliens",
+        "Sterne",
+        "Ufo",
+        "Quantenphysik",
+        "Internet Explorer",
+        "Karl Klammer",
+        "Windows Vista",
+        "Elon Musk",
+        "Notebook",
+        "Raketentreibstoff"
+    };
 
     private int mistakes = 0;
     private int currentRound = 0;
-    
+
     private bool newRound = true;
     private bool sucess = true;
     private bool play = true;

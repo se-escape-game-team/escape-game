@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EndOfGame : MonoBehaviour
 {
@@ -17,7 +18,14 @@ public class EndOfGame : MonoBehaviour
         if (playerOnTrigger)
         {
             // ToDo Endscreen anzeigen und spiel beenden
-            Debug.Log("Beende das Spiel");
+            DontDestroyOnLoad[] dontDestroys = GameObject.FindObjectsOfType<DontDestroyOnLoad>();
+            foreach (DontDestroyOnLoad d in dontDestroys)
+            {
+                Destroy(d.gameObject);
+            }
+            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = true;
+            SceneManager.LoadScene("Victory");
         }
     }
 
