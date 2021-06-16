@@ -10,22 +10,9 @@ public class Type : MonoBehaviour
     [SerializeField] private MeshRenderer lightOk;
 
     private float time = 0.5f;
-    private bool finishScene = false;
 
     void Update()
     {
-        if (finishScene)
-        {
-            if (time >= 0)
-            {
-                time -= Time.deltaTime;
-            }
-            else
-            {
-                ChangeScene.ChangeSceneBackToLab();
-            }
-        }
-
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hitObject;
 
@@ -42,7 +29,6 @@ public class Type : MonoBehaviour
                         {
                             lightOk.material.color = Color.green;
                             SaveScript.safeOpen = true;
-                            finishScene = true;
                         }
                         else
                         {

@@ -31,10 +31,6 @@ public class PauseMenuScript : MonoBehaviour
                 Pause();
 
             }
-            //else  // Gibt Fehler mit Cursor
-            //{
-            //    Resume();
-            //}
         }
     }
 
@@ -93,6 +89,7 @@ public class PauseMenuScript : MonoBehaviour
 
         // Schaltet den Cursor frei
         Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
 
         Time.timeScale = 0f;
         SaveScript.pause = true;

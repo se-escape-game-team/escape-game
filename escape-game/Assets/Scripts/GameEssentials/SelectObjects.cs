@@ -24,7 +24,8 @@ public class SelectObjects : MonoBehaviour
     [SerializeField] private float distance = 5f;
     [SerializeField] private Color colorItems = new Color(250, 150, 0);
     [SerializeField] private Color colorTasks = new Color(0, 250, 255);
-    
+    [SerializeField] private Color colorGlasses = new Color(0, 250, 255);
+
     [SerializeField] private int outlineWidth = 10;
 
     [SerializeField] private Inventory inventory;
@@ -76,7 +77,7 @@ public class SelectObjects : MonoBehaviour
             {
                 // Gibt der Brille eine Umrandung
                 recentOutline = hitObject.GetComponent<Outline>();
-                recentOutline.OutlineColor = colorTasks;
+                recentOutline.OutlineColor = colorGlasses;
                 recentOutline.OutlineWidth = outlineWidth;
                 recentOutline.enabled = true;
                 wasHit = true;
