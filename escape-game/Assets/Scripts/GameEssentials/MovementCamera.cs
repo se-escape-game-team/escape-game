@@ -8,7 +8,7 @@ public class MovementCamera : MonoBehaviour
     public Slider slider;
     float sensitivity;
     public Transform playerBody;
-    
+
 
     float xRotation = 0;
 
@@ -23,7 +23,7 @@ public class MovementCamera : MonoBehaviour
         float mouseY = Input.GetAxis("Mouse Y") * Time.deltaTime * sensitivity;
 
         xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+        xRotation = Mathf.Clamp(xRotation, -90f - SaveScript.camerRotationX, 90f - SaveScript.camerRotationX);
 
         transform.localRotation = Quaternion.Euler(xRotation + SaveScript.camerRotationX, 0f, 0);
         playerBody.Rotate(0, mouseX, 0);
@@ -31,5 +31,5 @@ public class MovementCamera : MonoBehaviour
         sensitivity = slider.value;
     }
 
-    
+
 }

@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class EndOfGame : MonoBehaviour
 {
-    public GameObject endGame;
-
     bool playerOnTrigger;
     // Start is called before the first frame update
     void Start()
@@ -19,6 +17,7 @@ public class EndOfGame : MonoBehaviour
         if (playerOnTrigger)
         {
             // ToDo Endscreen anzeigen und spiel beenden
+            Debug.Log("Beende das Spiel");
         }
     }
 
