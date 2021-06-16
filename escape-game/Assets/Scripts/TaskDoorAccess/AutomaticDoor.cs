@@ -22,30 +22,27 @@ public class AutomaticDoor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(movingDoor.transform.position);
         if (SaveScript.doorIsOpen)
         {
             if (playerOnTrigger)
             {
-                //Debug.Log("blala");
-                if (movingDoor.transform.position.x < maximumOpening + originX)
+
+                if (movingDoor.transform.position.x < maximumOpening + originX) // Tuer oeffnet sich
                 {
-                    //Debug.Log("Tür öffnen");
                     movingDoor.transform.Translate(0f, 0f, movementSpeed * Time.deltaTime);
                 }
             }
             else
             {
-                if (movingDoor.transform.position.x > originX)
+                if (movingDoor.transform.position.x > originX) // Tuer schliesst sich
                 {
-                    //Debug.Log("Tür schließen");
                     movingDoor.transform.Translate(0f, 0f, -movementSpeed * Time.deltaTime);
                 }
             }
         }
     }
 
-    private void OnTriggerEnter(Collider col)
+    private void OnTriggerEnter(Collider col) // Spieler betritt Trigger
     {
         if (col.gameObject.tag == "Player")
         {
@@ -53,7 +50,7 @@ public class AutomaticDoor : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider col)
+    private void OnTriggerExit(Collider col) // Spieler verlässtTrigger
     {
         if (col.gameObject.tag == "Player")
         {
