@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class PlayHangman : MonoBehaviour
 {
@@ -90,6 +91,9 @@ public class PlayHangman : MonoBehaviour
 
     private void Update()
     {
+
+        EventSystem.current.SetSelectedGameObject(inputField.gameObject, null);
+
         // Wird nur ausgefuehrt wenn eine neue Runde gestartet werden soll
         if (newRound)
         {
