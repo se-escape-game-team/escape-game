@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -789,14 +789,14 @@ MonoBehaviour:
   hangmanStates:
   - {fileID: 21300000, guid: 9b8d24473e024ce41a8be2f2cd2cf7a7, type: 3}
   - {fileID: 21300000, guid: ea14b24ca9b15874f92bc9485c101650, type: 3}
-  - {fileID: 21300000, guid: 0c249b8539f4d534186ef98a7791e377, type: 3}
-  - {fileID: 21300000, guid: 50229bd140ca21740bd0bc22cd31c975, type: 3}
   - {fileID: 21300000, guid: b6d081a8187a04a46a400d455b33a0bf, type: 3}
   - {fileID: 21300000, guid: e64a6cc6b3dae254b9dd41f03cbceca3, type: 3}
   - {fileID: 21300000, guid: 5540f44d2b65a1e4ea7d47bafd2a68da, type: 3}
   - {fileID: 21300000, guid: e58bef9dc9d85fd418c6c4e2226f89b6, type: 3}
   - {fileID: 21300000, guid: 01970d03e5c20e14b8c67548b3ea6ed9, type: 3}
   - {fileID: 21300000, guid: 04685d3e20575584a85a0863c6816c01, type: 3}
+  - {fileID: 21300000, guid: 65b29bbcff51f4600a13f0b51b9dcda8, type: 3}
+  - {fileID: 21300000, guid: 3f3927ff14ed0428b8c2694094192858, type: 3}
   hangmanImage: {fileID: 671260821}
   hangmanWord: {fileID: 1270503208}
   inputField: {fileID: 1207870613}

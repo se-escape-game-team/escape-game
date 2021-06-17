@@ -31,7 +31,7 @@ public class PlayHangman : MonoBehaviour
         "Roskosmos",
         "Raumschiff",
         "Landekapsel",
-        "AntiFü",
+        "AntiFue",
         "WLAN",
         "SpaceX",
         "Escape Game",
@@ -62,7 +62,7 @@ public class PlayHangman : MonoBehaviour
         "Elon Musk",
         "Notebook",
         "Raketentreibstoff",
-        "Desoxyribonukleinsäure",
+        "Desoxyribonukleinsaeure",
         "Adenosintriphosphat",
         "Watson",
         "Sherlock"
@@ -79,7 +79,7 @@ public class PlayHangman : MonoBehaviour
     private char[] hiddenWord;
 
     /// <summary>
-    /// Setzt das Spiel komplett zurück
+    /// Setzt das Spiel komplett zur?ck
     /// </summary>
     public void ResetHangman()
     {
@@ -97,7 +97,7 @@ public class PlayHangman : MonoBehaviour
         // Wird nur ausgefuehrt wenn eine neue Runde gestartet werden soll
         if (newRound)
         {
-            // Setzt alle für die naechste Runde benoetigten Komponenten zurueck
+            // Setzt alle f?r die naechste Runde benoetigten Komponenten zurueck
             mistakes = 0;
             hangmanImage.sprite = hangmanStates[0];
             roundText.text = $"Round {currentRound + 1}/{rounds}";
@@ -174,7 +174,7 @@ public class PlayHangman : MonoBehaviour
     }
 
     /// <summary>
-    /// Methode für NextRoundButton, startet die neue Runde.
+    /// Methode f?r NextRoundButton, startet die neue Runde.
     /// </summary>
     public void NextRound()
     {
@@ -190,7 +190,7 @@ public class PlayHangman : MonoBehaviour
     }
 
     /// <summary>
-    /// Überprüft ob der eingegebene Character im Wort vorhanden ist und setzt diesen im HiddenWord ein.
+    /// ?berpr?ft ob der eingegebene Character im Wort vorhanden ist und setzt diesen im HiddenWord ein.
     /// </summary>
     /// <param name="c"></param>
     /// <returns></returns>
@@ -219,7 +219,7 @@ public class PlayHangman : MonoBehaviour
     }
 
     /// <summary>
-    /// Versteckt alle Buchstaben des Wortes und weißt sie HiddenWord zu.
+    /// Versteckt alle Buchstaben des Wortes und wei?t sie HiddenWord zu.
     /// </summary>
     /// <param name="word"></param>
     /// <returns></returns>
