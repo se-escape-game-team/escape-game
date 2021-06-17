@@ -9,7 +9,7 @@ public class Type : MonoBehaviour
     [SerializeField] private string password;
     [SerializeField] private MeshRenderer lightOk;
 
-    private float time = 0.5f;
+    //private float time = 0.5f;
 
     void Update()
     {

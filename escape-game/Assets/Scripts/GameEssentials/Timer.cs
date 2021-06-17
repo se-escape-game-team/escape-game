@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    public float minutes;
-    public float seconds;
+    //public float minutes;
+    //public float seconds;
     public Text timerText;
     public static string timeLeft;
     public DefeatMessageScript defeatMessage;
@@ -15,7 +15,7 @@ public class Timer : MonoBehaviour
     {
         if (!SaveScript.timeSet)
         {
-            SaveScript.secondsLeft = minutes * 60 + seconds;
+            //SaveScript.secondsLeft = minutes * 60 + seconds;
             SaveScript.timeSet = true;
         }
     }

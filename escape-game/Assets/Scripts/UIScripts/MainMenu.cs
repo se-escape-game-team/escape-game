@@ -11,6 +11,10 @@ public class MainMenu : MonoBehaviour
     public GameObject errorNameNull;
     string username;
     bool isNameValid;
+    public Dropdown difficutly;
+    
+    
+    
     
     public string Username
     {
@@ -30,10 +34,25 @@ public class MainMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (userField != null && userField.text != null)
         {
             username = UserInput();
-        } 
+        }
+
+        int input = difficutly.value;
+        switch (input)
+        {
+            case 0: SaveScript.secondsLeft = 25 * 60;
+                break;
+            case 1:
+                SaveScript.secondsLeft = 20 * 60;
+                break;
+            case 2:
+                SaveScript.secondsLeft = 15 * 60;
+                break;
+            default: throw new System.IndexOutOfRangeException();
+        }
     }
 
     string UserInput()

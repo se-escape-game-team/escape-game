@@ -1,14 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StartMessageScript : MonoBehaviour
 {
     private Crosshair crosshair;
+    [SerializeField] private Text text;
 
     // Start is called before the first frame update
     void Start()
     {
+        text.text = $@"Anscheinend ist etwas schiefgelaufen! Es gab eine Explosion!
+
+Du befindest dich in einem hermetisch abgeriegelten Labor. Normalerweise beschäftigst Du, Professor Doktor {SaveScript.username}, Dich hier mit der Erforschung fremder Galaxien.
+
+Bei der Untersuchung von Marsgestein ist Dir ein verheerender Fehler unterlaufen, das Labor wird Dir nur für {MainMenu.time/60} Minuten ausreichend Sauerstoff bieten. Löse alle Rätsel, um dich zu befreien!
+
+Und dann ist da auch noch die KI …";
+
         crosshair = GameObject.Find("Overlay").GetComponent<Crosshair>();
         // Ueberpruefen ob die Nachricht bereits angezeigt wurde
         if (!SaveScript.startMessageWasShown)
