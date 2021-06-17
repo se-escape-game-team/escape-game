@@ -40,18 +40,22 @@ public class MainMenu : MonoBehaviour
             username = UserInput();
         }
 
-        int input = difficutly.value;
-        switch (input)
+        if (difficutly != null)
         {
-            case 0: SaveScript.secondsLeft = 25 * 60;
-                break;
-            case 1:
-                SaveScript.secondsLeft = 20 * 60;
-                break;
-            case 2:
-                SaveScript.secondsLeft = 15 * 60;
-                break;
-            default: throw new System.IndexOutOfRangeException();
+            int input = difficutly.value;
+            switch (input)
+            {
+                case 0:
+                    SaveScript.secondsLeft = 25 * 60 + 1;
+                    break;
+                case 1:
+                    SaveScript.secondsLeft = 20 * 60 + 1;
+                    break;
+                case 2:
+                    SaveScript.secondsLeft = 15 * 60 + 1;
+                    break;
+                default: throw new System.IndexOutOfRangeException();
+            }
         }
     }
 

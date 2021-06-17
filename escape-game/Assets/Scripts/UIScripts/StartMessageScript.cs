@@ -15,7 +15,7 @@ public class StartMessageScript : MonoBehaviour
 
 Du befindest dich in einem hermetisch abgeriegelten Labor. Normalerweise beschäftigst Du, Professor Doktor {SaveScript.username}, Dich hier mit der Erforschung fremder Galaxien.
 
-Bei der Untersuchung von Marsgestein ist Dir ein verheerender Fehler unterlaufen, das Labor wird Dir nur für {MainMenu.time/60} Minuten ausreichend Sauerstoff bieten. Löse alle Rätsel, um dich zu befreien!
+Bei der Untersuchung von Marsgestein ist Dir ein verheerender Fehler unterlaufen, das Labor wird Dir nur für {SaveScript.secondsLeft / 60} Minuten ausreichend Sauerstoff bieten. Löse alle Rätsel, um dich zu befreien!
 
 Und dann ist da auch noch die KI …";
 
@@ -43,7 +43,7 @@ Und dann ist da auch noch die KI …";
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
-        { 
+        {
             Resume();
         }
     }

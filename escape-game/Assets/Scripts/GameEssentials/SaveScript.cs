@@ -104,7 +104,7 @@ public static class SaveScript
     /// <summary>
     /// Speichert die noch ?brige Zeit in Sekunden
     /// </summary>
-    public static float secondsLeft;
+    public static float secondsLeft = 300;
 
     /// <summary>
     /// Gibt an ob die Zeit des Timers schon gesetzt wurde
