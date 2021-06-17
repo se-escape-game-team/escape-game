@@ -262,14 +262,28 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 50
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Ein Spiel von:\nAnnika Bangert \nJoshua Brandes\nFelix Bauer\nLukas Lindner\nAlexander
-    Linz\nMichael Zottmann\n"
+  m_Text: 'Ein Spiel von:
+
+    Annika Bangert
+
+    Felix Bauer
+
+    Joshua Brandes
+
+    Lukas
+    Lindner
+
+    Alexander Linz
+
+    Michael Zottmann
+
+'
 --- !u!222 &171317123
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -47,6 +47,7 @@ public class PauseMenuScript : MonoBehaviour
         {
             // Lockt den Cursor in der Mitte vom Bild
             Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
 
         // Aktiviert den BackToLab-Button

@@ -6,21 +6,37 @@ using UnityEngine.SceneManagement;
 public class DefeatMessageScript : MonoBehaviour
 {
     [SerializeField] private Crosshair crosshair;
+    [SerializeField] private GameObject[] content;
 
+    private void Start()
+    {
+        foreach (GameObject g in content)
+        {
+            g.SetActive(false);
+        }
+    }
     public void ShowDefeatMessage()
     {
         crosshair.CrosshairEnabled = false;
-        gameObject.SetActive(true);
+        foreach(GameObject g in content)
+        {
+            g.SetActive(true);
+        }
         Time.timeScale = 0f;
+        SaveScript.pause = true;
         PauseMenuScript.pauseMenuAvailable = false;
     }
 
     public void Resume()
     {
         SaveScript.continueAfterDefeat = true;
-        gameObject.SetActive(false);
+        foreach (GameObject g in content)
+        {
+            g.SetActive(false);
+        }
         crosshair.CrosshairEnabled = true;
         Time.timeScale = 1f;
+        SaveScript.pause = false;
         PauseMenuScript.pauseMenuAvailable = true;
     }
 
