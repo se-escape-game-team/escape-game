@@ -787,6 +787,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hangmanStates:
+  - {fileID: 21300000, guid: 9b8d24473e024ce41a8be2f2cd2cf7a7, type: 3}
+  - {fileID: 21300000, guid: ea14b24ca9b15874f92bc9485c101650, type: 3}
   - {fileID: 21300000, guid: 0c249b8539f4d534186ef98a7791e377, type: 3}
   - {fileID: 21300000, guid: 50229bd140ca21740bd0bc22cd31c975, type: 3}
   - {fileID: 21300000, guid: b6d081a8187a04a46a400d455b33a0bf, type: 3}

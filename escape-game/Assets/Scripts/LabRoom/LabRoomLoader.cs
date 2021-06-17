@@ -7,18 +7,18 @@ public class LabRoomLoader : MonoBehaviour
     [SerializeField] private GameObject glasses;
     [SerializeField] private GameObject safeDoor;
     [SerializeField] private GameObject formelAmoniakwasser;
+    private Crosshair crosshair;
 
     void Start()
     {
+        if (SaveScript.startMessageWasShown)
+        {
+            crosshair = GameObject.FindObjectOfType<Crosshair>();
+            crosshair.CrosshairEnabled = true;
+        }
+
         // Ueberprueft ob die Items in der Szene schon eignesammelt wurden
         GameObject[] itemsInScene = GameObject.FindGameObjectsWithTag("Selectable - Item");
-
-
-        //foreach (GameObject item in itemsInScene)
-        //{
-        //    Debug.Log(item.name);
-        //}
-
 
         foreach (Sprite s in SaveScript.itemList)
         {

@@ -60,7 +60,11 @@ public class PlayHangman : MonoBehaviour
         "Windows Vista",
         "Elon Musk",
         "Notebook",
-        "Raketentreibstoff"
+        "Raketentreibstoff",
+        "Desoxyribonukleinsäure",
+        "Adenosintriphosphat",
+        "Watson",
+        "Sherlock"
     };
 
     private int mistakes = 0;
@@ -94,7 +98,6 @@ public class PlayHangman : MonoBehaviour
             hangmanImage.sprite = hangmanStates[0];
             roundText.text = $"Round {currentRound + 1}/{rounds}";
             currentWord = ChoseWord();
-            Debug.Log(currentWord);
             hiddenWord = HideWord(currentWord);
             hangmanWord.text = new string(hiddenWord);
             newRound = false;
@@ -140,6 +143,7 @@ public class PlayHangman : MonoBehaviour
     {
         sucess = false;
         play = false;
+        hangmanWord.text = currentWord;
         nextWordButtonText.text = "Neues Spiel starten";
         nextWordButton.SetActive(true);
     }
