@@ -37968,7 +37968,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1379437440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37981,6 +37981,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26185008fde5f0e49b016d4bb8effab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hint: {fileID: 1379437439}
 --- !u!114 &1379437441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38040,7 +38041,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &1379437444
 RectTransform:
@@ -47444,7 +47445,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Leider verloren! \nVersuche es gerne nochmal!\n"
+  m_Text: "Komisch, ich sehe so schlecht. Meine Brille muss wohl bei der Explosion
+    kaputt gegangen sein. Irgendwo hatte ich doch meine Arbeitsbrille abgelegt \u2026"
 --- !u!222 &1673174524
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -4,20 +4,21 @@ using UnityEngine;
 
 public class GlassesHintScript : MonoBehaviour
 {
-    float time;
+    [SerializeField] GameObject hint;
+
     // Start is called before the first frame update
     void Start()
     {
-        gameObject.SetActive(false);
-        time = SaveScript.secondsLeft;
+        //gameObject.SetActive(false);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (SaveScript.secondsLeft < time * 0.99)
+        if (Input.GetKey(KeyCode.Alpha1))
         {
-            gameObject.SetActive(true);
+            hint.SetActive(true);
             Debug.Log("löajsdf");
         }
     }
