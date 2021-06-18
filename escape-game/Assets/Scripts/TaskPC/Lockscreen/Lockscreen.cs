@@ -14,9 +14,9 @@ public class Lockscreen : MonoBehaviour
     private string passwordString = "GeNiUS";
 
     public void Start()
-    {       
+    {
         username.text = SaveScript.username;
-        if(SaveScript.tries >= 3)
+        if (SaveScript.tries >= 3)
         {
             hintButton.SetActive(true);
         }
@@ -36,15 +36,15 @@ public class Lockscreen : MonoBehaviour
 
     public void Access()
     {
-        if(password.text == passwordString && username.text == SaveScript.username)
+        if (password.text == passwordString && username.text == SaveScript.username)
         {
             Debug.Log("Anmeldung erfolgreich!");
             desktop.SetActive(true);
-            this.enabled = false;
+            gameObject.SetActive(false);
         }
         else
         {
-            if(password.text != passwordString)
+            if (password.text != passwordString)
             {
                 password.textComponent.color = Color.red;
             }
@@ -52,7 +52,7 @@ public class Lockscreen : MonoBehaviour
             {
                 password.textComponent.color = Color.black;
             }
-            if(username.text != SaveScript.username)
+            if (username.text != SaveScript.username)
             {
                 username.textComponent.color = Color.red;
             }
