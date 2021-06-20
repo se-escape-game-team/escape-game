@@ -34812,6 +34812,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.495999, y: 1.012002, z: 0.677951}
   m_Center: {x: -0.2679995, y: 0, z: 0.33898854}
+--- !u!1 &1283582622 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 69c26a941c079874988f990a50c935be, type: 3}
+  m_PrefabInstance: {fileID: 2105718255}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1283582623
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1283582622}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 69c26a941c079874988f990a50c935be, type: 3}
 --- !u!1 &1287796930
 GameObject:
   m_ObjectHideFlags: 0
@@ -43883,6 +43902,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4728973355736244, guid: 2673d10920a9a4e1e8ea3928e8e90043, type: 3}
   m_PrefabInstance: {fileID: 1547031870}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1547097909 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100004, guid: 69c26a941c079874988f990a50c935be, type: 3}
+  m_PrefabInstance: {fileID: 2105718255}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1547097910
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547097909}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300002, guid: 69c26a941c079874988f990a50c935be, type: 3}
 --- !u!1 &1549487942
 GameObject:
   m_ObjectHideFlags: 0
@@ -52737,7 +52775,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1793344299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52751,7 +52789,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crosshair: {fileID: 255910403}
-  content: []
+  content:
+  - {fileID: 1657039916}
+  - {fileID: 1987426942}
 --- !u!114 &1793344300
 MonoBehaviour:
   m_ObjectHideFlags: 0
