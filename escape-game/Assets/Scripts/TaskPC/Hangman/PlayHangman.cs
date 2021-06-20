@@ -225,6 +225,7 @@ public class PlayHangman : MonoBehaviour
     /// <returns></returns>
     private char[] HideWord(string word)
     {
+        Debug.Log(word);
         char[] hiddenWord = new char[currentWord.Length];
         for (int i = 0; i < hiddenWord.Length; i++)
         {

@@ -13,6 +13,9 @@ public class Lockscreen : MonoBehaviour
 
     private string passwordString = "GeNiUS";
 
+    private string passwordWrong = null;
+    private string usernameWrong = null;
+
     public void Start()
     {
         username.text = SaveScript.username;
@@ -28,6 +31,23 @@ public class Lockscreen : MonoBehaviour
 
     public void Update()
     {
+        // Wenn ein Buchstabe vom falschen Passwort oder uUername geaendert wird soll der Text wieder in Farbe schwarz geschrieben sein
+        if(passwordWrong != null)
+        {
+            if(password.text != passwordWrong)
+            {
+                password.textComponent.color = Color.black;
+            }
+        }
+        if(usernameWrong != null)
+        {
+            if(username.text != usernameWrong)
+            {
+                username.textComponent.color = Color.black;
+            }
+        }
+
+        // Wird die Enter-Taste gedruckt soll der Anmeldevorgang gestartet werden
         if (Input.GetKeyDown(KeyCode.Return))
         {
             Access();
@@ -47,6 +67,8 @@ public class Lockscreen : MonoBehaviour
             if (password.text != passwordString)
             {
                 password.textComponent.color = Color.red;
+                // Speichern des faschen Passworts zum aendern der Schriftfarbe wenn eine Aenderung vorgenommen wurde
+                passwordWrong = password.text;
             }
             else
             {
@@ -55,6 +77,8 @@ public class Lockscreen : MonoBehaviour
             if (username.text != SaveScript.username)
             {
                 username.textComponent.color = Color.red;
+                // Speichern des faschen Usernames zum aendern der Schriftfarbe wenn eine Aenderung vorgenommen wurde
+                usernameWrong = username.text;
             }
             else
             {
