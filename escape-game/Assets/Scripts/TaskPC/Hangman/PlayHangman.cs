@@ -68,7 +68,13 @@ public class PlayHangman : MonoBehaviour
         "Sherlock",
         "Teleskop",
         "Roter Planet",
-        "Spektrum"
+        "Spektrum",
+        "Astronaut",
+        "Asteroid",
+        "Universum",
+        "Supernova",
+        "Himmelskörper",
+        "Astronomie"
     };
 
     private int mistakes = 0;
