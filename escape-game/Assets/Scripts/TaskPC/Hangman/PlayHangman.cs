@@ -65,7 +65,10 @@ public class PlayHangman : MonoBehaviour
         "Desoxyribonukleinsaeure",
         "Adenosintriphosphat",
         "Watson",
-        "Sherlock"
+        "Sherlock",
+        "Teleskop",
+        "Roter Planet",
+        "Spektrum"
     };
 
     private int mistakes = 0;
