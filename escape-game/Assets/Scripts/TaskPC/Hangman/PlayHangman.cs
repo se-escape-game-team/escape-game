@@ -119,7 +119,7 @@ public class PlayHangman : MonoBehaviour
         if (inputField.text != "" && inputField.text != null && play)
         {
             // Ueberprueft ob der eingegebene Buchstabe richtig ist
-            if (CheckChar(inputField.text[0]))
+            if (CheckChar(inputField.text[0], currentWord, ref hiddenWord))
             {
                 hangmanWord.text = new string(hiddenWord);
             }
@@ -203,14 +203,14 @@ public class PlayHangman : MonoBehaviour
     /// </summary>
     /// <param name="c"></param>
     /// <returns></returns>
-    private bool CheckChar(char c)
+    public bool CheckChar(char c, string word, ref char[] hiddenWord)
     {
         bool correct = false;
-        for (int i = 0; i < currentWord.Length; i++)
+        for (int i = 0; i < word.Length; i++)
         {
-            if (Char.ToUpper(c) == Char.ToUpper(currentWord[i]))
+            if (Char.ToUpper(c) == Char.ToUpper(word[i]))
             {
-                hiddenWord[i] = currentWord[i];
+                hiddenWord[i] = word[i];
                 correct = true;
             }
         }
@@ -232,13 +232,12 @@ public class PlayHangman : MonoBehaviour
     /// </summary>
     /// <param name="word"></param>
     /// <returns></returns>
-    private char[] HideWord(string word)
+    public char[] HideWord(string word)
     {
-        Debug.Log(word);
-        char[] hiddenWord = new char[currentWord.Length];
+        char[] hiddenWord = new char[word.Length];
         for (int i = 0; i < hiddenWord.Length; i++)
         {
-            if (currentWord[i] == ' ')
+            if (word[i] == ' ')
             {
                 hiddenWord[i] = ' ';
             }
