@@ -36,11 +36,7 @@ public class Clock : MonoBehaviour
         pointerMinutes = transform.Find("rotation_axis_pointer_minutes").gameObject;
         pointerHours = transform.Find("rotation_axis_pointer_hour").gameObject;
 
-        hour = DateTime.Now.Hour;
-        minutes = DateTime.Now.Minute;
-
-        msecs = 0.0f;
-        seconds = DateTime.Now.Second;
+        SetTime();
     }
     //-----------------------------------------------------------------------------------------------------------------------------------------
     //-----------------------------------------------------------------------------------------------------------------------------------------
@@ -82,4 +78,13 @@ public class Clock : MonoBehaviour
     //-----------------------------------------------------------------------------------------------------------------------------------------
     //-----------------------------------------------------------------------------------------------------------------------------------------
     //-----------------------------------------------------------------------------------------------------------------------------------------
+
+    public void SetTime()
+    {
+        hour = DateTime.Now.Hour;
+        minutes = DateTime.Now.Minute;
+        seconds = DateTime.Now.Second;
+        msecs = 0.0f;
+    }
+
 }

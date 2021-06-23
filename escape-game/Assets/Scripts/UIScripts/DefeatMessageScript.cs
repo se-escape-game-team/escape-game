@@ -34,7 +34,15 @@ public class DefeatMessageScript : MonoBehaviour
         {
             g.SetActive(false);
         }
-        crosshair.CrosshairEnabled = true;
+
+        if (SceneManager.GetActiveScene().name == "Lab_Room")
+        {
+            crosshair.CrosshairEnabled = true;
+
+            // Aktualisiert die Uhrzeit
+            GameObject clock = GameObject.Find("clock");
+            clock.GetComponent<Clock>().SetTime();
+        }
         Time.timeScale = 1f;
         SaveScript.pause = false;
         PauseMenuScript.pauseMenuAvailable = true;

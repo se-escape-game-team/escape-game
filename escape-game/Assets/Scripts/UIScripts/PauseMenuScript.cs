@@ -43,7 +43,11 @@ public class PauseMenuScript : MonoBehaviour
         pauseMenuUI.SetActive(false);
         backgroundPanel.SetActive(false);
 
-        if(SceneManager.GetActiveScene().name == "Lab_Room")
+        // Aktualisiert die Uhrzeit
+        GameObject clock = GameObject.Find("clock");
+        clock.GetComponent<Clock>().SetTime();
+
+        if (SceneManager.GetActiveScene().name == "Lab_Room")
         {
             // Lockt den Cursor in der Mitte vom Bild
             Cursor.lockState = CursorLockMode.Locked;
@@ -71,7 +75,7 @@ public class PauseMenuScript : MonoBehaviour
         }
         else
         {
-            timeLeft.text = $"Du bist {(int)SaveScript.secondsLeft / 60:D2}:{(int)SaveScript.secondsLeft % 60:D2} Minuten über der Zeit...";
+            timeLeft.text = $"Du bist {(int)SaveScript.secondsLeft / 60:D2}:{(int)SaveScript.secondsLeft % 60:D2} Minuten ?ber der Zeit...";
         }
 
         // Deaktiviert den BackToLab-Button
