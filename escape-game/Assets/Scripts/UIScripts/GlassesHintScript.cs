@@ -4,22 +4,28 @@ using UnityEngine;
 
 public class GlassesHintScript : MonoBehaviour
 {
+    [SerializeField] Crosshair crosshair;
     [SerializeField] GameObject hint;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        //gameObject.SetActive(false);
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Alpha1))
+        if (SaveScript.secondsLeft <= SaveScript.totalTime * 0.9 && !SaveScript.glassesHintWasShown && !SaveScript.glassesCollected)
         {
             hint.SetActive(true);
-            Debug.Log("löajsdf");
+            crosshair.CrosshairEnabled = false;
+            Time.timeScale = 0f;
+            SaveScript.pause = true;
+            PauseMenuScript.pauseMenuAvailable = false;
+            SaveScript.glassesHintWasShown = true;
         }
+    }
+
+    public void Resume()
+    {
+        hint.SetActive(false);
+        crosshair.CrosshairEnabled = true;
+        Time.timeScale = 1f;
+        SaveScript.pause = false;
+        PauseMenuScript.pauseMenuAvailable = true;
     }
 }

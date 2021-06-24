@@ -47,6 +47,11 @@ public static class SaveScript
     public static bool startMessageWasShown = false;
 
     /// <summary>
+    /// Gibt an ob der Hinweis zu der Brille schon gegeben wurde
+    /// </summary>
+    public static bool glassesHintWasShown = false;
+
+    /// <summary>
     /// Gibt an ob die Brille schon eigesammelt wurde.
     /// </summary>
     public static bool glassesCollected = false;
@@ -104,7 +109,12 @@ public static class SaveScript
     /// <summary>
     /// Speichert die noch ?brige Zeit in Sekunden
     /// </summary>
-    public static float secondsLeft = 20;
+    public static float secondsLeft = 30;
+
+    /// <summary>
+    /// Gibt an, wie viel Zeit man insgesamt hat um aus dem Labor zu entkommen
+    /// </summary>
+    public static float totalTime = 30;
 
     /// <summary>
     /// Gibt an ob die Zeit des Timers schon gesetzt wurde

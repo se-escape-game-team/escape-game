@@ -13,9 +13,6 @@ public class MainMenu : MonoBehaviour
     bool isNameValid;
     public Dropdown difficutly;
     
-    
-    
-    
     public string Username
     {
         get
@@ -25,13 +22,11 @@ public class MainMenu : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         username = "";
     }
 
-    // Update is called once per frame
     void Update()
     {
 
@@ -54,8 +49,9 @@ public class MainMenu : MonoBehaviour
                 case 2:
                     SaveScript.secondsLeft = 15 * 60 + 1;
                     break;
-                default: throw new System.IndexOutOfRangeException();
+                default: throw new System.IndexOutOfRangeException();       
             }
+            SaveScript.totalTime = SaveScript.secondsLeft;
         }
     }
 
