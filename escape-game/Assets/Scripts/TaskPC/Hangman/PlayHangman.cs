@@ -114,6 +114,7 @@ public class PlayHangman : MonoBehaviour
             hiddenWord = HideWord(currentWord);
             hangmanWord.text = new string(hiddenWord);
             newRound = false;
+            Debug.Log(currentWord);
         }
 
         if (inputField.text != "" && inputField.text != null && play)

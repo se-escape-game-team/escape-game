@@ -45,7 +45,10 @@ public class PauseMenuScript : MonoBehaviour
 
         // Aktualisiert die Uhrzeit
         GameObject clock = GameObject.Find("clock");
-        clock.GetComponent<Clock>().SetTime();
+        if (clock != null)
+        {
+            clock.GetComponent<Clock>().SetTime();
+        }
 
         if (SceneManager.GetActiveScene().name == "Lab_Room")
         {
@@ -55,7 +58,7 @@ public class PauseMenuScript : MonoBehaviour
         }
 
         // Aktiviert den BackToLab-Button
-        
+
         if (backToLabButton != null)
         {
             backToLabButton.SetActive(true);
@@ -75,19 +78,19 @@ public class PauseMenuScript : MonoBehaviour
         }
         else
         {
-            timeLeft.text = $"Du bist {(int)SaveScript.secondsLeft / 60:D2}:{(int)SaveScript.secondsLeft % 60:D2} Minuten ?ber der Zeit...";
+            timeLeft.text = $"Du bist {(int)SaveScript.secondsLeft / 60:D2}:{(int)SaveScript.secondsLeft % 60:D2} Minuten über der Zeit...";
         }
 
         // Deaktiviert den BackToLab-Button
         backToLabButton = GameObject.FindGameObjectWithTag("BackToLabButton");
-        if(backToLabButton != null)
+        if (backToLabButton != null)
         {
             backToLabButton.SetActive(false);
         }
 
         // Deaktiviert das Overlay
         overlay.SetActive(false);
-        
+
         // Aktiviert das Pause-Menue
         pauseMenuUI.SetActive(true);
         backgroundPanel.SetActive(true);
