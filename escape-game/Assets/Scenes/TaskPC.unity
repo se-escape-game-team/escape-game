@@ -5393,8 +5393,14 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Ich fordere Dich heraus! Gewinne f\xFCnf Runden Hangman gegen mich und
-    du bekommst vielleicht eine Chance zu fliehen!\n\n\n\n\n(Mit Leertaste beenden)"
+  m_Text: 'Ich fordere Dich heraus! Gewinne drei Runden Hangman gegen mich und du
+    bekommst vielleicht eine Chance zu fliehen!
+
+
+
+
+
+    (Mit Leertaste beenden)'
 --- !u!222 &2142846946
 CanvasRenderer:
   m_ObjectHideFlags: 0
