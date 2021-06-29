@@ -9,11 +9,9 @@ public class Type : MonoBehaviour
     [SerializeField] private string password;
     [SerializeField] private MeshRenderer lightOk;
 
-    //private float time = 0.5f;
-
     void Update()
     {
-        //Um auf die Zahlen klicken zu können
+        //Um auf die Zahlen klicken zu koennen
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hitObject;
 
@@ -33,7 +31,7 @@ public class Type : MonoBehaviour
                         }
                         else
                         {
-                            // Resets DisplayText
+                            // Setzt den angezeigten Text zurueck
                             text.text = "";
                         }
 
