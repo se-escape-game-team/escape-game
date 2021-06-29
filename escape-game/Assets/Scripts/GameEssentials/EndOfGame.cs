@@ -15,21 +15,26 @@ public class EndOfGame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Wenn der Spieler sich auf dem Trigger im Ausgangstunnel befindet, Endet das Spiel
         if (playerOnTrigger)
         {
-            // ToDo Endscreen anzeigen und spiel beenden
             DontDestroyOnLoad[] dontDestroys = GameObject.FindObjectsOfType<DontDestroyOnLoad>();
             foreach (DontDestroyOnLoad d in dontDestroys)
             {
                 Destroy(d.gameObject);
             }
+            // Curser wird wieder angezeigt
             Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = true;
             SceneManager.LoadScene("Victory");
         }
     }
 
-    private void OnTriggerEnter(Collider col) // Spieler betritt Trigger
+    /// <summary>
+    /// Spieler betritt Trigger
+    /// </summary>
+    /// <param name="col"></param>
+    private void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.tag == "Player")
         {

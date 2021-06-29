@@ -9,7 +9,7 @@ public static class SaveScript
     /// <summary>
     /// Speichert die Position des Spielers (wird immer beim verlassen der Lab-Scene aktualisiert)
     /// </summary>
-    public static Vector3 playerPosition = new Vector3(-1.2f, 2.6f , -1.9f);
+    public static Vector3 playerPosition = new Vector3(-1.2f, 2.6f, -1.9f);
 
     /// <summary>
     /// Speichert die Rotation des Spielers (wird immer beim verlassen der Lab-Scene aktualisiert)

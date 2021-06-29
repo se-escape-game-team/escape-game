@@ -8,8 +8,6 @@ public class MovementCamera : MonoBehaviour
     public Slider slider;
     float sensitivity;
     public Transform playerBody;
-
-
     float xRotation = 0;
 
     void Start()
@@ -19,6 +17,7 @@ public class MovementCamera : MonoBehaviour
 
     void Update()
     {
+        // Bewegt die Kamera je nach Mausempfindlichkeit und Mausbewegung
         float mouseX = Input.GetAxis("Mouse X") * Time.deltaTime * sensitivity;
         float mouseY = Input.GetAxis("Mouse Y") * Time.deltaTime * sensitivity;
 
@@ -27,9 +26,8 @@ public class MovementCamera : MonoBehaviour
 
         transform.localRotation = Quaternion.Euler(xRotation + SaveScript.camerRotationX, 0f, 0);
         playerBody.Rotate(0, mouseX, 0);
-
+        
+        // Mausempfindlichkeit aus Pausenmenü
         sensitivity = slider.value;
     }
-
-
 }

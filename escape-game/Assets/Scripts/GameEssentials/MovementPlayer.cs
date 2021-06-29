@@ -8,13 +8,12 @@ public class MovementPlayer : MonoBehaviour
     public CharacterController controller;
     public float speed = 10;
     public float gravity = 40f;
-
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
-
     Vector3 velocity;
     bool isGrounded;
+
     void Start()
     {
         // Setzen der gespeicherten Spieler-Position
@@ -26,6 +25,7 @@ public class MovementPlayer : MonoBehaviour
 
     void Update()
     {
+        // Gravitation
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         if (isGrounded && velocity.y < 0)
         {
@@ -35,11 +35,14 @@ public class MovementPlayer : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
 
+        // Erkennen der Bewegungseingabe
         float moveX = Input.GetAxis("Horizontal");
         float moveY = Input.GetAxis("Vertical");
 
+        // Bewegung des Spielenden
         Vector3 movement = transform.right * moveX + transform.forward * moveY;
 
+        // Schnellere Bewegung nach einsammeln der Brille
         if (!SaveScript.glassesCollected)
         {
             movement *= Time.deltaTime * (speed / 2);
@@ -49,6 +52,7 @@ public class MovementPlayer : MonoBehaviour
             movement *= Time.deltaTime * speed;
         }
 
+        // Zuweisung der Bewegung zu Objekt 
         controller.Move(movement);
     }
 }

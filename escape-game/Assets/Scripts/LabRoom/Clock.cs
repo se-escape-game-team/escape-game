@@ -62,8 +62,6 @@ public class Clock : MonoBehaviour
                 }
             }
         }
-
-
         //-- calculate pointer angles
         float rotationSeconds = (360.0f / 60.0f) * seconds;
         float rotationMinutes = (360.0f / 60.0f) * minutes;
@@ -73,12 +71,14 @@ public class Clock : MonoBehaviour
         pointerSeconds.transform.localEulerAngles = new Vector3(0.0f, 0.0f, rotationSeconds);
         pointerMinutes.transform.localEulerAngles = new Vector3(0.0f, 0.0f, rotationMinutes);
         pointerHours.transform.localEulerAngles = new Vector3(0.0f, 0.0f, rotationHours);
-
     }
     //-----------------------------------------------------------------------------------------------------------------------------------------
     //-----------------------------------------------------------------------------------------------------------------------------------------
     //-----------------------------------------------------------------------------------------------------------------------------------------
 
+    /// <summary>
+    /// Zeit der Uhr auf Systemzeit setzen
+    /// </summary>
     public void SetTime()
     {
         hour = DateTime.Now.Hour;
@@ -86,5 +86,4 @@ public class Clock : MonoBehaviour
         seconds = DateTime.Now.Second;
         msecs = 0.0f;
     }
-
 }

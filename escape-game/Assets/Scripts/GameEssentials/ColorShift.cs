@@ -9,6 +9,9 @@ public class ColorShift : MonoBehaviour
     bool up = true;
     private float duration = 15;
 
+    /// <summary>
+    /// Variablendeklaration
+    /// </summary>
     public void Start()
     {
         PostProcessVolume postFX = gameObject.GetComponent<PostProcessVolume>();
@@ -17,9 +20,11 @@ public class ColorShift : MonoBehaviour
 
     void Update()
     {
+        //Prueft ob LSD eingenommen wurde
         if (SaveScript.lsdMode)
         {
             duration -= Time.deltaTime;
+            // Aendern der Zaehlrichtung bei erreichen der Grenze des Wertebereichs
             if (colorGrading.hueShift.value >= 180)
             {
                 up = false;
@@ -29,6 +34,7 @@ public class ColorShift : MonoBehaviour
                 up = true;
             }
 
+            // Aendern der Farbe
             if (up)
             {
                 colorGrading.hueShift.value = colorGrading.hueShift.value + (75 * Time.deltaTime);
@@ -38,6 +44,7 @@ public class ColorShift : MonoBehaviour
                 colorGrading.hueShift.value = colorGrading.hueShift.value - (75 * Time.deltaTime);
             }
 
+            // Deaktivieren des LSD-Modes
             if (duration <= 0)
             {
                 duration = 15;
