@@ -9,7 +9,6 @@ public class StartMessageScript : MonoBehaviour
     private Crosshair crosshair;
     [SerializeField] private Text text;
 
-    // Start is called before the first frame update
     void Start()
     {
         text.text = $@"Anscheinend ist etwas schiefgelaufen! Es gab eine Explosion!

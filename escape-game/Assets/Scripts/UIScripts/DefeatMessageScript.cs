@@ -10,11 +10,16 @@ public class DefeatMessageScript : MonoBehaviour
 
     private void Start()
     {
+        // Deaktivieren der Nachricht bei Start der Szene
         foreach (GameObject g in content)
         {
             g.SetActive(false);
         }
     }
+
+    /// <summary>
+    /// Zeigt die Defeat-Message an
+    /// </summary>
     public void ShowDefeatMessage()
     {
         crosshair.CrosshairEnabled = false;
@@ -27,9 +32,14 @@ public class DefeatMessageScript : MonoBehaviour
         PauseMenuScript.pauseMenuAvailable = false;
     }
 
+    /// <summary>
+    /// Laesst das Spiel nach dem Anzeigen der Defeat-Message weiterlaufen
+    /// </summary>
     public void Resume()
     {
         SaveScript.continueAfterDefeat = true;
+
+        // Deaktivieren der Nachricht
         foreach (GameObject g in content)
         {
             g.SetActive(false);
@@ -37,17 +47,22 @@ public class DefeatMessageScript : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "Lab_Room")
         {
+            // Crosshair anzeigen
             crosshair.CrosshairEnabled = true;
 
-            // Aktualisiert die Uhrzeit
+            // Uhrzeit aktualisieren
             GameObject clock = GameObject.Find("clock");
             clock.GetComponent<Clock>().SetTime();
         }
+
         Time.timeScale = 1f;
         SaveScript.pause = false;
         PauseMenuScript.pauseMenuAvailable = true;
     }
 
+    /// <summary>
+    /// Beenden des Spiels und Wechseln in die Endszene
+    /// </summary>
     public void Quit()
     {
         // Loesche alle Objekte die ueber Szenenwechsel hinweg leben
@@ -56,6 +71,7 @@ public class DefeatMessageScript : MonoBehaviour
         {
             Destroy(d.gameObject);
         }
+
         SceneManager.LoadScene("Credits");
     }
 }

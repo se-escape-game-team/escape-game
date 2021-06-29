@@ -5,22 +5,13 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
-{    
+{
     public InputField userField;
     public GameObject errorNameTooLong;
     public GameObject errorNameNull;
     string username;
     bool isNameValid;
     public Dropdown difficutly;
-    
-    public string Username
-    {
-        get
-        {
-            Debug.Log("Userneme was accessed");
-            return username;
-        }
-    }
 
     void Start()
     {
@@ -29,32 +20,40 @@ public class MainMenu : MonoBehaviour
 
     void Update()
     {
-
+        // Aktualisieren des User-Inputs
         if (userField != null && userField.text != null)
         {
             username = UserInput();
         }
 
+        // Zeit der ausgewaehlten Schwierigkeit nach setzen
         if (difficutly != null)
         {
             int input = difficutly.value;
             switch (input)
             {
                 case 0:
-                    SaveScript.secondsLeft = 25 * 60 + 1;
+                    // Leicht (35 Minuten)
+                    SaveScript.secondsLeft = 35 * 60 + 1;
                     break;
                 case 1:
-                    SaveScript.secondsLeft = 20 * 60 + 1;
+                    // Mittel (30 Minuten)
+                    SaveScript.secondsLeft = 30 * 60 + 1;
                     break;
                 case 2:
-                    SaveScript.secondsLeft = 15 * 60 + 1;
+                    // Schwer (25 Minuten)
+                    SaveScript.secondsLeft = 25 * 60 + 1;
                     break;
-                default: throw new System.IndexOutOfRangeException();       
+                default: throw new System.IndexOutOfRangeException();
             }
             SaveScript.totalTime = SaveScript.secondsLeft;
         }
     }
 
+    /// <summary>
+    /// Ueberpruefen des Inputs und anzeigen moeglicher Fehler
+    /// </summary>
+    /// <returns>User-Input username</returns>
     string UserInput()
     {
         string _username = userField.text;
@@ -69,34 +68,44 @@ public class MainMenu : MonoBehaviour
             errorNameTooLong.SetActive(false);
             isNameValid = true;
         }
+
         if (_username.Length != 0)
         {
             errorNameNull.SetActive(false);
         }
 
         return _username;
-    }    
+    }
 
+    /// <summary>
+    /// Starten des Spiels und Ueberpruefen ob der Name richtig gesetzt ist
+    /// </summary>
     public void StartGame()
     {
         Time.timeScale = 1f;
+        // Ueberpruefen des Namens
         if (username.Length == 0 || username == null)
         {
             errorNameNull.SetActive(true);
         }
-        else if(isNameValid)
+        else if (isNameValid)
         {
             SaveScript.username = username;
             SceneManager.LoadScene("Lab_Room");
         }
     }
 
-    public void doExitGame()
-    {        
-        Debug.Log("Quitting...");
+    /// <summary>
+    /// Verlassen des Spiels
+    /// </summary>
+    public void DoExitGame()
+    {
         Application.Quit();
     }
 
+    /// <summary>
+    /// Wechseln in Credit-Szene
+    /// </summary>
     public void GoToCredits()
     {
         SceneManager.LoadScene("Credits");

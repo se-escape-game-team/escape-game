@@ -50,7 +50,7 @@ public class Inventory : MonoBehaviour
     }
 
     /// <summary>
-    /// Element view goes up
+    /// Inventar rueckt die vorhandenen Elemente nach oben
     /// </summary>
     void ScrollDown()
     {
@@ -61,7 +61,7 @@ public class Inventory : MonoBehaviour
     }
 
     /// <summary>
-    /// Element view goes down
+    /// Inventar rueckt die vorhandenen Elemente nach unten
     /// </summary>
     void ScrollUp()
     {
@@ -72,7 +72,7 @@ public class Inventory : MonoBehaviour
     }
 
     /// <summary>
-    /// Adds a new Item (Sprite) to the inventory. 
+    /// Fuegt ein neues Item (Sprite) zum Inventar hinzu 
     /// </summary>
     /// <param name="sprite"></param>
     public void AddItem(Sprite sprite)
@@ -83,9 +83,9 @@ public class Inventory : MonoBehaviour
     }
 
     /// <summary>
-    /// Delets Sprite out of ItemList of Inventory
+    /// Loescht ein Item (Sprite) aus dem Inventar
     /// </summary>
-    /// <param name="sprite">Sprite to delete</param>
+    /// <param name="sprite">Zu loeschendes Sprite</param>
     public void DeleteItem(Sprite sprite)
     {
         SaveScript.itemList.Remove(sprite);
@@ -93,6 +93,9 @@ public class Inventory : MonoBehaviour
         RefreshInventory();
     }
 
+    /// <summary>
+    /// Aktualisiert das Inventar
+    /// </summary>
     void RefreshInventory()
     {
         if (SaveScript.itemList.Count <= SaveScript.itemImage.Length)
