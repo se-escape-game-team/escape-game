@@ -31,7 +31,6 @@ public class PlayHangman : MonoBehaviour
         "Roskosmos",
         "Raumschiff",
         "Landekapsel",
-        "AntiFue",
         "WLAN",
         "SpaceX",
         "Escape Game",
@@ -73,7 +72,7 @@ public class PlayHangman : MonoBehaviour
         "Asteroid",
         "Universum",
         "Supernova",
-        "Himmelskörper",
+        "Himmelskoerper",
         "Astronomie"
     };
 
@@ -88,7 +87,7 @@ public class PlayHangman : MonoBehaviour
     private char[] hiddenWord;
 
     /// <summary>
-    /// Setzt das Spiel komplett zur?ck
+    /// Setzt das Spiel komplett zurueck
     /// </summary>
     public void ResetHangman()
     {
@@ -106,7 +105,7 @@ public class PlayHangman : MonoBehaviour
         // Wird nur ausgefuehrt wenn eine neue Runde gestartet werden soll
         if (newRound)
         {
-            // Setzt alle f?r die naechste Runde benoetigten Komponenten zurueck
+            // Setzt alle fuer die naechste Runde benoetigten Komponenten zurueck
             mistakes = 0;
             hangmanImage.sprite = hangmanStates[0];
             roundText.text = $"Round {currentRound + 1}/{rounds}";
@@ -184,7 +183,7 @@ public class PlayHangman : MonoBehaviour
     }
 
     /// <summary>
-    /// Methode f?r NextRoundButton, startet die neue Runde.
+    /// Methode fuer NextRoundButton, startet die neue Runde.
     /// </summary>
     public void NextRound()
     {
@@ -200,7 +199,7 @@ public class PlayHangman : MonoBehaviour
     }
 
     /// <summary>
-    /// ?berpr?ft ob der eingegebene Character im Wort vorhanden ist und setzt diesen im HiddenWord ein.
+    /// Ueberprueft ob der eingegebene Character im Wort vorhanden ist und setzt diesen im HiddenWord ein.
     /// </summary>
     /// <param name="c"></param>
     /// <returns></returns>
@@ -229,7 +228,7 @@ public class PlayHangman : MonoBehaviour
     }
 
     /// <summary>
-    /// Versteckt alle Buchstaben des Wortes und wei?t sie HiddenWord zu.
+    /// Versteckt alle Buchstaben des Wortes und weisst sie HiddenWord zu.
     /// </summary>
     /// <param name="word"></param>
     /// <returns></returns>

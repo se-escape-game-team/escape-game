@@ -31,7 +31,7 @@ public class Lockscreen : MonoBehaviour
 
     public void Update()
     {
-        // Wenn ein Buchstabe vom falschen Passwort oder uUername geaendert wird soll der Text wieder in Farbe schwarz geschrieben sein
+        // Wenn ein Buchstabe vom falschen Passwort oder Username geaendert wird soll der Text wieder in Farbe schwarz geschrieben sein
         if(passwordWrong != null)
         {
             if(password.text != passwordWrong)
@@ -54,6 +54,9 @@ public class Lockscreen : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Prueft auf korrekte Eingaben
+    /// </summary>
     public void Access()
     {
         if (password.text == passwordString && username.text == SaveScript.username)
@@ -96,6 +99,9 @@ public class Lockscreen : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Aktiviert den Passwort-Hinweis
+    /// </summary>
     public void ShowHint()
     {
         Debug.Log("Show hint");

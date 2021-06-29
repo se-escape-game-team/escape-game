@@ -9,10 +9,9 @@ public class Type : MonoBehaviour
     [SerializeField] private string password;
     [SerializeField] private MeshRenderer lightOk;
 
-    //private float time = 0.5f;
-
     void Update()
     {
+        //Um auf die Zahlen klicken zu koennen
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hitObject;
 
@@ -32,7 +31,7 @@ public class Type : MonoBehaviour
                         }
                         else
                         {
-                            // Resets DisplayText
+                            // Setzt den angezeigten Text zurueck
                             text.text = "";
                         }
 
@@ -53,6 +52,11 @@ public class Type : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// loescht die letzte Eingabe
+    /// </summary>
+    /// <param name="s"></param>
+    /// <returns></returns>
     private string DeleteLastCharacter(string s)
     {
         string temp = "";
@@ -63,6 +67,10 @@ public class Type : MonoBehaviour
         return temp;
     }
 
+    /// <summary>
+    /// Ueberprueft den Code auf Richtigkeit
+    /// </summary>
+    /// <returns></returns>
     private bool CheckPassword()
     {
         if (text.text.Length != password.Length)
