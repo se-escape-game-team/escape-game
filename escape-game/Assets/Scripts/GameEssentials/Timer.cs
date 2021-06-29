@@ -42,7 +42,6 @@ public class Timer : MonoBehaviour
         {
             timeLeft = timerText.text = ($"-{(int)SaveScript.secondsLeft / 60:D2}:{(int)SaveScript.secondsLeft % 60:D2}");
         }
-        
     }
 }
 

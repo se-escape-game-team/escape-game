@@ -55,6 +55,5 @@ public class ShowSecretLetters : MonoBehaviour
             spotPapersTrigger.SetActive(true);
             triggerActive = true;
         }
-
     }
 }
