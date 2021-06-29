@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using System;
 
 public class VictorySceneScript : MonoBehaviour
@@ -26,10 +27,10 @@ public class VictorySceneScript : MonoBehaviour
     }
 
     /// <summary>
-    /// Beenden des Spiels
+    /// Wechsel in Credits-Szene
     /// </summary>
     public void QuitApplication()
     {
-        Application.Quit();
+        SceneManager.LoadScene("Credits");
     }
 }
