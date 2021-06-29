@@ -30,13 +30,11 @@ public class ClickInventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerE
                 if (currentHover.name.Length == 5)
                 {
                     itemImage = currentHover.transform.Find($"ItemImage{currentHover.name[4]}").GetComponent<Image>();
-                    // Debug.Log("Image über ItemPanel: " + itemImage.sprite.name);
                 }
                 // Zeiger ueber Item-Image
                 else if (currentHover.name.Length == 10)
                 {
                     itemImage = currentHover.GetComponent<Image>();
-                    // Debug.Log("Image direkt über Image " + itemImage.sprite.name);
                 }
                 else
                 {
@@ -52,6 +50,9 @@ public class ClickInventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerE
         }
     }
 
+    /// <summary>
+    /// Methode dass das Item dem Mauszeiger waehrend dem Klicken folgt
+    /// </summary>
     private void DragItem()
     {
         if (dragItem && Input.GetMouseButton(0))
@@ -72,7 +73,6 @@ public class ClickInventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerE
         }
     }
 
-
     /// <summary>
     /// Erkennt das aktuelle Objekt unter der Maus
     /// </summary>
@@ -83,8 +83,9 @@ public class ClickInventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerE
             currentHover = eventData.pointerCurrentRaycast.gameObject;
         }
     }
+
     /// <summary>
-    /// setzt currentHover zur?ck, wenn die Maus ?ber keinem Objekt ist
+    /// setzt currentHover zurueck, wenn die Maus ueber keinem Objekt ist
     /// </summary>
     /// <param name="eventData"></param>
     public void OnPointerExit(PointerEventData eventData)

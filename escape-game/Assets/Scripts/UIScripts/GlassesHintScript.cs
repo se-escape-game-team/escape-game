@@ -9,6 +9,7 @@ public class GlassesHintScript : MonoBehaviour
 
     void Update()
     {
+        // Anzeigen des Tipps fuer die Brille nachdem 10% der Zeit abgelaufen sind und die Brille noch nicht eingesammelt wurde
         if (SaveScript.secondsLeft <= SaveScript.totalTime * 0.9 && !SaveScript.glassesHintWasShown && !SaveScript.glassesCollected)
         {
             hint.SetActive(true);
@@ -20,6 +21,9 @@ public class GlassesHintScript : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Schliessen der Nachricht und zurueckkehren zum Spiel
+    /// </summary>
     public void Resume()
     {
         hint.SetActive(false);

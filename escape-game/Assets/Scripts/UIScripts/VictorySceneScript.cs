@@ -13,6 +13,8 @@ public class VictorySceneScript : MonoBehaviour
         textArea.text = $"Herzlichen Glückwunsch {SaveScript.username}!\n" +
             $"Du hast es geschafft, aus dem Labor zu fliehen und die KI zu besiegen.\n" +
             $"Gut gemacht!\n";
+
+        // Anpassen der Nachricht je nachdem ob man das Spiel in der vorgegebenen Zeit geschafft hat oder nicht
         if (!SaveScript.continueAfterDefeat)
         {
             textArea.text += $"Übrige Zeit: {(int)SaveScript.secondsLeft / 60:D2}:{(int)SaveScript.secondsLeft % 60:D2} Minuten\n";
@@ -23,9 +25,11 @@ public class VictorySceneScript : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Beenden des Spiels
+    /// </summary>
     public void QuitApplication()
     {
         Application.Quit();
-        Debug.Log("Quitting Game...");
     }
 }

@@ -11,6 +11,9 @@ public class PauseMenuScript : MonoBehaviour
     [SerializeField] private GameObject overlay;
     [SerializeField] private Text timeLeft;
 
+    /// <summary>
+    /// Gibt an ob das Pause-Menue gerade verfuegbar ist oder nicht
+    /// </summary>
     public static bool pauseMenuAvailable = true;
 
     private GameObject backToLabButton;
@@ -24,16 +27,19 @@ public class PauseMenuScript : MonoBehaviour
 
     void Update()
     {
+        // Wenn Escape gedrueckt wird soll das Pause-Menue geoeffnet werden
         if (Input.GetKeyDown(KeyCode.Escape) && pauseMenuAvailable)
         {
             if (!SaveScript.pause)
             {
                 Pause();
-
             }
         }
     }
 
+    /// <summary>
+    /// Methode zum Zurueckkehren zum Spiel
+    /// </summary>
     public void Resume()
     {
         // Aktiviert das Overlay
@@ -58,7 +64,6 @@ public class PauseMenuScript : MonoBehaviour
         }
 
         // Aktiviert den BackToLab-Button
-
         if (backToLabButton != null)
         {
             backToLabButton.SetActive(true);
@@ -69,6 +74,9 @@ public class PauseMenuScript : MonoBehaviour
         SaveScript.pause = false;
     }
 
+    /// <summary>
+    /// Methode zum Aktivieren des Pause-Menues
+    /// </summary>
     void Pause()
     {
         // Aktualisieren der angezeigten uebrigen Zeit
@@ -103,9 +111,11 @@ public class PauseMenuScript : MonoBehaviour
         SaveScript.pause = true;
     }
 
+    /// <summary>
+    /// Methode zum Verlassen des Spiels
+    /// </summary>
     public void QuitGame()
     {
-        Debug.Log("Spiel beenden.");
         Application.Quit();
     }
 }
