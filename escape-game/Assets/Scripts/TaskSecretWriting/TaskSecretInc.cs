@@ -14,12 +14,12 @@ public class TaskSecretInc : MonoBehaviour
     [SerializeField] Sprite ItemCup;
     [SerializeField] GameObject Cup;
 
-    //Verschiedene Flüssigkeiten im Glas
+    //Verschiedene Fluessigkeiten im Glas
     [SerializeField] GameObject liquidHalf;
     [SerializeField] GameObject liquidRight;
     [SerializeField] GameObject liquidWrong;
 
-    // Farben für Flüssigkeit in Zylinder
+    // Farben fuer Fluessigkeit in Zylinder
     [SerializeField] private Color H2O = new Color(6, 219, 255, 150);
     [SerializeField] private Color NH3 = new Color(6, 255, 9, 150);
     [SerializeField] private Color HCl = new Color(96, 0, 241, 150);
@@ -41,7 +41,6 @@ public class TaskSecretInc : MonoBehaviour
         retry.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -61,9 +60,9 @@ public class TaskSecretInc : MonoBehaviour
                     if (firstElement == null)
                     {
                         firstElement = spriteName[0];
-                        //Glas halb füllen mit entsprechender Farbe
+                        //Glas halb fuellen mit entsprechender Farbe
                         liquidHalf.SetActive(true);
-                        //Richtige Farbe für die erste Flüssigkeit setzen
+                        //Richtige Farbe fuer die erste Fl?ssigkeit setzen
                         switch (firstElement)
                         {
                             case "H2O":
@@ -97,8 +96,7 @@ public class TaskSecretInc : MonoBehaviour
                                 liquidHalfMaterial.SetColor("_Color", NaOH);
                                 break;
                             default:
-                                throw new System.Exception("Bitte Farbe für diese Chemicalie zuweisen");
-
+                                throw new System.Exception("Bitte Farbe fuer diese Chemicalie zuweisen");
                         }
                     }
                     else
@@ -128,9 +126,12 @@ public class TaskSecretInc : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// neuer Versuch
+    /// </summary>
     public void Retry()
     {
-        //Flüssigkeiten ausblenden
+        //Fl?ssigkeiten ausblenden
         liquidHalf.SetActive(false);
         liquidRight.SetActive(false);
         liquidWrong.SetActive(false);
@@ -143,6 +144,9 @@ public class TaskSecretInc : MonoBehaviour
         retry.SetActive(false);
     }
 
+    /// <summary>
+    /// Resultat zum Inventar hinzufuegen
+    /// </summary>
     public void AddToInventory()
     {
         Inventory inventory = GameObject.FindObjectOfType<Inventory>();
