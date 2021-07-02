@@ -11,14 +11,14 @@ public class VictorySceneScript : MonoBehaviour
 
     void Start()
     {
-        textArea.text = $"Herzlichen Glückwunsch {SaveScript.username}!\n" +
+        textArea.text = $"Herzlichen Gl?ckwunsch {SaveScript.username}!\n" +
             $"Du hast es geschafft, aus dem Labor zu fliehen und die KI zu besiegen.\n" +
             $"Gut gemacht!\n";
 
         // Anpassen der Nachricht je nachdem ob man das Spiel in der vorgegebenen Zeit geschafft hat oder nicht
         if (!SaveScript.continueAfterDefeat)
         {
-            textArea.text += $"Übrige Zeit: {(int)SaveScript.secondsLeft / 60:D2}:{(int)SaveScript.secondsLeft % 60:D2} Minuten\n";
+            textArea.text += $"Uebrige Zeit: {(int)SaveScript.secondsLeft / 60:D2}:{(int)SaveScript.secondsLeft % 60:D2} Minuten\n";
         }
         else
         {
