@@ -34105,11 +34105,11 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Anscheinend ist etwas schiefgelaufen! Es gab eine Explosion! \r\nDu befindest
-    dich in einem hermetisch abgeriegelten Labor. Normalerweise besch\xE4ftigst Du,
+    dich in einem hermetisch abgeriegelten Labor. Normalerweise beschaeftigst Du,
     Professor Doktor , Dich hier mit der Erforschung fremder Galaxien. \r\nBei der
     Untersuchung von Marsgestein ist Dir ein verheerender Fehler unterlaufen, das
-    Labor wird Dir nur f\xFCr <Zeit> ausreichend Sauerstoff bieten. L\xF6se alle
-    R\xE4tsel, um dich zu befreien!\r\nUnd dann ist da auch noch die KI \r..."
+    Labor wird Dir nur f\xFCr <Zeit> ausreichend Sauerstoff bieten. Loese alle R\xE4tsel,
+    um dich zu befreien!\r\nUnd dann ist da auch noch die KI \r..."
 --- !u!222 &1278255876
 CanvasRenderer:
   m_ObjectHideFlags: 0
